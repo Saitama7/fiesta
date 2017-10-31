@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBouquetsTable extends Migration
+class CreateBasketProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateBouquetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bouquets', function (Blueprint $table) {
+        Schema::create('basket_product', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('basket_id');
+            $table->integer('product_id');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateBouquetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bouquets');
+        Schema::dropIfExists('basket_product');
     }
 }

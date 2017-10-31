@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vip extends Model
+class Delivery extends Model
 {
     public function baskets() {
         return $this->hasMany('App\Basket');
