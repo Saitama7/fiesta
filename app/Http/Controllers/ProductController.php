@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.product');
     }
 
     /**
@@ -35,7 +35,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+
+        $product->name = $request->name;
+        $product->desc = $request->desc;
+        $product->size_id = $request->size_id;
+        $product->type_id = $request->type_id;
+        $product->image_path = $request->image_path;
+        $product->cost = $request->cost;
+
+        $product->save();
+
+        return redirect()->back();
     }
 
     /**
