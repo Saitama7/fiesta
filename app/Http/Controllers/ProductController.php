@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('all.product', ['products' => $products]);
     }
 
     /**
@@ -55,9 +56,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('all.product', ['product' => $product]);
     }
 
     /**
@@ -66,9 +68,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('edit.product', ['product' => $product]);
     }
 
     /**
@@ -78,9 +82,41 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        if ($request) {
+            $product = Product::find($id);
+            if ($request->name) {
+                $product->name = $request->name;
+            }
+            if ($request->desc) {
+                $product->desc = $request->desc;
+            }
+            if ($request->size_id) {
+                $product->size_id = $request->size_id;
+            }
+            if ($request->type_id) {
+                $product->type_id = $request->type_id;
+            }
+            if ($request->status) {
+                $product->status = $request->status;
+            }
+            if ($request->slide_status) {
+                $product->slide_status = $request->slide_status;
+            }
+            if ($request->image_path) {
+                $product->image_path = $request->image_path;
+            }
+            if ($request->cost) {
+                $product->cost = $request->cost;
+            }
+
+            $product->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -89,8 +125,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->back();
     }
 }

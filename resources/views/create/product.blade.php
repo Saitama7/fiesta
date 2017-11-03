@@ -12,6 +12,8 @@
                 <input type="text" name="size_id">
                 <input type="text" name="type_id">
                 <input type="text" name="cost">
+                <input type="text" name="status">
+                <input type="text" name="slide_status">
 
                 <input type="submit">
             </form>

@@ -14,7 +14,8 @@ class SizeController extends Controller
      */
     public function index()
     {
-        //
+        $sizes = Size::all();
+        return view('all.size', ['size' => $sizes]);
     }
 
     /**
@@ -24,7 +25,7 @@ class SizeController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.size');
     }
 
     /**
@@ -35,7 +36,12 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $size = new Size();
+
+        $size->name = $request->name;
+        $size->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -44,9 +50,10 @@ class SizeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function show(Size $size)
+    public function show($sizeId)
     {
-        //
+        $size = Size::find($sizeId);
+        return view('show.size', ['size' => $size]);
     }
 
     /**
@@ -55,9 +62,11 @@ class SizeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function edit(Size $size)
+    public function edit($sizeId)
     {
-        //
+        $size = Size::find($sizeId);
+
+        return view('edit.size', ['size' => $size]);
     }
 
     /**
@@ -67,9 +76,20 @@ class SizeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Size $size)
+    public function update(Request $request, $sizeId)
     {
-        //
+        if ($request) {
+            $size = Size::find($sizeId);
+            if ($request->name) {
+                $size->name = $request->name;
+            }
+
+            $size->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +98,10 @@ class SizeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Size $size)
+    public function destroy($sizeId)
     {
-        //
+        $size = Size::find($sizeId);
+        $size->delete();
+        return redirect()->back();
     }
 }

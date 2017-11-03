@@ -14,7 +14,8 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-        //
+        $deliveries = Delivery::all();
+        return view('all.delivery', ['deliveries' => $deliveries]);
     }
 
     /**
@@ -24,7 +25,7 @@ class DeliveryController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.delivery');
     }
 
     /**
@@ -35,7 +36,14 @@ class DeliveryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $delivery = new Delivery();
+
+        $delivery->name = $request->name;
+        $delivery->cost = $request->cost;
+
+        $delivery->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -44,9 +52,10 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function show(Delivery $delivery)
+    public function show($deliveryId)
     {
-        //
+        $delivery = Delivery::find($deliveryId);
+        return view('show.delivery', ['delivery' => $delivery]);
     }
 
     /**
@@ -55,9 +64,11 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Delivery $delivery)
+    public function edit($deliveryId)
     {
-        //
+        $delivery = Delivery::find($deliveryId);
+
+        return view('edit.delivery', ['delivery' => $delivery]);
     }
 
     /**
@@ -67,9 +78,23 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Delivery $delivery)
+    public function update(Request $request, $deliveryId)
     {
-        //
+        if ($request) {
+            $delivery = Delivery::find($deliveryId);
+            if ($request->name) {
+                $delivery->name = $request->name;
+            }
+            if ($request->cost) {
+                $delivery->cost = $request->cost;
+            }
+
+            $delivery->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +103,10 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Delivery $delivery)
+    public function destroy($deliveryId)
     {
-        //
+        $delivery = Delivery::find($deliveryId);
+        $delivery->delete();
+        return redirect()->back();
     }
 }

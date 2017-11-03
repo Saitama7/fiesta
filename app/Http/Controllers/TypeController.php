@@ -14,7 +14,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        return view('all.type', ['types' => $types]);
     }
 
     /**
@@ -24,7 +25,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.type');
     }
 
     /**
@@ -35,7 +36,12 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type= new Type();
+
+        $type->name = $request->name;
+        $type->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -44,9 +50,10 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($typeId)
     {
-        //
+        $type = Type::find($typeId);
+        return view('all.type', ['type' => $type]);
     }
 
     /**
@@ -55,9 +62,11 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit($typeId)
     {
-        //
+        $type = Type::find($typeId);
+
+        return view('edit.type', ['type' => $type]);
     }
 
     /**
@@ -67,9 +76,19 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, $typeId)
     {
-        //
+        if ($request) {
+            $type = Type::find($typeId);
+            if ($request->name) {
+                $type->name = $request->name;
+            }
+            $type->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +97,10 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function destroy($typeId)
     {
-        //
+        $type= Type::find($typeId);
+        $type->delete();
+        return redirect()->back();
     }
 }

@@ -14,7 +14,8 @@ class VipController extends Controller
      */
     public function index()
     {
-        //
+        $vips = Vip::all();
+        return view('all.vip', ['vips' => $vips]);
     }
 
     /**
@@ -24,7 +25,7 @@ class VipController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.vip');
     }
 
     /**
@@ -35,18 +36,26 @@ class VipController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $vip= new Vip();
 
+        $vip->name = $request->name;
+        $vip->phone_number = $request->phone_number;
+        $vip->address = $request->address;
+        $vip->discount = $request->discount;
+        $vip->save();
+
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *
      * @param  \App\Vip  $vip
      * @return \Illuminate\Http\Response
      */
-    public function show(Vip $vip)
+    public function show($vipId)
     {
-        //
+        $vip = Vip::find($vipId);
+        return view('all.vip', ['vip' => $vip]);
     }
 
     /**
@@ -55,9 +64,11 @@ class VipController extends Controller
      * @param  \App\Vip  $vip
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vip $vip)
+    public function edit($vipId)
     {
-        //
+        $vip = Vip::find($vipId);
+
+        return view('edit.vip', ['vip' => $vip]);
     }
 
     /**
@@ -67,9 +78,28 @@ class VipController extends Controller
      * @param  \App\Vip  $vip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vip $vip)
+    public function update(Request $request, $vipId)
     {
-        //
+        if ($request) {
+            $vip = Vip::find($vipId);
+            if ($request->name) {
+                $vip->name = $request->name;
+            }
+            if ($request->phone_number) {
+                $vip->phone_number = $request->phone_number;
+            }
+            if ($request->address) {
+                $vip->address = $request->address;
+            }
+            if ($request->discount) {
+                $vip->discount = $request->discount;
+            }
+            $vip->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +108,10 @@ class VipController extends Controller
      * @param  \App\Vip  $vip
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vip $vip)
+    public function destroy($vipId)
     {
-        //
+        $vip= Vip::find($vipId);
+        $vip->delete();
+        return redirect()->back();
     }
 }

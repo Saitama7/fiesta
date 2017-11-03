@@ -20,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->integer('type_id');
             $table->string('desc');
             $table->integer('size_id');
+            $table->tinyInteger('status');
+            $table->tinyInteger('slide_status');
             $table->string('image_path');
             $table->timestamps();
         });
