@@ -14,10 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/add-to-cart/{id}',[
+    'uses' => 'ProductController@getIndex',
+    'as' => 'product.index'
+]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/create/product', 'ProductController@create');
 Route::post('/store/product', 'ProductController@store');
