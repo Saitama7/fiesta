@@ -14,7 +14,8 @@ class BasketController extends Controller
      */
     public function index()
     {
-        //
+        $baskets = Basket::all();
+        return view('all.basket', ['baskets' => $baskets]);
     }
 
     /**
@@ -24,7 +25,7 @@ class BasketController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.basket');
     }
 
     /**
@@ -35,7 +36,17 @@ class BasketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $basket = new Basket();
+
+        $basket->delivery_id = $request->delivery_id;
+        $basket->vip_id = $request->vip_id;
+        $basket->name = $request->name;
+        $basket->address = $request->address;
+        $basket->phone_number = $request->phone_number;
+
+        $basket->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -44,9 +55,10 @@ class BasketController extends Controller
      * @param  \App\Basket  $basket
      * @return \Illuminate\Http\Response
      */
-    public function show(Basket $basket)
+    public function show($basketId)
     {
-        //
+        $basket = Basket::find($basketId);
+        return view('show.basket', ['basket' => $basketId]);
     }
 
     /**
@@ -55,9 +67,11 @@ class BasketController extends Controller
      * @param  \App\Basket  $basket
      * @return \Illuminate\Http\Response
      */
-    public function edit(Basket $basket)
+    public function edit($basketId)
     {
-        //
+        $basket = Basket::find($basketId);
+
+        return view('edit.basket', ['basket' => $basket]);
     }
 
     /**
@@ -67,9 +81,32 @@ class BasketController extends Controller
      * @param  \App\Basket  $basket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Basket $basket)
+    public function update(Request $request, $basketId)
     {
-        //
+        if ($request) {
+            $basket = Basket::find($basketId);
+            if ($request->name) {
+                $basket->name = $request->name;
+            }
+            if ($request->delivery_id) {
+                $basket->delivery_id = $request->delivery_id;
+            }
+            if ($request->vip_id) {
+                $basket->vip_id = $request->vip_id;
+            }
+            if ($request->address) {
+                $basket->address = $request->address;
+            }
+            if ($request->phone_number) {
+                $basket->phone_number = $request->phone_number;
+            }
+
+            $basket->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +115,10 @@ class BasketController extends Controller
      * @param  \App\Basket  $basket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Basket $basket)
+    public function destroy($basketId)
     {
-        //
+        $basket = Basket::find($basketId);
+        $basketId->delete();
+        return redirect()->back();
     }
 }

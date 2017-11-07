@@ -17,6 +17,7 @@ class CreateBasketProductTable extends Migration
             $table->increments('id');
             $table->integer('basket_id');
             $table->integer('product_id');
+            $table->integer('count_product');
             $table->timestamps();
         });
     }
