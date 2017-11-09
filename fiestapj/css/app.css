@@ -1,0 +1,218 @@
+.img-back {
+     
+     background-size: cover;
+     background-position: center center;
+     height: 100px;  
+     
+}
+
+
+
+.logo-size {
+     width: 75px;
+     height: auto;
+     margin-right: 10px;
+     vertical-align: middle;
+}
+.nav>li>a {
+     color: aliceblue;
+     font-family: 'Comfortaa', cursive;
+}
+
+content {
+     background-color: rgb(238, 238, 238);
+}
+
+.card-radius {
+     width: 100%;
+     border-radius: 150px;
+     border-color: black;
+     border-style: solid;
+}
+
+
+
+
+
+.bg-footer {
+     background: rgb(49, 49, 49); 
+}
+
+ul.nav a {
+     font-size: 14px;
+     padding-left: 0px;
+     padding-right: 0px;
+     padding-top: 4px;
+     padding-bottom: 4px;
+}
+
+
+.text-family {
+     font-family: 'Comfortaa', cursive;
+}
+/*
+.header {
+     opocity: 0;
+     position: fixed;
+     width: 100%;
+     
+
+     z-index: 9999;
+}
+.headhesive{
+     
+     position: fixed;
+     opacity: 1;
+     width: 100%;
+     padding: 20px 0;
+    
+     transition: 0.5s;
+}
+.headhesive--stick{
+     padding: 40px 0;
+     background:  rgba(0,0,0, 0.77);
+     color:#fff;
+}*/
+.content{
+     margin-top: 90px;
+}
+.headhesive--stick .logotype{
+     width: 75px;
+     height: auto;
+     transition: 0.5s;
+     
+}
+.min-menu li a {
+     font-size: 12px;
+   
+    
+}
+
+
+.max-menu li a {
+     font-size: 20px;
+    
+}
+
+
+
+.bg-header {
+     width: 100%;
+     background: rgba(0,0,0, 0.77);
+}
+
+
+.paginator{
+     position: relative;
+     float: right;
+     margin-bottom: 20px;
+}
+
+.prev{
+     display: block;
+     height: 20px;
+     width: 20px;
+
+}
+
+.next{
+     display: block;
+     height: 20px;
+     width: 20px;
+
+}
+.preve{
+     display: block;
+     height: 20px;
+     width: 20px;
+
+}
+
+.nexte{
+     display: block;
+     height: 20px;
+     width: 20px;
+
+}
+
+/*Картинка меняет цвет на обычный при наведении на неё курсором мыши*/
+.ulis {
+     list-style:none;
+     margin:0;
+     padding:0;
+}
+.ulis:after {
+     content:"";
+     display:table;
+     clear:both
+}
+.list-in-anime {
+     width:48%;
+     float:left;
+     position:relative;
+     margin:1%
+}
+.img-o-nas {
+     display:block;
+     width:100%;
+     -webkit-filter: grayscale(.75);
+     -moz-filter: grayscale(.75);
+     -o-filter: grayscale(.75);
+     filter: grayscale(.75);
+     opacity: 0.75;
+}
+.list-in-anime:hover .img-o-nas {
+     -webkit-filter: none;
+     -moz-filter: none;
+     -o-filter: none;
+     filter: none;
+     opacity: 1;
+     -webkit-transition: 1s;
+     -moz-transition: 1s;
+     -o-transition: 1s;
+     transition: 1s;
+}
+
+
+
+.text-style {
+     font-size: 1rem;
+    font-family: "Azbuka","Trebuchet MS","Helvetica","Arial",sans-serif;
+    line-height: 1.35;
+}
+
+/*footer color text*/
+.color-text-footer li a {
+     color: #7d8792;
+     font-size: 12px;
+     
+}
+
+
+i.fa {
+     cursor: pointer;
+}
+.fa-color{
+     color: aliceblue;
+}
+/*Корзина блок*/
+.shirina-korz {
+     width: 600px;
+     left: -300px;
+     background: #404040;
+     padding-top: 20px;
+     
+}
+
+.dropdown-menu.shirina-korz.show{
+     top: 53px;
+}
+.dropdown-menu {
+     border-top-left-radius: 0 !important;
+     border-top-right-radius: 0 !important;
+     
+}
+.dropdown-menu{
+     transition: .4s !important;
+}
+
