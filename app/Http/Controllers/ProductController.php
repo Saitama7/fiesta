@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
 use Session;
@@ -143,6 +144,7 @@ class ProductController extends Controller
 
         $request->session()->put('cart', $cart);
         //add($request->session()->get('cart'));
-        return redirect()->route('product.index');
+//        return redirect()->route('product.index');
+        return redirect()->back();
     }
 }
