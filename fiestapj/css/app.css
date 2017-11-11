@@ -198,7 +198,7 @@ i.fa {
 /*Корзина блок*/
 .shirina-korz {
      width: 600px;
-     left: -300px;
+     left: -250px;
      background: #404040;
      padding-top: 20px;
      
@@ -215,4 +215,20 @@ i.fa {
 .dropdown-menu{
      transition: .4s !important;
 }
+#size-img {
+     border: 1px #000;
+     border-radius: 50px;
+}
 
+
+
+
+
+.btn-center {
+     margin-left: 50px;
+     margin-right: 50px;
+}
+
+.btn-left {
+     margin-left: 45px;
+}
