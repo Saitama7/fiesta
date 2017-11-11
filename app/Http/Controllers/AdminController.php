@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     public function index() {
 
-        return view('layouts.admin', [
+        return view('admin', [
             'baskets' => Basket::all(),
             'deliveries' => Delivery::all(),
             'products' => Product::all(),

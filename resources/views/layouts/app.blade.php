@@ -91,7 +91,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto nav min-menu">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Главная<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/">Главная<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Заказать букет</a>
@@ -103,7 +103,7 @@
                                 <a class="nav-link" href="#">Контакты</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">О нас</a>
+                                <a class="nav-link" href="{{ url('/about-us') }}">О нас</a>
                             </li>
                         </ul>
 
@@ -208,7 +208,7 @@
                                 <a class="nav-link" href="#">Контакты</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">О нас</a>
+                                <a class="nav-link " href="{{ url('/about-us') }}">О нас</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="#">Вигвамы</a>
