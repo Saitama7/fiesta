@@ -1,10 +1,15 @@
 .img-back {
-     
+
      background-size: cover;
      background-position: center center;
-     height: 100px;  
-     
+     height: 100px;
+
 }
+
+.nav-link:hover {
+     color: #bbb;
+}
+
 
 .logo-size {
      width: 75px;
@@ -33,7 +38,7 @@ content {
 
 
 .bg-footer {
-     background: rgb(49, 49, 49); 
+     background: rgb(49, 49, 49);
 }
 
 ul.nav a {
@@ -53,17 +58,17 @@ ul.nav a {
      opocity: 0;
      position: fixed;
      width: 100%;
-     
+
 
      z-index: 9999;
 }
 .headhesive{
-     
+
      position: fixed;
      opacity: 1;
      width: 100%;
      padding: 20px 0;
-    
+
      transition: 0.5s;
 }
 .headhesive--stick{
@@ -78,18 +83,18 @@ ul.nav a {
      width: 75px;
      height: auto;
      transition: 0.5s;
-     
+
 }
 .min-menu li a {
      font-size: 12px;
-   
-    
+
+
 }
 
 
 .max-menu li a {
      font-size: 20px;
-    
+
 }
 
 
@@ -153,11 +158,11 @@ ul.nav a {
 .img-o-nas {
      display:block;
      width:100%;
-     -webkit-filter: grayscale(.75);
-     -moz-filter: grayscale(.75);
-     -o-filter: grayscale(.75);
-     filter: grayscale(.75);
-     opacity: 0.75;
+     -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: 0.85;
 }
 .list-in-anime:hover .img-o-nas {
      -webkit-filter: none;
@@ -165,25 +170,25 @@ ul.nav a {
      -o-filter: none;
      filter: none;
      opacity: 1;
-     -webkit-transition: 1s;
-     -moz-transition: 1s;
-     -o-transition: 1s;
-     transition: 1s;
+     -webkit-transition: .5s;
+     -moz-transition: .5s;
+     -o-transition: .5s;
+     transition: .5s;
 }
 
 
 
 .text-style {
      font-size: 1rem;
-    font-family: "Azbuka","Trebuchet MS","Helvetica","Arial",sans-serif;
-    line-height: 1.35;
+     font-family: "Azbuka","Trebuchet MS","Helvetica","Arial",sans-serif;
+     line-height: 1.35;
 }
 
 /*footer color text*/
 .color-text-footer li a {
      color: #7d8792;
      font-size: 12px;
-     
+
 }
 
 
@@ -196,10 +201,10 @@ i.fa {
 /*Корзина блок*/
 .shirina-korz {
      width: 600px;
-     left: -300px;
+     left: -250px;
      background: #404040;
      padding-top: 20px;
-     
+
 }
 
 .dropdown-menu.shirina-korz.show{
@@ -208,9 +213,77 @@ i.fa {
 .dropdown-menu {
      border-top-left-radius: 0 !important;
      border-top-right-radius: 0 !important;
-     
+
 }
 .dropdown-menu{
      transition: .4s !important;
 }
 
+.dropdown-item:hover {
+     background-color: rgba(0,0,0,0);
+}
+
+#size-img {
+     border: 1px #000;
+     border-radius: 50px;
+}
+
+
+
+
+
+.btn-center {
+     margin-left: 50px;
+     margin-right: 50px;
+}
+
+.btn-left {
+     margin-left: 45px;
+}
+
+.card-img-overlay {
+     display: none;
+     background-color: rgba(0, 123, 255, .3);
+}
+
+.card-img-overlay.norm {
+     display: none;
+     background-color: rgba(0, 123, 255, .0);
+}
+
+.card:hover .card-img-overlay {
+     display: block;
+     transition: 1s;
+}
+
+.card:hover img {
+     -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: .3;
+     transition: .5s;
+}
+
+.card-display {
+     position: absolute;
+     top: 80px;
+     left: 40px;
+     z-index: 999;
+     text-align: center;
+     width: 75%;
+     display: none;
+}
+
+.card-image-container:hover .card-image-display {
+     -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: .3;
+     transition: .5s;
+}
+
+.card-image-container:hover .card-display {
+     display: block;
+}

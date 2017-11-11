@@ -178,25 +178,32 @@
                     </div>
                 </nav>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <img src="{{ asset('./fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
-                </div>
-
-            </div>
         </header>
+
         <content>
+            <div class="container my-3">
+                <div class="row justify-content-center">
+                    <div class="col-7">
+                        <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
+                    </div>
+
+                </div>
+            </div>
             @yield('content')
         </content>
 
         <footer class="bg-dark py-3">
             <div class="container">
                 <div class="row py-5">
-                    <div class="col-4"></div>
+                    <div class="col-4 d-flex align-items-center">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #000;">&nbsp;&nbsp;&nbsp;</div>
+                        <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #000;">&nbsp;&nbsp;&nbsp;</div>
+                    </div>
                     <div class="col-4 text-center">
                         <ul class="nav flex-column color-text-footer">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Главная</a>
+                                <a class="nav-link active" href="/">Главная</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Закзать букет</a>
@@ -215,7 +222,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-4"></div>
+                    <div class="col-4 d-flex align-items-center">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #000;">&nbsp;&nbsp;&nbsp;</div>
+                        <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #000;">&nbsp;&nbsp;&nbsp;</div>
+                    </div>
                 </div>
             </div>
         </footer>
