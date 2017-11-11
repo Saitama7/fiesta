@@ -1,4 +1,4 @@
-.img-back {
+﻿.img-back {
      
      background-size: cover;
      background-position: center center;
@@ -6,6 +6,9 @@
      
 }
 
+.nav-link:hover {
+     color: #bbb;
+}
 
 
 .logo-size {
@@ -215,6 +218,11 @@ i.fa {
 .dropdown-menu{
      transition: .4s !important;
 }
+
+.dropdown-item:hover {
+    background-color: rgba(0,0,0,0);
+}
+
 #size-img {
      border: 1px #000;
      border-radius: 50px;
