@@ -6,7 +6,7 @@ var header = new Headhesive('.header', options);*/
                     $('.autoplay').slick({
                       slidesToShow: 4,
                       slidesToScroll: 1,
-                      autoplay: true,
+                      autoplay: false,
                       autoplaySpeed: 2000,
                       prevArrow: $('.prev'),
                       nextArrow: $('.next'),

@@ -158,11 +158,11 @@ ul.nav a {
 .img-o-nas {
      display:block;
      width:100%;
-     -webkit-filter: grayscale(.75);
-     -moz-filter: grayscale(.75);
-     -o-filter: grayscale(.75);
-     filter: grayscale(.75);
-     opacity: 0.75;
+     -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: 0.85;
 }
 .list-in-anime:hover .img-o-nas {
      -webkit-filter: none;
@@ -170,10 +170,10 @@ ul.nav a {
      -o-filter: none;
      filter: none;
      opacity: 1;
-     -webkit-transition: 1s;
-     -moz-transition: 1s;
-     -o-transition: 1s;
-     transition: 1s;
+     -webkit-transition: .5s;
+     -moz-transition: .5s;
+     -o-transition: .5s;
+     transition: .5s;
 }
 
 
@@ -239,4 +239,51 @@ i.fa {
 
 .btn-left {
      margin-left: 45px;
+}
+
+.card-img-overlay {
+    display: none;
+    background-color: rgba(0, 123, 255, .3);
+}
+
+.card-img-overlay.norm {
+    display: none;
+    background-color: rgba(0, 123, 255, .0);
+}
+
+.card:hover .card-img-overlay {
+    display: block;
+    transition: 1s;
+}
+
+.card:hover img {
+    -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: .3;
+    transition: .5s;
+}
+
+.card-display {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    z-index: 999;
+    text-align: center;
+    width: 75%;
+    display: none;
+}
+
+.card-image-container:hover .card-image-display {
+    -webkit-filter: grayscale(.85);
+     -moz-filter: grayscale(.85);
+     -o-filter: grayscale(.85);
+     filter: grayscale(.85);
+     opacity: .3;
+    transition: .5s;
+}
+
+.card-image-container:hover .card-display {
+    display: block;
 }
