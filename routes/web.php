@@ -25,8 +25,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin','AdminController@index')->name('admin');
+//Route::get('/admin', 'AdminController@index');
+//Route::get('/admin','AdminController@index')->name('admin');
+Route::group(['middleware' => ['admin']],function() {
+    Route::get('/admin',function(){
+        echo 'You have access';
+    });
+});
 
 
 Route::get('/create/product', 'ProductController@create');
