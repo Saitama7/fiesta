@@ -1,4 +1,4 @@
-.img-back {
+﻿.img-back {
      
      background-size: cover;
      background-position: center center;
@@ -286,30 +286,4 @@ i.fa {
 
 .card-image-container:hover .card-display {
     display: block;
-}
-
-.mar {
-     padding: 0px;
-}
-
-.btn-color {
-     background-color: white;
-}
-.btn-color>a {
-     color: #404040;
-     text-decoration: none;
-}
-.btn-color:hover {
-     background-color: #404040;
-}
-.btn-color>a:hover {
-     color: white;
-     text-decoration: none;
-}
-.ali>a{
-     color: #404040;
-     text-decoration: none;
-}
-.ali>a:hover {
-     color: white;
 }
