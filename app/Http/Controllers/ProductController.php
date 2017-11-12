@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('create.product');
+        return view('admin');
     }
 
     /**

@@ -6,10 +6,11 @@
 $('.autoplay').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     prevArrow: $('.prev'),
     nextArrow: $('.next'),
+    infinite: false,
 });
 
 $('.slaider').slick({
@@ -19,4 +20,6 @@ $('.slaider').slick({
     autoplaySpeed: 2500,
     prevArrow: $('.preve'),
     nextArrow: $('.nexte'),
+    infinite: false,
+
 });
