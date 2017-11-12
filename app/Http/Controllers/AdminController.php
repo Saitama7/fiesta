@@ -9,18 +9,25 @@ use App\Size;
 use App\Type;
 use App\Vip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public function index() {
 
-        return view('admin', [
-            'baskets' => Basket::all(),
-            'deliveries' => Delivery::all(),
-            'products' => Product::all(),
-            'sizes' => Size::all(),
-            'types' => Type::all(),
-            'vips' => Vip::all(),
-        ]);
+        if (Auth::check()) {
+            // The user is logged in...
+            return view('admin', [
+                'baskets' => Basket::all(),
+                'deliveries' => Delivery::all(),
+                'products' => Product::all(),
+                'sizes' => Size::all(),
+                'types' => Type::all(),
+                'vips' => Vip::all(),
+            ]);
+        }else {
+            return $redirectTo = '/login';
+        }
+
     }
 }
