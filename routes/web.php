@@ -10,28 +10,31 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Authentication
-Auth::routes();
 
-
-//Cart
-Route::get('/getcart', 'IndexController@getCart');
 Route::get('/','IndexController@index');
 Route::get('/add-to-cart/{id}',[
     'uses' => 'ProductController@getAddToCart',
     'as' => 'product.index'
 ]);
 
+//Cart
+Route::get('/getcart', 'IndexController@getCart');
+
 //Route::get('/add-to-cart/{id}', 'ProductController@getIndex')->name('product.index');
 
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Admin
 Route::group(['middleware' => ['admin']],function() {
-
+    Route::get('/admin',function(){
+       return view('admin');
+    });
+    Route::get('/admin','AdminController@index')->name('admin');
     Route::get('/admin', 'AdminController@index');
+
 });
 
 //Product

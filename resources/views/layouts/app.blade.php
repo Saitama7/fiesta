@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
@@ -20,10 +20,64 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+        {{--<nav class="navbar navbar-default navbar-static-top">--}}
+            {{--<div class="container">--}}
+                {{--<div class="navbar-header">--}}
 
+                    {{--<!-- Collapsed Hamburger -->--}}
+                    {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+                        {{--<span class="sr-only">Toggle Navigation</span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                    {{--</button>--}}
+
+                    {{--<!-- Branding Image -->--}}
+                    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                        {{--{{ config('app.name', 'Laravel') }}--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+
+
+                    {{--<!-- Left Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav">--}}
+                        {{--&nbsp;--}}
+                    {{--</ul>--}}
+
+                    {{--<!-- Right Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav navbar-right">--}}
+                        {{--<!-- Authentication Links -->--}}
+                        {{--<li><a href="/getcart">Корзина</a><span class="badge badge-dark">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></li>--}}
+                        {{--@if (Auth::guest())--}}
+                            {{--<li><a href="{{ route('login') }}">Login</a></li>--}}
+                            {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
+                        {{--@else--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                                    {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
+                                {{--</a>--}}
+
+                                {{--<ul class="dropdown-menu" role="menu">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="{{ route('logout') }}"--}}
+                                            {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                                            {{--Logout--}}
+                                        {{--</a>--}}
+
+                                        {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                                            {{--{{ csrf_field() }}--}}
+                                        {{--</form>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+
+            {{--</div>--}}
+        {{--</nav>--}}
         <header>
             <!-- Хедер -->
             <div class="img-back"></div>
@@ -187,6 +241,5 @@
     <script src="{{ asset('js/headhesive.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
     <script src="{{ asset('js/js.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

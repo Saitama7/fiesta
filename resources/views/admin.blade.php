@@ -3,10 +3,6 @@
         <div class="row">
             <div class="col-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                        {{ csrf_field() }}
-                        <button type="submit">Выйти</button>
-                    </form>
                     <a href="" class="col-5"><img class="w-100" src="{{ asset('fiesta_img/logo-flower.png') }}" alt="image"><h5 class="flower text-dark">Fiesta flower</h5></a>
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">button1</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">button2</a>
@@ -23,28 +19,26 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success py-3" data-toggle="modal" data-target="#modalproduct">
-                            Создать букет
+                        <button type="button" class="btn btn-success py-3" data-toggle="modal" data-target="#exampleModal">
+                            Launch demo modal
                         </button>
 
 
 
                         <div class="pt-5">
 
-                            @foreach($products as $product)
-
                             <div class="row align-items-center border bg-dark rounded p-3">
                                 <div class="col-2">
                                     <img class="rad" src="./fiesta_img/1.jpg" alt="">
                                 </div>
                                 <div class="col">
-                                    <p>{{ $product->name }}</p>
+                                    <input type="text" class="form-control" placeholder="First name" size="25">
                                 </div>
                                 <div class="col">
-                                    <p>{{ $product->desc }}</p>
+                                    <input type="text" class="form-control" placeholder="Last name" size="25">
                                 </div>
                                 <div class="col">
-                                    <p>{{ $product->cost }}</p>
+                                    <input type="text" class="form-control" placeholder="Last name" size="10">
                                 </div>
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-info">
@@ -56,8 +50,52 @@
                                 </div>
 
                             </div>
-                            @endforeach
+                            <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="col-2">
+                                    <img class="rad" src="./fiesta_img/1.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name" size="25">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name" size="25">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name" size="10">
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-info">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
 
+                            </div>
+                            <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="col-2">
+                                    <img class="rad" src="./fiesta_img/1.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name" size="25">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name" size="25">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name" size="10">
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-info">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
@@ -117,12 +155,41 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
             <!--</div>-->
         </div>
 
-        @include('modals.product')
-
-
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row pt-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name" size="25">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" size="25">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" size="10">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-success">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     @endsection
