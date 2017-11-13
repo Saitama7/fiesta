@@ -39,6 +39,7 @@ Route::get('/create/product', 'ProductController@create');
 Route::post('/store/product', 'ProductController@store');
 Route::get('/edit/product/{id}', 'ProductController@edit');
 Route::post('/update/product/{id}', 'ProductController@update');
+Route::get('/delete/product/{id}', 'ProductController@destroy');
 
 //Type
 Route::get('/create/type', 'TypeController@create');

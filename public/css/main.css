@@ -291,3 +291,7 @@ i.fa {
 .card-image-container:hover .card-display {
      display: block;
 }
+.row {
+     margin-left: 0 !important;
+     margin-right: 0 !important;
+}

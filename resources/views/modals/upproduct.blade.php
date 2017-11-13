@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalproduct" tabindex="-1" role="dialog" aria-labelledby="modalproduct" aria-hidden="true">
+<div class="modal fade" id="modalupproduct" tabindex="-1" role="dialog" aria-labelledby="modalupproduct" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/store/product" method="POST">
+            <form action="/update/product/{{ $product->id }}" method="POST">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
