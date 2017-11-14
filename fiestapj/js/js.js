@@ -20,3 +20,4 @@ var header = new Headhesive('.header', options);*/
                       prevArrow: $('.preve'),
                       nextArrow: $('.nexte'),
                     });
+

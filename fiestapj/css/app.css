@@ -87,13 +87,15 @@ ul.nav a {
 }
 .min-menu li a {
      font-size: 12px;
-   
-    
+     text-transform: uppercase;
+     font-weight: 500;
+     margin-right: 20px;
 }
 
 
 .max-menu li a {
-     font-size: 20px;
+     font-size: 20px !important;
+     
     
 }
 
@@ -312,4 +314,7 @@ i.fa {
 }
 .ali>a:hover {
      color: white;
+}
+ul>li>a {
+     font-size: 14px !important;
 }

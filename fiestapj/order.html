@@ -144,7 +144,7 @@
                     <h4 class='mb-5'>Информация о заказе</h4>
                     <h4 class="mb-3">Контактные данные</h4>
                     <p class="shrift-ton">Укажите свои контактные данные</p>
-                    <form>
+                    <form action="/">
 
                          <div class="row mb-4">
                               <div class="col">
@@ -153,7 +153,7 @@
                               </div>
                               <div class="col">
                                    <label for="phone">Ваш телефон <span style="color: red;">*</span></label>
-                                   <input type="text" class="form-control" placeholder="Номер телефона" id="phone" required>
+                                   <input type="tel"  pattern="996-[0-9]{3}-[0-9]{3}-[0-9]{3}" class="form-control" placeholder="+996-777-777-777" id="phone" required>
                               </div>
                          </div>
 
@@ -167,7 +167,7 @@
 
                               </div>
                               <div class="col justify-content-center">
-                                   <label class="col mar" for="inlineCheckbox1">Время <span style="color: red;">*</span></label>
+                                   <label class="col p-0" for="inlineCheckbox1">Время <span style="color: red;">*</span></label>
                                    <div class="form-check form-check-inline">
 
                                         <label class="form-check-label">
@@ -234,7 +234,7 @@
                          </div>
                          <div class="row">
                              <div class="col d-flex justify-content-end mx-auto mt-3">
-                                  <button type="button" class="btn btn-outline-dark ali"><a href="index.html">Оформить заказ</a></button>
+                                  <button type="submit" class="btn btn-outline-dark ali"><a href="index.html">Оформить заказ</a></button>
                              </div>
                          </div>
 
@@ -284,6 +284,12 @@
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
           <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
           <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="js/mask.js"></script>
+               <script type="text/javascript">
+   jQuery(function($){
+   $("#phone").mask("+999 (999) 999-999");
+   });
+</script>
                 
           <script src="http://code.gijgo.com/1.6.1/js/gijgo.js" type="text/javascript"></script>
                      <script src="js/headhesive.min.js"></script>
