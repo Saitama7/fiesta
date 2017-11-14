@@ -82,12 +82,12 @@
                                         <p>{{ $type->name }}</p>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-outline-info">
+                                        <button type="submit"  class="btn btn-outline-info"  data-toggle="modal" data-target="#modaluptype">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger">
+                                        <a href="/delete/type/{{ $type->id }}" type="button" class="btn btn-outline-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -114,12 +114,12 @@
                                         <p>{{ $size->name }}</p>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-outline-info">
+                                        <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupsize">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger">
+                                        <a href="/delete/size/{{ $size->id }}" type="button" class="btn btn-outline-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -148,12 +148,12 @@
                                         <p>{{ $delivery->cost }}</p>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-outline-info">
+                                        <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupdeliv">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger">
+                                        <a href="/delete/delivery/{{ $delivery->id }}" type="button" class="btn btn-outline-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -188,12 +188,12 @@
                                         <p>{{ $vip->discount }}</p>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-outline-info">
+                                        <button type="submit"  class="btn btn-outline-info" data-toggle="modal" data-target="#modalupvip">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger">
+                                        <a href="/delete/vip/{{ $vip->id }}" type="button" class="btn btn-outline-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -209,9 +209,13 @@
         @include('modals.product')
         @include('modals.upproduct')
         @include('modals.type')
+        @include('modals.uptype')
         @include('modals.size')
+        {{--@include('modals.upsize')--}}
         @include('modals.delivery')
+        {{--@include('modals.updelivery')--}}
         @include('modals.vip')
+        {{--@include('modals.upvip')--}}
 
 
 

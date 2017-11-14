@@ -46,6 +46,7 @@ Route::get('/create/type', 'TypeController@create');
 Route::post('/update/type/{id}', 'TypeController@update');
 Route::post('/store/type', 'TypeController@store');
 Route::get('/edit/type/{id}', 'TypeController@edit');
+Route::get('/delete/type/{id}', 'TypeController@destroy');
 
 //Vip
 Route::get('/create/vip', 'VipController@create');
