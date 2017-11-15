@@ -23,3 +23,4 @@ $('.slaider').slick({
     infinite: false,
 
 });
+

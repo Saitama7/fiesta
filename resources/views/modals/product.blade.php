@@ -28,7 +28,7 @@
                             <label for="p-type">Тип</label>
                             <select class="form-control form-control" name="type_id" id="p-type">
                                 @foreach($types as $type)
-                                    <option>{{ $type->name }}</option>
+                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -36,7 +36,7 @@
                             <label for="p-size">Размер</label>
                             <select class="form-control form-control" name="size_id" id="p-size">
                                 @foreach($sizes as $size)
-                                    <option>{{ $size->name }}</option>
+                                    <option value="{{ $size->id }}">{{ $size->name }}</option>
                                 @endforeach
                             </select>
                         </div>

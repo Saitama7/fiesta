@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/update/type/{{ $type->id }}" method="POST">
+            <form action="/update/type/{{ $type->id }}"  method="POST">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
@@ -17,6 +17,7 @@
                             <input type="text" name="name" class="form-control" id="t-name" value="{{ $type->name }}">
                         </div>
                     </div>
+                    <p class="nurlan"></p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
                         <button type="submit" class="btn btn-outline-success">Сохранить</button>

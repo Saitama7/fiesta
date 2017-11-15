@@ -82,9 +82,11 @@
                                         <p>{{ $type->name }}</p>
                                     </div>
                                     <div class="col">
-                                        <button type="submit"  class="btn btn-outline-info"  data-toggle="modal" data-target="#modaluptype">
+
+                                        <a href="#modaluptype"  class="btn btn-outline-info" data-toggle="modal"   data-id="{{ $type->id }}">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
-                                        </button>
+
+                                        </a>
                                         <a href="/delete/type/{{ $type->id }}" type="button" class="btn btn-outline-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -205,6 +207,7 @@
             </div>
             <!--</div>-->
         </div>
+
 
         @include('modals.product')
         @include('modals.upproduct')

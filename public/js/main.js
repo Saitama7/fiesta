@@ -15,4 +15,11 @@ $(document).ready(function() {
         });
     });
 
-});
+
+
+    $('#modaluptype').modal();
+    $(window).on('shown.bs.modal', function(e){
+        alert('sfasdfsdf');
+    });
+})
+
