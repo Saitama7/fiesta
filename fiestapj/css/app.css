@@ -8,6 +8,7 @@
 
 .nav-link:hover {
      color: #bbb;
+     
 }
 
 
@@ -98,7 +99,11 @@ ul.nav a {
      
     
 }
-
+.solt {
+     position: absolute;
+     top: 0px;
+     left: 26px;
+}
 
 
 .bg-header {
@@ -317,4 +322,41 @@ i.fa {
 }
 ul>li>a {
      font-size: 14px !important;
+}
+
+
+.card-images-overlay {
+     display: none;
+     filter: none;
+}
+card:hover .card-images-overlay{
+     display: block;
+     filter: grayscale(0.77);
+}
+.btn-pos {
+     position: absolute;
+     top: -38px;
+     
+}     
+
+.btn-labflower {
+     display: block;
+     margin: auto;
+     padding: 1em 2em;
+     padding-top: 0.85em;
+     width: 10em;
+     border-radius: 1em 1em 0 0;
+     background: linear-gradient(to bottom,#f0e3d8,white);
+     background-color: #f0e3d8;
+     box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.12);
+     color: #2c2c2c;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: 200;
+     font-size: 1rem;
+}
+
+.num-size {
+     font-weight: 600;
+     font-size: 16px;
 }
