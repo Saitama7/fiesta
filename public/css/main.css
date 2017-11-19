@@ -8,10 +8,7 @@
 
 .nav-link:hover {
      color: #bbb;
-}
 
-.slick-cloned {
-     display: none !important;
 }
 
 
@@ -91,16 +88,22 @@ ul.nav a {
 }
 .min-menu li a {
      font-size: 12px;
-
-
+     text-transform: uppercase;
+     font-weight: 500;
+     margin-right: 20px;
 }
 
 
 .max-menu li a {
-     font-size: 20px;
+     font-size: 20px !important;
+
 
 }
-
+.solt {
+     position: absolute;
+     top: 0px;
+     left: 26px;
+}
 
 
 .bg-header {
@@ -247,12 +250,12 @@ i.fa {
 
 .card-img-overlay {
      display: none;
-     background-color: rgba(0, 123, 255, .3);
+     background-color: rgba(207, 207, 207, .3);
 }
 
 .card-img-overlay.norm {
      display: none;
-     background-color: rgba(0, 123, 255, .0);
+     background-color: rgba(207, 207, 207, .3);
 }
 
 .card:hover .card-img-overlay {
@@ -291,7 +294,69 @@ i.fa {
 .card-image-container:hover .card-display {
      display: block;
 }
-.row {
-     margin-left: 0 !important;
-     margin-right: 0 !important;
+
+.mar {
+     padding: 0px;
+}
+
+.btn-color {
+     background-color: white;
+}
+.btn-color>a {
+     color: #404040;
+     text-decoration: none;
+}
+.btn-color:hover {
+     background-color: #404040;
+}
+.btn-color>a:hover {
+     color: white;
+     text-decoration: none;
+}
+.ali>a{
+     color: #404040;
+     text-decoration: none;
+}
+.ali>a:hover {
+     color: white;
+}
+ul>li>a {
+     font-size: 14px !important;
+}
+
+
+.card-images-overlay {
+     display: none;
+     filter: none;
+}
+card:hover .card-images-overlay{
+     display: block;
+     filter: grayscale(0.77);
+}
+.btn-pos {
+     position: absolute;
+     top: -38px;
+
+}
+
+.btn-labflower {
+     display: block;
+     margin: auto;
+     padding: 1em 2em;
+     padding-top: 0.85em;
+     width: 10em;
+     border-radius: 1em 1em 0 0;
+     background: linear-gradient(to bottom,#f0e3d8,white);
+     background-color: #f0e3d8;
+     box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.12);
+     color: #2c2c2c;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: 200;
+     font-size: 1rem;
+}
+
+.num-size {
+     font-weight: 600;
+     font-size: 16px;
 }

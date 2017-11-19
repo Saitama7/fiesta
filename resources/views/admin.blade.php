@@ -31,9 +31,9 @@
 
                             @foreach($products as $product)
 
-                                <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="row text-light align-items-center border bg-dark rounded p-3">
                                     <div class="col-2">
-                                        <img class="rad" src="./fiesta_img/1.jpg" alt="">
+                                        <img class="rad" src="/uploads/products/{{ $product->image_path }}" alt="">
                                     </div>
                                     <div class="col-3">
                                         <label>{{ $product->name }}</label>

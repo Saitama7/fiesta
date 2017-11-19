@@ -24,3 +24,5 @@ $('.slaider').slick({
 
 });
 
+// $(".owl-carousel").owlCarousel();
+

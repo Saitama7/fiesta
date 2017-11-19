@@ -70,3 +70,23 @@ Route::get('/edit/size/{id}', 'SizeController@edit');
 Route::get('/about-us', function(){
     return view('about-us');
 });
+
+Route::get('/vigvams', function () {
+    return view('vigvams');
+});
+
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+
+Route::get('/order', function () {
+    return view('form');
+});
+
+Route::get('/cart', function () {
+    return view('korzina');
+});
+
+Route::get('/all/flowers', 'ProductController@flowers');
+Route::get('/all/boxes', 'ProductController@boxes');
+

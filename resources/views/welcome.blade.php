@@ -19,18 +19,22 @@
             <div class="row  slaider">
 
                 @foreach($products as $product)
-                <div class="col-3 mb-3">
 
-                    <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                        <img class="card-img rounded-circle " src="./fiesta_img/6.jpg" alt="Card image">
-                        <div class="card-img-overlay rounded-circle ">
-                            <h4 class="card-title mt-5">{{ $product->cost }}</h4>
-                            <p class="card-text">{{ $product->desc }}</p>
-                            <a href="{{ $product->id }}" id="{{ $product->id }}" class="zakazat btn btn-primary">Заказать</a>
+                    <div class="col-3 mb-3">
+
+                        <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
+                            <img class="card-img rounded-circle " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
+                            <div class="card-img-overlay rounded-circle ">
+                                <h4 class="card-title mt-5">{{ $product->cost }}</h4>
+                                <p class="card-text">{{ $product->desc }}</p>
+
+                            </div>
                         </div>
-                    </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="{{ $product->id }}" id="{{ $product->id }}" class="zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
 
-                </div>
+                    </div>
 
                 @endforeach
 
@@ -55,6 +59,22 @@
 
             <div class="row autoplay">
 
+                <div class="col-3 mb-3">
+
+                    <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
+                        <img class="card-img rounded-circle " src="./fiesta_img/3.jpg" alt="Card image">
+                        <div class="card-img-overlay rounded-circle ">
+                            <h4 class="card-title mt-5">4000 сом</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="#" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <div class="col-3 mb-3">
 
@@ -63,23 +83,16 @@
                         <div class="card-img-overlay rounded-circle ">
                             <h4 class="card-title mt-5">4000 сом</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
+
                         </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="#" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
+
                     </div>
 
                 </div>
-                <div class="col-3 mb-3">
 
-                    <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                        <img class="card-img rounded-circle " src="./fiesta_img/2.jpg" alt="Card image">
-                        <div class="card-img-overlay rounded-circle ">
-                            <h4 class="card-title mt-5">4000 сом</h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
-                        </div>
-                    </div>
-
-                </div>
                 <div class="col-3 mb-3">
 
                     <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
@@ -87,22 +100,29 @@
                         <div class="card-img-overlay rounded-circle ">
                             <h4 class="card-title mt-5">4000 сом</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
+
                         </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="#" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
+
                     </div>
 
                 </div>
 
-
-                <div class="col-3">
+                <div class="col-3 mb-3">
 
                     <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                        <img class="card-img rounded-circle " src="./fiesta_img/4.jpg" alt="Card image">
+                        <img class="card-img rounded-circle " src="./fiesta_img/3.jpg" alt="Card image">
                         <div class="card-img-overlay rounded-circle ">
                             <h4 class="card-title mt-5">4000 сом</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
+
                         </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="#" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
+
                     </div>
 
                 </div>
@@ -111,28 +131,22 @@
                 <div class="col-3 mb-3">
 
                     <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                        <img class="card-img rounded-circle " src="./fiesta_img/2.jpg" alt="Card image">
+                        <img class="card-img rounded-circle " src="./fiesta_img/3.jpg" alt="Card image">
                         <div class="card-img-overlay rounded-circle ">
                             <h4 class="card-title mt-5">4000 сом</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
+
                         </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="#" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                        </div>
+
                     </div>
 
                 </div>
 
-                <div class="col-3 mb-3">
 
-                    <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                        <img class="card-img rounded-circle " src="{{ asset('fiesta_img/2.jpg') }}" alt="Card image">
-                        <div class="card-img-overlay rounded-circle ">
-                            <h4 class="card-title mt-5">4000 сом</h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
-                        </div>
-                    </div>
 
-                </div>
 
 
 

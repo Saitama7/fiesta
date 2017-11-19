@@ -17,8 +17,12 @@ $(document).ready(function() {
 
 
 
-    $('#modaluptype').modal();
-    $(window).on('shown.bs.modal', function(e){
+
+    $('.modal.fade').on('show.bs.modal', function(event){
+        alert('sfasdfsdf');
+    });
+
+    $('#modalproduct').on('show.bs.modal', function(event){
         alert('sfasdfsdf');
     });
 })
