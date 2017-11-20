@@ -1,0 +1,30 @@
+.body {
+     background-image: url(./fiesta_img/regal.png);
+}
+
+.rad {
+     width: 75px;
+     height: 75px;
+     border-radius: 170px;
+}
+
+.flower {
+     font-family: 'Great Vibes', cursive;
+     
+}
+
+#size-img {
+     border: 1px #000;
+     border-radius: 50px;
+}
+
+.content{
+     margin-top: 90px;
+}
+.headhesive--stick .logotype{
+     width: 75px;
+     height: auto;
+     transition: 0.5s;
+     
+}
+

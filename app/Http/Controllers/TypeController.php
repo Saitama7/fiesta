@@ -66,7 +66,7 @@ class TypeController extends Controller
     {
         $type = Type::find($typeId);
 
-        return view('edit.type', ['type' => $type]);
+        return response()->json(['type' => $type]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Session;
 use function Sodium\add;
 
@@ -28,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('create.product');
+        return view('admin');
     }
 
     /**
@@ -45,12 +46,34 @@ class ProductController extends Controller
         $product->desc = $request->desc;
         $product->size_id = $request->size_id;
         $product->type_id = $request->type_id;
-        $product->image_path = $request->image_path;
+        if ($request->hasFile('image_path')) {
+            $avatar = $request->file('image_path');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(400, 400)->save('uploads/products/' . $filename );
+            $product->image_path = $filename;
+
+        }
         $product->cost = $request->cost;
 
         $product->save();
 
         return redirect()->back();
+    }
+
+    public function flowers() {
+        $products = Product::all()->where('type_id', '=', 1);
+
+        return view('all.products', [
+            'products' => $products,
+        ]);
+    }
+
+    public function boxes() {
+        $products = Product::all()->where('type_id', '=', 2);
+
+        return view('all.products', [
+            'products' => $products,
+        ]);
     }
 
     /**
