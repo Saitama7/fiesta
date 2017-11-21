@@ -12,16 +12,16 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
-                        <div class="col">
+                        <div class="col-6">
                             <input type="text" name="name" class="form-control" placeholder="ФИО" size="25">
                         </div>
-                        <div class="col">
+                        <div class="col-6">
                             <input type="text" name="phone_number" class="form-control" placeholder="Номер телефона" size="25">
                         </div>
-                        <div class="col">
+                        <div class="col-6 mt-4 mb-4">
                             <input type="text" name="address" class="form-control" placeholder="Адрес" size="25">
                         </div>
-                        <div class="col">
+                        <div class="col-6 mt-4 mb-4">
                             <input type="text" name="discount" class="form-control" placeholder="Скидка(%)" size="25">
                         </div>
                     </div>

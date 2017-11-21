@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+    $(window).resize(function(){
+        var h = $(window).height();
+        $('.height').css({'min-height':h});
+    });
+    $(window).trigger('resize');
+
     $('.zakazat').click(function(e) {
         e.preventDefault(e);
         alert(this.id);

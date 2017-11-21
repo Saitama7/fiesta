@@ -12,7 +12,7 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
-                        <div class="col">
+                        <div class="col mb-5">
                             <input type="text" name="name" class="form-control" placeholder="Наименование" size="25">
                         </div>
                     </div>

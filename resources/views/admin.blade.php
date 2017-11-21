@@ -1,12 +1,8 @@
 @extends('layouts.admin')
     @section('content-admin')
-        <div class="row">
+        <div class="row ml-0 mr-0">
             <div class="col-2">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                        {{ csrf_field() }}
-                        <button type="submit">Выйти</button>
-                    </form>
                     <a href="" class="col-5"><img class="w-100" src="{{ asset('fiesta_img/logo-flower.png') }}" alt="image"><h5 class="flower text-dark">Fiesta flower</h5></a>
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
@@ -23,9 +19,14 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success py-3" data-toggle="modal" data-target="#modalproduct">
+                        <button type="button" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalproduct">
                             Создать букет
                         </button>
+
+                        <form id="logout-form" class="pull-right" action="{{ route('logout') }}" method="POST" >
+                            {{ csrf_field() }}
+                            <button class="btn btn-secondary mt-2" type="submit">Выйти</button>
+                        </form>
 
                         <div class="pt-5">
 

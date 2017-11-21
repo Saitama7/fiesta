@@ -24,7 +24,7 @@
 
 </head>
 <body>
-    <div class="body">
+    <div class="body height">
         @yield('content-admin')
     </div>
 

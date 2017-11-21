@@ -12,11 +12,11 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
-                        <div class="col">
+                        <div class="col mb-5">
                             <label for="d-name">Курьер</label>
                             <input type="text" name="name" class="form-control" id="d-name" value="{{ $delivery->name }}">
                         </div>
-                        <div class="col">
+                        <div class="col mb-5">
                             <label for="d-cost"></label>
                             <input type="text" name="cost" class="form-control" id="d-cost" value="{{ $delivery->cost }}">
                         </div>
