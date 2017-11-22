@@ -53,6 +53,18 @@ class ProductController extends Controller
             $product->image_path = $filename;
 
         }
+        if ($request->status == 'on') {
+            $product->status = 1;
+        }else {
+            $product->status = 0;
+        }
+
+        if ($request->slide_status == 'on') {
+            $product->slide_status = 1;
+        }else {
+            $product->slide_status = 0;
+        }
+
         $product->cost = $request->cost;
 
         $product->save();
@@ -61,7 +73,7 @@ class ProductController extends Controller
     }
 
     public function flowers() {
-        $products = Product::all()->where('type_id', '=', 1);
+        $products = Product::all()->where('type_id', '=', 3);
 
         return view('all.products', [
             'products' => $products,
@@ -69,7 +81,7 @@ class ProductController extends Controller
     }
 
     public function boxes() {
-        $products = Product::all()->where('type_id', '=', 2);
+        $products = Product::all()->where('type_id', '=', 4);
 
         return view('all.products', [
             'products' => $products,

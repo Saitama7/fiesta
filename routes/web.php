@@ -89,4 +89,3 @@ Route::get('/cart', function () {
 
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');
-

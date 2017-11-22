@@ -9,6 +9,7 @@
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Размер товара</a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Курьеры</a>
                     <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
+                    <a class="nav-link" id="v-pills-background-tab" data-toggle="pill" href="#v-pills-background" role="tab" aria-controls="v-pills-button5" aria-selected="false">Главный фон</a>
                 </div>
             </div>
             <div class="col-10">
@@ -20,7 +21,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalproduct">
-                            Создать букет
+                            Создать товар
                         </button>
 
                         <form id="logout-form" class="pull-right" action="{{ route('logout') }}" method="POST" >
@@ -204,6 +205,8 @@
 
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
             <!--</div>-->

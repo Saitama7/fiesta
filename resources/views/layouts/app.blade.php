@@ -158,9 +158,15 @@
 
                     <div class="col-3 font-italic font-weight-light text-center text-light">
                         <img class="mb-4 w-100" src="/fiesta_img/fiesta_logofff.png" alt="">
-                        <p>+996 777 777 777</p>
-                        <p>+996 777 777 777</p>
-                        <p>+996 777 777 777</p>
+                        <p>
+                            <span class="fa fa-phone"> ТЕЛЕФОН:</span><br>
+                            <a href="tel:996700923321" target="_blank">+996 (700) 923-321</a>
+                        </p>
+                        <p>
+                            <span class="fa fa-whatsapp"> WHATSAPP:</span><br>
+                            <a href="tel:996700923321" target="_blank">+996 (700) 923-321</a>
+                        </p>
+
                     </div>
 
                 </div>
