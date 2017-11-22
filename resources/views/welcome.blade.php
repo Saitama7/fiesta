@@ -25,7 +25,7 @@
                         <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
                             <img class="card-img rounded-circle " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
                             <div class="card-img-overlay rounded-circle ">
-                                <h4 class="card-title mt-5">{{ $product->cost }}</h4>
+                                <h4 class="card-title mt-5">{{ $product->cost }} сом</h4>
                                 <p class="card-text">{{ $product->desc }}</p>
 
                             </div>

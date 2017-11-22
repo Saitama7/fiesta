@@ -40,10 +40,10 @@
                                         <label>{{ $product->name }}</label>
                                     </div>
                                     <div class="col-3">
-                                        <p>{{ $product->desc }}</p>
+                                        <label>{{ $product->desc }}</label>
                                     </div>
                                     <div class="col-2">
-                                        <p>{{ $product->cost }}</p>
+                                        <label>{{ $product->cost }}</label>
                                     </div>
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupproduct">
@@ -75,12 +75,12 @@
 
                             @foreach($types as $type)
 
-                                <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="row text-light align-items-center border bg-dark rounded p-3">
                                     <div class="col-2">
                                         <img class="rad" src="./fiesta_img/1.jpg" alt="">
                                     </div>
                                     <div class="col">
-                                        <p>{{ $type->name }}</p>
+                                        <label>{{ $type->name }}</label>
                                     </div>
                                     <div class="col">
 
@@ -109,12 +109,12 @@
 
                             @foreach($sizes as $size)
 
-                                <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="row text-light align-items-center border bg-dark rounded p-3">
                                     <div class="col-2">
                                         <img class="rad" src="./fiesta_img/1.jpg" alt="">
                                     </div>
                                     <div class="col">
-                                        <p>{{ $size->name }}</p>
+                                        <label>{{ $size->name }}</label>
                                     </div>
                                     <div class="col">
                                         <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupsize">
@@ -140,15 +140,15 @@
 
                             @foreach($deliveries as $delivery)
 
-                                <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="row text-light align-items-center border bg-dark rounded p-3">
                                     <div class="col-2">
                                         <img class="rad" src="./fiesta_img/1.jpg" alt="">
                                     </div>
                                     <div class="col">
-                                        <p>{{ $delivery->name }}</p>
+                                        <label>{{ $delivery->name }}</label>
                                     </div>
                                     <div class="col">
-                                        <p>{{ $delivery->cost }}</p>
+                                        <label>{{ $delivery->cost }}</label>
                                     </div>
                                     <div class="col">
                                         <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupdeliv">
@@ -174,18 +174,18 @@
 
                             @foreach($vips as $vip)
 
-                                <div class="row align-items-center border bg-dark rounded p-3">
+                                <div class="row text-light align-items-center border bg-dark rounded p-3">
                                     <div class="col-2">
                                         <img class="rad" src="./fiesta_img/1.jpg" alt="">
                                     </div>
                                     <div class="col">
-                                        <p>{{ $vip->name }}</p>
+                                        <label>{{ $vip->name }}</label>
                                     </div>
                                     <div class="col">
-                                        <p>{{ $vip->phone_number }}</p>
+                                        <label>{{ $vip->phone_number }}</label>
                                     </div>
                                     <div class="col">
-                                        <p>{{ $vip->address }}</p>
+                                        <label>{{ $vip->address }}</label>
                                     </div>
                                     <div class="col">
                                         <p>{{ $vip->discount }}</p>
