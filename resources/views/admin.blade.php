@@ -31,40 +31,50 @@
 
                         <div class="pt-5">
 
-                            @foreach($products as $product)
-
-                                <div class="row text-light align-items-center border bg-dark rounded p-3">
-                                    <div class="col-2">
-                                        <img class="rad" src="/uploads/products/{{ $product->image_path }}" alt="">
-                                    </div>
-                                    <div class="col-3">
-                                        <label>{{ $product->name }}</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <label>{{ $product->desc }}</label>
-                                    </div>
-                                    <div class="col-2">
-                                        <label>{{ $product->cost }}</label>
-                                    </div>
-                                    <div class="col-2">
-                                        <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupproduct">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="/delete/product/{{ $product->id }}" type="button"   class="btn btn-outline-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                            @endforeach
+                                <table class="table table-bordered table-hover table-light">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Картина</th>
+                                        <th scope="col">Наименование</th>
+                                        <th scope="col">Цена</th>
+                                        <th scope="col">Тип</th>
+                                        <th scope="col">Описание</th>
+                                        <th scope="col">Размер</th>
+                                        <th scope="col">Видим</th>
+                                        <th scope="col">Слайд</th>
+                                    </tr>
+                                    </thead>
+                                    @foreach($products as $product)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $product->id }}</th>
+                                            <td><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
+                                            <td class="align-middle">{{ $product->name }}</td>
+                                            <td class="align-middle">{{ $product->cost }}</td>
+                                            <td class="align-middle">{{ $product->type_id }}</td>
+                                            <td class="align-middle">{{ $product->desc }}</td>
+                                            <td class="align-middle">{{ $product->size_id }}</td>
+                                            <td class="align-middle">{{ $product->status }}</td>
+                                            <td class="align-middle">{{ $product->slide_status }}</td>
+                                            <td class="align-middle">
+                                                <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupproduct">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="/delete/product/{{ $product->id }}" type="button"   class="btn btn-outline-danger">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                </table>
 
                         </div>
 
-
                     </div>
-
-
 
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -74,28 +84,32 @@
 
                         <div class="pt-5">
 
-                            @foreach($types as $type)
-
-                                <div class="row text-light align-items-center border bg-dark rounded p-3">
-                                    <div class="col-2">
-                                        <img class="rad" src="./fiesta_img/1.jpg" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $type->name }}</label>
-                                    </div>
-                                    <div class="col">
-
-                                        <a href="#modaluptype"  class="btn btn-outline-info" data-toggle="modal"   data-id="{{ $type->id }}">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                        </a>
-                                        <a href="/delete/type/{{ $type->id }}" type="button" class="btn btn-outline-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Наименование</th>
+                                </tr>
+                                </thead>
+                                @foreach($types as $type)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $type->id }}</th>
+                                        <td class="align-middle col">{{ $type->name }}</td>
+                                        <td class="align-middle col">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle col">
+                                            <a href="/delete/product/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
 
                         </div>
                     </div>
@@ -108,26 +122,32 @@
 
                         <div class="pt-5">
 
-                            @foreach($sizes as $size)
-
-                                <div class="row text-light align-items-center border bg-dark rounded p-3">
-                                    <div class="col-2">
-                                        <img class="rad" src="./fiesta_img/1.jpg" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $size->name }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupsize">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="/delete/size/{{ $size->id }}" type="button" class="btn btn-outline-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Наименование</th>
+                                    </tr>
+                                </thead>
+                                @foreach($sizes as $size)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $size->id }}</th>
+                                        <td class="align-middle col">{{ $size->name }}</td>
+                                        <td class="align-middle col">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupsize" data-id="{{ $size->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle col">
+                                            <a href="/delete/product/{{ $size->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
 
                         </div>
                     </div>
@@ -139,29 +159,34 @@
 
                         <div class="pt-5">
 
-                            @foreach($deliveries as $delivery)
-
-                                <div class="row text-light align-items-center border bg-dark rounded p-3">
-                                    <div class="col-2">
-                                        <img class="rad" src="./fiesta_img/1.jpg" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $delivery->name }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $delivery->cost }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupdeliv">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="/delete/delivery/{{ $delivery->id }}" type="button" class="btn btn-outline-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Наименование</th>
+                                        <th scope="col">Цена</th>
+                                    </tr>
+                                </thead>
+                                @foreach($deliveries as $delivery)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $delivery->id }}</th>
+                                        <td class="align-middle col">{{ $delivery->name }}</td>
+                                        <td class="align-middle col">{{ $delivery->cost }}</td>
+                                        <td class="align-middle col">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupdeliv" data-id="{{ $delivery->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle col">
+                                            <a href="/delete/product/{{ $delivery->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
 
                         </div>
                     </div>
@@ -173,40 +198,43 @@
 
                         <div class="pt-5">
 
-                            @foreach($vips as $vip)
-
-                                <div class="row text-light align-items-center border bg-dark rounded p-3">
-                                    <div class="col-2">
-                                        <img class="rad" src="./fiesta_img/1.jpg" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $vip->name }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $vip->phone_number }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <label>{{ $vip->address }}</label>
-                                    </div>
-                                    <div class="col">
-                                        <p>{{ $vip->discount }}</p>
-                                    </div>
-                                    <div class="col">
-                                        <button type="submit"  class="btn btn-outline-info" data-toggle="modal" data-target="#modalupvip">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="/delete/vip/{{ $vip->id }}" type="button" class="btn btn-outline-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">ФИО</th>
+                                        <th scope="col">Номер телефона</th>
+                                        <th scope="col">Адрес</th>
+                                        <th scope="col">Размер скидки (%)</th>
+                                    </tr>
+                                </thead>
+                                @foreach($vips as $vip)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $vip->id }}</th>
+                                        <td class="align-middle">{{ $vip->name }}</td>
+                                        <td class="align-middle">{{ $vip->phone_number }}</td>
+                                        <td class="align-middle">{{ $vip->address }}</td>
+                                        <td class="align-middle">{{ $vip->discount }}</td>
+                                        <td class="align-middle">
+                                            <button type="submit" class="btn btn-outline-info " data-toggle="modal" data-target="#modalupvip" data-id="{{ $vip->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="/delete/product/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
 
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
             <!--</div>-->
