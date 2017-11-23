@@ -52,11 +52,29 @@
                                             <td><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
                                             <td class="align-middle">{{ $product->name }}</td>
                                             <td class="align-middle">{{ $product->cost }}</td>
-                                            <td class="align-middle">{{ $product->type_id }}</td>
+                                            @foreach($types as $type)
+                                                @if($type->id == $product->type_id)
+                                                    <td class="align-middle">{{ $type->name }}</td>
+                                                @endif
+                                            @endforeach
                                             <td class="align-middle">{{ $product->desc }}</td>
-                                            <td class="align-middle">{{ $product->size_id }}</td>
-                                            <td class="align-middle">{{ $product->status }}</td>
-                                            <td class="align-middle">{{ $product->slide_status }}</td>
+                                            @foreach($sizes as $size)
+                                                @if($size->id == $product->size_id)
+                                                    <td class="align-middle">{{ $size->name }}</td>
+                                                @endif
+                                            @endforeach
+
+                                            @if($product->status == 1 )
+                                                <td class="align-middle">Да</td>
+                                            @else
+                                                <td class="align-middle">Нет</td>
+                                            @endif
+
+                                            @if($product->slide_status == 1 )
+                                                <td class="align-middle">Да</td>
+                                            @else
+                                                <td class="align-middle">Нет</td>
+                                            @endif
                                             <td class="align-middle">
                                                 <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupproduct">
                                                     <i class="fa fa-cog" aria-hidden="true"></i>
