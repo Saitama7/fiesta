@@ -184,6 +184,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+
     public function removeFromCart(Request $request, $id)
     {
         $product = Product::find($id);

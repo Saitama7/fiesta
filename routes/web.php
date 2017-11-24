@@ -18,9 +18,9 @@ Auth::routes();
 Route::get('/getcart', 'IndexController@getCart');
 Route::get('/','IndexController@index');
 
-Route::get('/add-to-cart/{id}', 'ProductController@getIndex')->name('product.index'); // ADD
-Route::get('remove-form-cart/{id}', 'ProductController@removeFromCart'); //Remove 1 item From Cart
-Route::get('remove-form-cart/{id}', 'ProductController@deleteFromCart'); //Delete items from Cart
+Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('product.index'); // ADD
+Route::get('/remove-form-cart/{id}', 'ProductController@removeFromCart'); //Remove 1 item From Cart
+Route::get('/remove-form-cart/{id}', 'ProductController@deleteFromCart'); //Delete items from Cart
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -81,9 +81,7 @@ Route::get('/order', function () {
     return view('form');
 });
 
-Route::get('/cart', function () {
-    return view('korzina');
-});
+Route::get('/cart', 'IndexController@getCart');
 
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');

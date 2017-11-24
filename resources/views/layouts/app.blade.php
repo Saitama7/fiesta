@@ -62,70 +62,7 @@
 
                 </ul>
                 <!----->
-                <ul class="navbar-nav mx-auto nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="badge badge-success text-white rounded-circle solt">4</span>
-                            <i class="fa fa-shopping-cart fa-2x mr-2" aria-hidden="true"></i>
-
-                            <span style="font-size: 12px; text-transform: uppercase;font-weight: 500;">Корзина</span>
-                        </a>
-                        <div class="dropdown-menu shirina-korz" aria-labelledby="navbarDropdown">
-                            <div class="dropdown-item">
-                                <h2 class="text-white text-center">Ваша корзина</h2>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="dropdown-item">
-                                <div class="row text-white">
-                                    <div class="col-2">
-                                        1
-                                    </div>
-                                    <div class="col-6">
-                                        Цветок цветок
-                                    </div>
-                                    <div class="col-4">
-                                        1000 сом
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="row text-white">
-                                    <div class="col-2">
-                                        2
-                                    </div>
-                                    <div class="col-6">
-                                        Цветошек
-                                    </div>
-                                    <div class="col-4">
-                                        2000 сом
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="row text-white">
-                                    <div class="col-2">
-                                        3
-                                    </div>
-                                    <div class="col-6">
-                                        Цфитощка
-                                    </div>
-                                    <div class="col-4">
-                                        4000 сом
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="dropdown-item">
-                                <div class="row text-white">
-                                    <div class="col-6 justify-content-start">Всего: 7000 сом</div>
-                                    <div class="col justify-content-end">
-                                        <button type="button" class="btn btn-color"><a href="/cart">Оформление заказа</a></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                @include('shop.shopping-cart')
 
                 <ul class="navbar-nav mx-auto nav">
                     <li class="nav-item active">

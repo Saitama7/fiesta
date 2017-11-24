@@ -18,20 +18,20 @@
         <div class="container-fluid">
             <div class="row  slaider">
 
-                @foreach($products as $product)
-                    @if($product->type_id == 3 && $product->status == 1 && $product->slide_status == 1)
+                @foreach($flowers as $flower)
+                    @if($flower->type_id == 3 && $flower->status == 1 && $flower->slide_status == 1)
                         <div class="col-3 mb-3">
 
                             <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                                <img class="card-img rounded-circle " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
+                                <img class="card-img rounded-circle " src="/uploads/products/{{ $flower->image_path }}" alt="Card image">
                                 <div class="card-img-overlay rounded-circle ">
-                                    <h4 class="card-title mt-5">{{ $product->cost }} сом</h4>
-                                    <p class="card-text">{{ $product->desc }}</p>
+                                    <h4 class="card-title mt-5">{{ $flower->cost }} сом</h4>
+                                    <p class="card-text">{{ $flower->desc }}</p>
 
                                 </div>
                             </div>
                             <div class="col d-flex justify-content-center">
-                                <a href="{{ $product->id }}" id="{{ $product->id }}" class="zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
+                                <a href="{{ $flower->id }}" id="{{ $flower->id }}" class="zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                             </div>
 
                         </div>
@@ -59,19 +59,20 @@
 
             <div class="row autoplay">
 
-                @foreach($products as $product)
-                    @if($product->type_id == 4 && $product->status == 1 && $product->slide_status == 1)
+                @foreach($boxes as $box)
+                    @if($box->type_id == 4 && $box->status == 1 && $box->slide_status == 1)
                         <div class="col-3 mb-3">
 
                             <div class="card bg-dark text-white rounded-circle  text-center" style="border: 0px;">
-                                <img class="card-img rounded-circle " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
+                                <img class="card-img rounded-circle " src="/uploads/products/{{ $box->image_path }}" alt="Card image">
                                 <div class="card-img-overlay rounded-circle ">
-                                    <h4 class="card-title mt-5">{{ $product->cost }} сом</h4>
-                                    <p class="card-text">{{ $product->desc }}</p>
+                                    <h4 class="card-title mt-5">{{ $box->cost }} сом</h4>
+                                    <p class="card-text">{{ $box->desc }}</p>
 
                                 </div>
                                 <div class="col d-flex justify-content-center">
-                                    <a href="{{ $product->id }}" id="{{ $product->id }}" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+
+                                    <a href="{{ $box->id }}" id="{{ $box->id }}" class="zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                                 </div>
 
                             </div>
