@@ -183,4 +183,26 @@ class ProductController extends Controller
 //        return redirect()->route('product.index');
         return redirect()->back();
     }
+
+    public function removeFromCart(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($product, $product->id);
+        $request->session()->put('cart', $cart);
+        return redirect()->back();
+
+    }
+
+    public function deleteFromCart(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->delete($product, $product->id);
+        $request->session()->put('cart', $cart);
+        return redirect()->back();
+
+    }
 }
