@@ -74,17 +74,27 @@ class ProductController extends Controller
 
     public function flowers() {
         $products = Product::all()->where('type_id', '=', 3);
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
 
         return view('all.products', [
-            'products' => $products,
+            'tproducts' => $products,
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
         ]);
     }
 
     public function boxes() {
         $products = Product::all()->where('type_id', '=', 4);
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
 
         return view('all.products', [
-            'products' => $products,
+            'tproducts' => $products,
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
         ]);
     }
 

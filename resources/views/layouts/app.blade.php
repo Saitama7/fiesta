@@ -83,7 +83,12 @@
                     <div class="col-7">
                         <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
                     </div>
-
+                </div>
+                <div class="buttons">
+                    <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="http://odnoklassniki.ru" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
+                    <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
                 </div>
             </div>
             @yield('content')
@@ -93,7 +98,7 @@
             <div class="container">
                 <div class="row py-5 justify-content-center">
 
-                    <div class="col-3 font-italic font-weight-light text-center text-light">
+                    <div class="col-3 font-italic font-weight-light text-center foot-contact">
                         <img class="mb-4 w-100" src="/fiesta_img/fiesta_logofff.png" alt="">
                         <p>
                             <span class="fa fa-phone"> ТЕЛЕФОН:</span><br>

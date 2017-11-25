@@ -5,7 +5,7 @@
     <div class="container py-5">
         <div class="row">
 
-            @foreach($products as $product)
+            @foreach($tproducts as $product)
                 @if($product->status == 1)
                     <div class="col-3 mb-3">
 
@@ -16,7 +16,7 @@
                                 <p class="card-text">{{ $product->desc }}</p>
                             </div>
                             <div class="col d-flex justify-content-center">
-                                <a href="{{ $product->id }}" id="{{ $product->id }}" class="btn btn-pos btn-labflower text-dark">Заказать</a>
+                                <a href="{{ $product->id }}" id="{{ $product->id }}" class="zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                             </div>
 
                         </div>

@@ -65,21 +65,13 @@ Route::post('/store/size', 'SizeController@store');
 Route::get('/edit/size/{id}', 'SizeController@edit');
 
 //Pages
-Route::get('/about-us', function(){
-    return view('about-us');
-});
+Route::get('/about-us', 'IndexController@about');
 
-Route::get('/vigvams', function () {
-    return view('vigvams');
-});
+Route::get('/vigvams', 'IndexController@vigvams');
 
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+Route::get('/contacts', 'IndexController@contacts');
 
-Route::get('/order', function () {
-    return view('form');
-});
+Route::get('/order', 'IndexController@order');
 
 Route::get('/cart', 'IndexController@getCart');
 
