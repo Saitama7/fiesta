@@ -94,12 +94,11 @@ ul.nav a {
      font-size: 12px;
      text-transform: uppercase;
      font-weight: 500;
-     margin-right: 20px;
 }
 
 
 .max-menu li a {
-     font-size: 20px !important;
+     font-size: 15px !important;
 
 
 }
@@ -325,7 +324,11 @@ i.fa {
      color: white;
 }
 ul>li>a {
-     font-size: 14px !important;
+     font-size: 11px !important;
+}
+
+ul>li>a ins {
+     font-size: 13px !important;
 }
 
 

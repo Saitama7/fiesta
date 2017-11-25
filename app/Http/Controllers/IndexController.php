@@ -80,5 +80,27 @@ class IndexController extends Controller
             'totalPrice' => $cart->totalPrice]);
     }
 
+    public function deliver() {
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return view('deliver', [
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function corpclient() {
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return view('corporative-clients', [
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice]);
+    }
+
 
 }

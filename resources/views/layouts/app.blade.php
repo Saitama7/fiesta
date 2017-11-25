@@ -31,16 +31,13 @@
     <div class="img-back"></div>
     <div class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-0 nav bg-header">
-            <a class="navbar-brand py-0 mx-auto col-2" href="/"><img src="/fiesta_img/fiesta_logofff.png" alt="" class="w-100 py-2"></a>
+            <a class="navbar-brand py-0 mx-auto col-2 active" href="/"><img src="/fiesta_img/fiesta_logofff.png" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto nav min-menu">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Главная<span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/all/flowers">Заказать букет</a>
                     </li>
@@ -48,7 +45,13 @@
                         <a class="nav-link" href="/all/boxes">Подарочные боксы</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/corporative-clients">Корпоративные клиенты</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/contacts">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/deliver">Доставка и оплата</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about-us">О нас</a>

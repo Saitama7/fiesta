@@ -66,14 +66,12 @@ Route::get('/edit/size/{id}', 'SizeController@edit');
 
 //Pages
 Route::get('/about-us', 'IndexController@about');
-
 Route::get('/vigvams', 'IndexController@vigvams');
-
 Route::get('/contacts', 'IndexController@contacts');
-
 Route::get('/order', 'IndexController@order');
-
 Route::get('/cart', 'IndexController@getCart');
+Route::get('/deliver', 'IndexController@deliver');
+Route::get('/corporative-clients', 'IndexController@corpclient');
 
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');
