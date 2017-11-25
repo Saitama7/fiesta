@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/owlcarousel/dist/assets/owl.theme.default.min.css">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -84,12 +83,7 @@
                     <div class="col-7">
                         <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
                     </div>
-                </div>
-                <div class="buttons">
-                    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                    <a href="https://vk.com" target="_blank"><i class="fa fa-vk"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+
                 </div>
             </div>
             @yield('content')
@@ -99,7 +93,7 @@
             <div class="container">
                 <div class="row py-5 justify-content-center">
 
-                    <div class="col-3 font-italic font-weight-light text-center foot-contact">
+                    <div class="col-3 font-italic font-weight-light text-center text-light">
                         <img class="mb-4 w-100" src="/fiesta_img/fiesta_logofff.png" alt="">
                         <p>
                             <span class="fa fa-phone"> ТЕЛЕФОН:</span><br>

@@ -25,8 +25,7 @@ class IndexController extends Controller
             'totalPrice' => $cart->totalPrice]);
     }
 
-    public function getCart()
-    {
+    public function getCart() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
@@ -37,49 +36,5 @@ class IndexController extends Controller
             'totalPrice' => $cart->totalPrice]);
     }
 
-    public function contact()
-    {
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
 
-        return view('contacts', [
-            'products' => $cart->items,
-            'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
-    }
-
-    public function vigvams()
-    {
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-
-        return view('vigvams', [
-            'products' => $cart->items,
-            'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
-    }
-
-    public function about()
-    {
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-
-        return view('about-us', [
-            'products' => $cart->items,
-            'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
-    }
-
-    public function order()
-    {
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-
-        return view('order', [
-            'products' => $cart->items,
-            'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
-    }
 }
-
-

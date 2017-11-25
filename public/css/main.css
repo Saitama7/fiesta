@@ -364,26 +364,3 @@ card:hover .card-images-overlay{
      font-weight: 600;
      font-size: 16px;
 }
-.foot-contact {
-     color: #7f7f7f !important;
-}
-.foot-contact p a  {
-     color: inherit !important;
-}
-.buttons{
-     position: fixed;
-     top:170px;
-     left: 0;
-     z-index: 5;
-}
-.buttons a{
-     display:block;
-     padding:10px 15px;
-     margin-bottom: 5px;
-     background-color: rgba(0,0,0,.6);
-     color:rgba(255,255,255,.6);
-}
-.buttons a:hover{
-     background-color: rgba(0,0,0,.9);
-     color: rgba(255,255,255,.9);
-}
