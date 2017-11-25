@@ -26,7 +26,7 @@
         @foreach($products as $product)
             <div class="row align-items-center border bg-dark text-light rounded text-center p-3">
                 <div class="col-2">
-                    <img class="w-100 rounded-circle" src="./fiesta_img/2.jpg" alt="" >
+                    <img class="w-100 rounded-circle" src="/uploads/products/{{ $product['item']['image_path'] }}" alt="" >
                 </div>
                 <div class="col-4">
                     {{ $product['item']['name'] }}
@@ -35,7 +35,7 @@
                     {{ $product['price'] }} сом
                 </div>
                 <div class="col-1">
-                    <input type="text" class="form-control text-center" size="4" maxlength="4">
+                    <input type="text"  class="form-control text-center" size="4" maxlength="4">
                 </div>
                 <div class="col-2">
                     {{ $product['price'] }} сом
