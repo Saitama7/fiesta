@@ -32,10 +32,10 @@
                     {{ $product['item']['name'] }}
                 </div>
                 <div class="col-2">
-                    {{ $product['price'] }} сом
+                    {{ $product['item']['cost'] }} сом
                 </div>
                 <div class="col-1">
-                    <input type="text"  class="form-control text-center" size="4" maxlength="4">
+                    <input type="text" value="{{ $product['qty'] }}"  class="form-control text-center" size="4" maxlength="4">
                 </div>
                 <div class="col-2">
                     {{ $product['price'] }} сом
