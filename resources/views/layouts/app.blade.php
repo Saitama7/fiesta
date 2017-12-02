@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="http://code.gijgo.com/1.6.1/css/gijgo.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
@@ -134,5 +135,19 @@
     (function(){ var widget_id = 'Nhb5gshoz9';var d=document;var w=window;function l(){
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
+<script src="http://code.gijgo.com/1.6.1/js/gijgo.js" type="text/javascript"></script>
+<script>
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome'
+    });
+</script>
+        <script src="js/mask.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                $("#phone").mask("+996 (999) 999-999");
+            });
+        </script>
+
 </body>
 </html>

@@ -16,9 +16,14 @@ class CreateBasketsTable extends Migration
         Schema::create('baskets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('vip_id')->nullable();
-            $table->integer('delivery_id');
+            $table->integer('delivery_id')->nullable();
             $table->string('name');
-            $table->string('address')->nullable();
+            $table->date('order_date');
+            $table->time('order_time');
+            $table->string('city')->nullable();
+            $table->string('street')->nullable();
+            $table->string('house')->nullable();
+            $table->string('sign')->nullable();
             $table->string('phone_number');
             $table->timestamps();
         });

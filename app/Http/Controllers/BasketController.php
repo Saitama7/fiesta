@@ -41,8 +41,13 @@ class BasketController extends Controller
         $basket->delivery_id = $request->delivery_id;
         $basket->vip_id = $request->vip_id;
         $basket->name = $request->name;
-        $basket->address = $request->address;
+        $basket->city = $request->city;
+        $basket->street = $request->street;
+        $basket->house = $request->house;
         $basket->phone_number = $request->phone_number;
+        $basket->order_date = $request->order_date;
+        $basket->order_time = $request->order_time;
+        $basket->sign = $request->sign;
 
         $basket->save();
 
@@ -94,12 +99,29 @@ class BasketController extends Controller
             if ($request->vip_id) {
                 $basket->vip_id = $request->vip_id;
             }
-            if ($request->address) {
-                $basket->address = $request->address;
+            if ($request->city) {
+                $basket->city = $request->city;
+            }
+            if ($request->street) {
+                $basket->street = $request->street;
+            }
+            if ($request->house) {
+                $basket->house = $request->house;
+            }
+            if ($request->order_date) {
+                $basket->order_date = $request->order_date;
+            }
+            if ($request->order_time) {
+                $basket->order_time = $request->order_time;
             }
             if ($request->phone_number) {
                 $basket->phone_number = $request->phone_number;
             }
+            if ($request->sign) {
+                $basket->sign = $request->sign  ;
+            }
+
+
 
             $basket->save();
         }

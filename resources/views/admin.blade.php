@@ -9,7 +9,8 @@
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Размер товара</a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Курьеры</a>
                     <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
-                    <a class="nav-link" id="v-pills-background-tab" data-toggle="pill" href="#v-pills-background" role="tab" aria-controls="v-pills-button5" aria-selected="false">Главный фон</a>
+                    <a class="nav-link" id="v-pills-background-tab" data-toggle="pill" href="#v-pills-background" role="tab" aria-controls="v-pills-mainpage" aria-selected="false">Главный фон</a>
+                    <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
                 </div>
             </div>
             <div class="col-10">
@@ -225,6 +226,51 @@
                                             <a href="/delete/product/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+                        <div class="pt-5">
+
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">VIP</th>
+                                    <th scope="col">ФИО</th>
+                                    <th scope="col">Номер телефона</th>
+                                    <th scope="col">Адрес</th>
+                                    <th scope="col">Итоговая сумма</th>
+                                    <th scope="col">Товары</th>
+                                </tr>
+                                </thead>
+                                @foreach($baskets as $basket)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $basket->id }}</th>
+                                        <td class="align-middle">
+                                            @if($basket->vip)
+                                                <input type="checkbox" checked  class="disabled">
+                                                @else
+                                                <input type="checkbox" class="disabled">
+                                            @endif
+                                        </td>
+                                        <td class="align-middle">{{ $basket->name }}</td>
+                                        <td class="align-middle">{{ $basket->phone_number }}</td>
+                                        <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
+                                        <td class="align-middle">{{ $basket->address}}</td>
+                                        <td class="align-middle"><a href="#">Подробнее</a></td>
+                                        <td class="align-middle">
+                                            
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="checkbox">
                                         </td>
                                     </tr>
                                     </tbody>

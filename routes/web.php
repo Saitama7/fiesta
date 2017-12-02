@@ -64,6 +64,12 @@ Route::post('/update/size/{id}', 'SizeController@update');
 Route::post('/store/size', 'SizeController@store');
 Route::get('/edit/size/{id}', 'SizeController@edit');
 
+//Baskets
+Route::get('/create/basket', 'BasketController@create');
+Route::post('/update/basket/{id}', 'BasketController@update');
+Route::post('/store/basket', 'BasketController@store');
+Route::get('/edit/basket/{id}', 'BasketController@edit');
+
 //Pages
 Route::get('/about-us', 'IndexController@about');
 Route::get('/vigvams', 'IndexController@vigvams');
