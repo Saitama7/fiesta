@@ -15,33 +15,36 @@
                 </div>
                 <div class="dropdown-divider"></div>
                 <span class="d-none">{{ $i = 1 }}</span>
-                @foreach($products as $product)
-                    <div class="dropdown-item">
-                        <div class="row text-white">
-                            <div class="col-2">
-                                {{ $i++ }}
-                            </div>
-                            <div class="col-6">
-                                {{ $product['item']['name'] }}
-                            </div>
-                            <div class="col-4">
-                                {{ $product['price'] }} сом
-                            </div>
-                        </div>
-                    </div>
-                    @if($i > 7)
+                <div class="productsInCart">
+                    @foreach($products as $product)
                         <div class="dropdown-item">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">. . .</div>
+                            <div class="row text-white">
+                                <div class="col-2 count">
+                                    {{ $i++ }}
+                                </div>
+                                <div class="col-6">
+                                    <span class="productId d-none">{{ $product['item']['id'] }}</span><span class="qty">{{ $product['qty'] }}</span> x <span class="xname">{{ $product['item']['name'] }}</span>
+                                </div>
+                                <div class="col-4 cost">
+                                    {{ $product['price'] }} сом
+                                </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                        @if($i > 7)
+                            <div class="dropdown-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto text-light font-weight-bold">. . .</div>
+                                </div>
+                            </div>
+                            @break
+                        @endif
+                    @endforeach
+                </div>
 
                 <div class="dropdown-divider"></div>
                 <div class="dropdown-item">
                     <div class="row text-white">
-                        <div class="col-6 justify-content-start">Всего: <span>{{ $totalPrice }}</span> сом</div>
+                        <div class="col-6 justify-content-start">Всего: <span class="totalPrice">{{ $totalPrice }}</span> сом</div>
                         <div class="col justify-content-end">
                             <button type="button" class="btn btn-color"><a href="/cart">Оформление заказа</a></button>
                         </div>

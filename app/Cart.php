@@ -33,6 +33,8 @@ class Cart
         $this->items[$id] = $storedItem;
         $this->totalQty++;
         $this->totalPrice += $item->cost;
+
+        return $storedItem;
     }
 
     public function remove($item, $id)

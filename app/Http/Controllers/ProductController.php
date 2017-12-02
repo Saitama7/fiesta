@@ -186,12 +186,18 @@ class ProductController extends Controller
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $product = $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
         //add($request->session()->get('cart'));
 //        return redirect()->route('product.index');
-        return redirect()->back();
+
+
+        return response()->json([
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
+        ]);
     }
 
 

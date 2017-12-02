@@ -21,7 +21,7 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalproduct">
+                        <button type="button" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalProduct">
                             Создать товар
                         </button>
 
@@ -98,7 +98,7 @@
                                         <th scope="row" class="align-middle">{{ $type->id }}</th>
                                         <td class="align-middle col">{{ $type->name }}</td>
                                         <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}">
+                                            <button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}">
                                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                             </button>
                                         </td>
@@ -256,9 +256,9 @@
                                         <th scope="row" class="align-middle">{{ $basket->id }}</th>
                                         <td class="align-middle">
                                             @if($basket->vip)
-                                                <input type="checkbox" checked  class="disabled">
+                                                <input type="checkbox" checked disabled>
                                                 @else
-                                                <input type="checkbox" class="disabled">
+                                                <input type="checkbox" disabled>
                                             @endif
                                         </td>
                                         <td class="align-middle">{{ $basket->name }}</td>
