@@ -30,6 +30,12 @@ class IndexController extends Controller
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        
+        $cartNew = [];
+
+        foreach ($cart->items as $item) {
+            
+        }
 
         return view('korzina', [
             'products' => $cart->items,

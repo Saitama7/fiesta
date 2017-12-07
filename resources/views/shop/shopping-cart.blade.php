@@ -1,12 +1,10 @@
 <ul class="navbar-nav mx-auto nav">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @if(Session::has('cart'))
-                <span class="badge badge-success text-white rounded-circle solt">{{ $totalQty }}</span>
-            @endif
+                <span class="badge badge-success text-white rounded-circle solt d-none">{{ $totalQty }}</span>
             <i class="fa fa-shopping-cart fa-2x mr-2" aria-hidden="true"></i>
 
-            <span style="font-size: 12px; text-transform: uppercase;font-weight: 500;">Корзина</span>
+            <span class="korzina" style="font-size: 12px; text-transform: uppercase;font-weight: 500;">Корзина</span>
         </a>
         <div class="dropdown-menu shirina-korz" aria-labelledby="navbarDropdown">
             @if (Session::has('cart'))

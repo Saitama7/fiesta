@@ -387,15 +387,15 @@
         @include('modals.type')
         @include('modals.uptype')
         @include('modals.vid ')
-        {{--@include('modals.uptype')--}}
+        @include('modals.uptype')
         @include('modals.size')
-        {{--@include('modals.upsize')--}}
+        @include('modals.upsize')
         @include('modals.time')
         {{--@include('modals.uptime')--}}
         @include('modals.delivery')
-        {{--@include('modals.updelivery')--}}
+        @include('modals.updelivery')
         @include('modals.vip')
-        {{--@include('modals.upvip')--}}
+        @include('modals.upvip')
 
 
 
