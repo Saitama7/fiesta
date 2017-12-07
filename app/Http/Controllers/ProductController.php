@@ -90,7 +90,7 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
 
-        return view('all.products', [
+        return view('all.boxes', [
             'tproducts' => $products,
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,

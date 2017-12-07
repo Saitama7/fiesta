@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-labelledby="modalProductLabel" aria-hidden="true">
+<div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-labelledby="modalProductLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +33,7 @@
                             </select>
                         </div>
                         <div class="col-6 mb-4">
-                            <label for="p-size">Размер</label>
+                            <label for="p-size">Категория</label>
                             <select class="form-control form-control" name="size_id" id="p-size">
                                 @foreach($sizes as $size)
                                     <option value="{{ $size->id }}">{{ $size->name }}</option>

@@ -394,3 +394,17 @@ card:hover .card-images-overlay{
      background-color: rgba(0,0,0,.9);
      color: rgba(255,255,255,.9);
 }
+.corp{
+     text-transform: uppercase;
+     font-weight: 400;
+}
+.brd{
+     display: table;
+     content: "";
+     width: 100%;
+     height: 1px;
+     background-color: #1b1e21;
+}
+footer{
+     margin-top: 5%;
+}

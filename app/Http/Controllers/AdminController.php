@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Basket;
 use App\Delivery;
+use App\OrderTime;
 use App\Product;
 use App\Size;
 use App\Type;
@@ -24,6 +25,7 @@ class AdminController extends Controller
                 'sizes' => Size::all(),
                 'types' => Type::all(),
                 'vips' => Vip::all(),
+                'order_times' => OrderTime::all(),
             ]);
         }else {
             return $redirectTo = '/login';

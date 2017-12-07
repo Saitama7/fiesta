@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Административная панель')
     @section('content-admin')
         <div class="row ml-0 mr-0">
             <div class="col-2">
@@ -6,7 +7,8 @@
                     <a href="" class="col-5"><img class="w-100" src="{{ asset('fiesta_img/logo-flower.png') }}" alt="image"><h5 class="flower text-dark">Fiesta flower</h5></a>
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Размер товара</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
+                    <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Курьеры</a>
                     <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
                     <a class="nav-link" id="v-pills-background-tab" data-toggle="pill" href="#v-pills-background" role="tab" aria-controls="v-pills-mainpage" aria-selected="false">Главный фон</a>
@@ -21,7 +23,7 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalProduct">
+                        <button type="button" id="prodbtn" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalProduct">
                             Создать товар
                         </button>
 
@@ -41,7 +43,7 @@
                                         <th scope="col">Цена</th>
                                         <th scope="col">Тип</th>
                                         <th scope="col">Описание</th>
-                                        <th scope="col">Размер</th>
+                                        <th scope="col">Категория</th>
                                         <th scope="col">Видим</th>
                                         <th scope="col">Слайд</th>
                                     </tr>
@@ -52,7 +54,7 @@
                                             <th scope="row" class="align-middle">{{ $product->id }}</th>
                                             <td><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
                                             <td class="align-middle">{{ $product->name }}</td>
-                                            <td class="align-middle">{{ $product->cost }}</td>
+                                            <td class="align-middle">{{ $product->cost }} сом</td>
                                             @foreach($types as $type)
                                                 @if($product->type_id == $type->id)
                                                     <td class="align-middle" value="{{ $product->type_id }}">{{ $type->name }}</td>
@@ -121,7 +123,7 @@
                                             </button>
                                         </td>
                                         <td class="align-middle col">
-                                            <a href="/delete/product/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                            <a href="/delete/type/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -136,7 +138,7 @@
 
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalsize">
-                            Создать размер
+                            Создать категорию
                         </button>
 
                         <div class="pt-5">
@@ -159,7 +161,44 @@
                                             </button>
                                         </td>
                                         <td class="align-middle col">
-                                            <a href="/delete/product/{{ $size->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                            <a href="/delete/size/{{ $size->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-intervals" role="tabpanel" aria-labelledby="v-pills-intervals-tab">
+                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modaltime">
+                            Создать диапазон времени
+                        </button>
+
+                        <div class="pt-5">
+
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Диапазон</th>
+                                </tr>
+                                </thead>
+                                @foreach($order_times as $time)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $time->id }}</th>
+                                        <td class="align-middle col">{{ $time->interval }}</td>
+                                        <td class="align-middle col">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupsize" data-id="{{ $time->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle col">
+                                            <a href="/delete/size/{{ $time->id }}" type="button"   class="btn btn-outline-danger float-left">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -198,7 +237,7 @@
                                             </button>
                                         </td>
                                         <td class="align-middle col">
-                                            <a href="/delete/product/{{ $delivery->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                            <a href="/delete/delivery/{{ $delivery->id }}" type="button"   class="btn btn-outline-danger float-left">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -241,7 +280,7 @@
                                             </button>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="/delete/product/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
+                                            <a href="/delete/vip/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -282,7 +321,7 @@
                                         <td class="align-middle">{{ $basket->name }}</td>
                                         <td class="align-middle">{{ $basket->phone_number }}</td>
                                         <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
-                                        <td class="align-middle">{{ $basket->address}}</td>
+                                        <td class="align-middle">{{ $basket->totalPrice }}</td>
                                         <td class="align-middle"><a href="#">Подробнее</a></td>
                                         <td class="align-middle">
                                             
@@ -311,6 +350,8 @@
         @include('modals.uptype')
         @include('modals.size')
         {{--@include('modals.upsize')--}}
+        @include('modals.time')
+        {{--@include('modals.uptime')--}}
         @include('modals.delivery')
         {{--@include('modals.updelivery')--}}
         @include('modals.vip')

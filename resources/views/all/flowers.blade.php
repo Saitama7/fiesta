@@ -4,7 +4,7 @@
 
     <div class="container py-5">
         <div class="row">
-
+            <h4 class="mb-3">Адрес доставки</h4>
             @foreach($tproducts as $product)
                 @if($product->status == 1)
                     <div class="col-3 mb-3">

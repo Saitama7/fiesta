@@ -51,24 +51,34 @@ Route::get('/create/vip', 'VipController@create');
 Route::post('/update/vip/{id}', 'VipController@update');
 Route::post('/store/vip', 'VipController@store');
 Route::get('/edit/vip/{id}', 'VipController@edit');
+Route::get('/delete/vip/{id}', 'VipController@destroy');
 
 //Delivery
 Route::get('/create/delivery', 'DeliveryController@create');
 Route::post('/update/delivery/{id}', 'DeliveryController@update');
 Route::post('/store/delivery', 'DeliveryController@store');
 Route::get('/edit/delivery/{id}', 'DeliveryController@edit');
+Route::get('/delete/delivery/{id}', 'DeliveryController@destroy');
 
 //Size
 Route::get('/create/size', 'SizeController@create');
 Route::post('/update/size/{id}', 'SizeController@update');
 Route::post('/store/size', 'SizeController@store');
 Route::get('/edit/size/{id}', 'SizeController@edit');
+Route::get('/delete/size/{id}', 'SizeController@destroy');
+//Interval
+Route::get('/create/time', 'TimeController@create');
+Route::post('/update/time/{id}', 'TimeController@update');
+Route::post('/store/time', 'TimeController@store');
+Route::get('/edit/time/{id}', 'TimeController@edit');
+Route::get('/delete/time/{id}', 'TimeController@destroy');
 
 //Baskets
 Route::get('/create/basket', 'BasketController@create');
 Route::post('/update/basket/{id}', 'BasketController@update');
 Route::post('/store/basket', 'BasketController@store');
 Route::get('/edit/basket/{id}', 'BasketController@edit');
+Route::get('/delete/basket/{id}', 'BasketController@destroy');
 
 //Pages
 Route::get('/about-us', 'IndexController@about');
@@ -77,7 +87,8 @@ Route::get('/contacts', 'IndexController@contacts');
 Route::get('/order', 'IndexController@order');
 Route::get('/cart', 'IndexController@getCart');
 Route::get('/deliver', 'IndexController@deliver');
-Route::get('/corporative-clients', 'IndexController@corpclient');
+Route::get('/festivities', 'IndexController@corpclient');
+//Route::get('/admin', 'IndexController@admin');
 
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');

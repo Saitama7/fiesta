@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\OrderTime;
 use App\Product;
 use Illuminate\Http\Request;
 use Session;
@@ -77,7 +78,9 @@ class IndexController extends Controller
         return view('order', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'order_times' => OrderTime::all(),
+            ]);
     }
 
     public function deliver() {
@@ -97,6 +100,16 @@ class IndexController extends Controller
         $cart = new Cart($oldCart);
 
         return view('corporative-clients', [
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice]);
+    }
+    public function admin() {
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return view('admin', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
             'totalPrice' => $cart->totalPrice]);

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Оформление заказа')
 @section('content')
 
     <content>
@@ -56,11 +56,13 @@
                         <input type="text" id="datepicker" name="order_date" width="276" />
                     </div>
                     <div class="col justify-content-center">
-                        <label class="col p-0" for="inlineCheckbox1">Время <span style="color: red;">*</span></label>
+                        <label class="col p-0" for="inputState">Время <span style="color: red;">*</span></label>
                         <div class="form-check form-check-inline">
-
-                                <input class="form-check-input" name="order_time" type="time" id="inlineCheckbox1" value="option1">
-
+                            <select id="inputState" class="form-control" name="order_time_id">
+                                @foreach($order_times as $time)
+                                    <option value="{{ $time->id }}">{{ $time->interval }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         {{--<div class="form-check form-check-inline">--}}
                             {{--<label class="form-check-label">--}}
@@ -121,6 +123,7 @@
                         </ul>
                     </div>
                 </div>
+                <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
                         <button type="submit" class="btn btn-outline-dark ali">Оформить заказ</button>

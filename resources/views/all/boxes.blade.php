@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Заказать букет')
+@section('title', 'Подарочные боксы')
 @section('content')
 
     <div class="container py-5">

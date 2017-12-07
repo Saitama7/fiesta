@@ -64,14 +64,10 @@ $(document).ready(function() {
 
 
 
-
-    $('.modal.fade').on('show.bs.modal', function(e){
-        alert('sfasdfsdf');
+    $('#modalProduct').modal('show');
+    $('#modalProduct').on('show.bs.modal', function (e) {
+        alert('sdsfdf');
     });
 
-    $('#modalProduct').on('show.bs.modal', function(){
-        console.log('ghj');
-        alert('sfasdfsdf');
-    });
-})
+});
 

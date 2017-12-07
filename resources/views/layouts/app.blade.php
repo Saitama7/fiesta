@@ -22,7 +22,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Fiesta') }}</title>
+    {{--<title>{{ config('app.name', 'Fiesta') }}</title>--}}
+    <title> @yield('title')</title>
 
 </head>
 <body>
@@ -46,16 +47,13 @@
                         <a class="nav-link" href="/all/boxes">Подарочные боксы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/corporative-clients">Корпоративные клиенты</a>
+                        <a class="nav-link" href="/festivities">Оформление торжеств</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">Контакты</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/deliver">Доставка и оплата</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us">О нас</a>
                     </li>
                 </ul>
 
@@ -132,7 +130,7 @@
     <script src="/owlcarousel/dist/owl.carousel.min.js"></script>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>
-    (function(){ var widget_id = 'Nhb5gshoz9';var d=document;var w=window;function l(){
+    (function(){ var widget_id = 'JRWbCZDUWR';var d=document;var w=window;function l(){
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
 <script src="http://code.gijgo.com/1.6.1/js/gijgo.js" type="text/javascript"></script>

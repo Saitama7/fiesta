@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Basket;
+use App\OrderTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BasketController extends Controller
 {
@@ -15,7 +17,7 @@ class BasketController extends Controller
     public function index()
     {
         $baskets = Basket::all();
-        return view('all.basket', ['baskets' => $baskets]);
+        return view('all.basket', ['baskets' => $baskets,]);
     }
 
     /**
@@ -46,12 +48,13 @@ class BasketController extends Controller
         $basket->house = $request->house;
         $basket->phone_number = $request->phone_number;
         $basket->order_date = $request->order_date;
-        $basket->order_time = $request->order_time;
+        $basket->order_time_id = $request->order_time_id;
         $basket->sign = $request->sign;
-
+        $basket->totalPrice = $request->totalPrice;
         $basket->save();
+        Session::remove('cart');
+        return redirect('/');
 
-        return redirect()->back();
     }
 
     /**
@@ -111,8 +114,8 @@ class BasketController extends Controller
             if ($request->order_date) {
                 $basket->order_date = $request->order_date;
             }
-            if ($request->order_time) {
-                $basket->order_time = $request->order_time;
+            if ($request->order_time_id) {
+                $basket->order_time_id = $request->order_time_id;
             }
             if ($request->phone_number) {
                 $basket->phone_number = $request->phone_number;
