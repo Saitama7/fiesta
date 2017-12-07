@@ -7,6 +7,7 @@
                     <a href="" class="col-5"><img class="w-100" src="{{ asset('fiesta_img/logo-flower.png') }}" alt="image"><h5 class="flower text-dark">Fiesta flower</h5></a>
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
+                    <a class="nav-link" id="v-pills-vid-tab" data-toggle="pill" href="#v-pills-vid" role="tab" aria-controls="v-pills-profile" aria-selected="false">Вид Букета</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
                     <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Курьеры</a>
@@ -79,7 +80,7 @@
                                                 <td class="align-middle">Нет</td>
                                             @endif
                                             <td class="align-middle">
-                                                <button type="submit" class="btn btn-outline-info" data-toggle="modal" data-target="#modalupproduct">
+                                                <button onclick="give(this.id)" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
                                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                                 </button>
                                             </td>
@@ -124,6 +125,43 @@
                                         </td>
                                         <td class="align-middle col">
                                             <a href="/delete/type/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-vid" role="tabpanel" aria-labelledby="v-pills-vid-tab">
+                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalvid">
+                            Создать вид букета
+                        </button>
+
+                        <div class="pt-5">
+
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Наименование</th>
+                                </tr>
+                                </thead>
+                                @foreach($vids as $vid)
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="align-middle">{{ $vid->id }}</th>
+                                        <td class="align-middle col">{{ $vid->name }}</td>
+                                        <td class="align-middle col">
+                                            <button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $vid->id }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                        <td class="align-middle col">
+                                            <a href="/delete/vid/{{ $vid->id }}" type="button"   class="btn btn-outline-danger float-left">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -198,7 +236,7 @@
                                             </button>
                                         </td>
                                         <td class="align-middle col">
-                                            <a href="/delete/size/{{ $time->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                            <a href="/delete/time/{{ $time->id }}" type="button"   class="btn btn-outline-danger float-left">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -348,6 +386,8 @@
         @include('modals.upproduct')
         @include('modals.type')
         @include('modals.uptype')
+        @include('modals.vid ')
+        {{--@include('modals.uptype')--}}
         @include('modals.size')
         {{--@include('modals.upsize')--}}
         @include('modals.time')

@@ -9,6 +9,7 @@ use App\Product;
 use App\Size;
 use App\Type;
 use App\Vip;
+use App\Vid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +27,7 @@ class AdminController extends Controller
                 'types' => Type::all(),
                 'vips' => Vip::all(),
                 'order_times' => OrderTime::all(),
+                'vids' => Vid::all(),
             ]);
         }else {
             return $redirectTo = '/login';

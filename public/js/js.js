@@ -24,5 +24,9 @@ $('.slaider').slick({
 
 });
 
+
+$('#modalProduct').on('show.bs.modal', function (event) {
+    alert('dsafasdf');
+})
 // $(".owl-carousel").owlCarousel();
 

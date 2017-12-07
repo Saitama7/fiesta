@@ -64,10 +64,11 @@ $(document).ready(function() {
 
 
 
-    $('#modalProduct').modal('show');
-    $('#modalProduct').on('show.bs.modal', function (e) {
-        alert('sdsfdf');
-    });
+    function give(val) {
+        var obj = document.getElementById('modalupproduct');
+        obj.innerHTML = val;
+        var hh = val;
+    }
 
 });
 

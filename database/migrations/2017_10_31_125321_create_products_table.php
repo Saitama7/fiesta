@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('cost');
             $table->integer('type_id');
+            $table->integer('vid_id');
             $table->string('desc');
             $table->integer('size_id');
             $table->tinyInteger('status')->nullable();

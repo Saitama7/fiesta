@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Product;
+use App\Vip;
+use App\Vid;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Session;
@@ -77,11 +79,12 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
 
-        return view('all.products', [
+        return view('all.flowers', [
             'tproducts' => $products,
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice
+            'totalPrice' => $cart->totalPrice,
+            'vids' => Vid::all(),
         ]);
     }
 

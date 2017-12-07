@@ -66,6 +66,14 @@ Route::post('/update/size/{id}', 'SizeController@update');
 Route::post('/store/size', 'SizeController@store');
 Route::get('/edit/size/{id}', 'SizeController@edit');
 Route::get('/delete/size/{id}', 'SizeController@destroy');
+
+//Vid
+Route::get('/create/vid', 'VidController@create');
+Route::post('/update/vid/{id}', 'VidController@update');
+Route::post('/store/vid', 'VidController@store');
+Route::get('/edit/vid/{id}', 'VidController@edit');
+Route::get('/delete/vid/{id}', 'VidController@destroy');
+
 //Interval
 Route::get('/create/time', 'TimeController@create');
 Route::post('/update/time/{id}', 'TimeController@update');

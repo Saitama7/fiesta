@@ -14,7 +14,8 @@
                     <div class="row pt-3">
                         <div class="col-6 mb-3">
                             <label for="p-name" class="pull-left">Наименование</label>
-                            <input type="text" name="name" class="form-control pull" id="p-name" value="" size="25">
+
+                            <input type="text" name="name" value="{{ $product->name }}" class="form-control pull" id="p-name" value="" size="25">
                         </div>
                         <div class="col-6 mb-3">
                             <label for="p-cost">Цена</label>
