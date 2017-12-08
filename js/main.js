@@ -111,12 +111,17 @@ $(document).ready(function() {
     });
 
     $('#modalupproduct').on('show.bs.modal', function (event) {
-        alert('Тупое гавно!' +
-            'Которое не запускается' +
-            'Сука!!!' +
-            'Долбоебизм' +
-            '!!!!' +
-            '')
+        var button = $(event.relatedTarget);
+        alert(button.data('id'));
+        console.log(button.data(''));
+        var modal = $(this);
+        $.ajax({
+           url: '/uploads/products/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                
+            }
+        });
     })
 
 });

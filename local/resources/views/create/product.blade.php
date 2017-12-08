@@ -6,7 +6,7 @@
             <form action="/store/product" method="POST" class="col-8 mx-auto">
                 {{ csrf_field() }}
 
-                <input type="text" name="name">
+                <input type="text" name="name" required>
                 <input type="text" name="desc">
                 <input type="text" name="image_path">
                 <input type="text" name="size_id">

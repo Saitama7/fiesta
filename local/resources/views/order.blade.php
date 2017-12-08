@@ -53,7 +53,7 @@
                 <div class="row mb-4">
                     <div class="col">
                         <label for="datepicker">Дата</label>
-                        <input type="text" id="datepicker" name="order_date" width="276" />
+                        <input type="text" id="datepicker" name="order_date" width="276" required />
                     </div>
                     <div class="col justify-content-center">
                         <label class="col p-0" for="inputState">Время <span style="color: red;">*</span></label>

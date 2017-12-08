@@ -20,7 +20,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Fiesta') }}</title>
+    <title> @yield('title')</title>
 
 </head>
 <body>

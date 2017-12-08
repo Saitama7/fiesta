@@ -49,7 +49,9 @@
                                         <th scope="col">Слайд</th>
                                     </tr>
                                     </thead>
+                                    <?php $i = 0 ?>
                                     @foreach($products as $product)
+                                        <?php $i++ ?>
                                         <tbody>
                                         <tr>
                                             <th scope="row" class="align-middle">{{ $product->id }}</th>
@@ -80,7 +82,7 @@
                                                 <td class="align-middle">Нет</td>
                                             @endif
                                             <td class="align-middle">
-                                                <button onclick="give(this.id)" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
+                                                <button id="{{ $i }}" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
                                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                                 </button>
                                             </td>

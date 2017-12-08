@@ -14,15 +14,15 @@
                     <div class="row pt-3">
                         <div class="col-6 mb-3">
                             <label for="p-name" class="pull-left">Наименование</label>
-                            <input type="text" name="name" class="form-control pull" id="p-name" placeholder="Наименование" size="25">
+                            <input type="text" name="name" class="form-control pull" id="p-name" placeholder="Наименование" size="25" required>
                         </div>
                         <div class="col-6 mb-3">
                             <label for="p-cost">Цена</label>
-                            <input type="text" name="cost" class="form-control" id="p-cost" placeholder="Цена" size="10">
+                            <input type="text" name="cost" class="form-control" id="p-cost" placeholder="Цена" size="10" required>
                         </div>
                         <div class="col-12 mb-4">
                             <label for="p-desc">Описание</label>
-                            <textarea type="text" name="desc" class="form-control" id="p-desc" rows="5"></textarea>
+                            <textarea type="text" name="desc" class="form-control" id="p-desc" rows="5" required></textarea>
                         </div>
                         <div class="col-6 mb-4">
                             <label for="p-type">Тип</label>
