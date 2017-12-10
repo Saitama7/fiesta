@@ -76,10 +76,10 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $typeId)
+    public function update(Request $request)
     {
         if ($request) {
-            $type = Type::find($typeId);
+            $type = Type::find($request->id);
             if ($request->name) {
                 $type->name = $request->name;
             }

@@ -15,18 +15,17 @@ class CreateAppsTable extends Migration
     {
         Schema::create('apps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('logo_path');
-            $table->string('description');
-            $table->string('img_path');
-            $table->string('facebook');
-            $table->string('instagram');
-            $table->string('twitter');
-            $table->string('odnoklassniki');
-            $table->string('tel');
-            $table->string('whatsapp');
-            $table->string('telegram');
-            $table->string('viber');
+            $table->string('logo_path')->nullable();
+            $table->string('description')->nullable();
+            $table->string('img_path')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('odnoklassniki')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('telegram')->nullable();
+            $table->string('viber')->nullable();
             $table->timestamps();
         });
     }

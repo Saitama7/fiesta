@@ -66,7 +66,7 @@ class VidController extends Controller
     {
         $vid = Vid::find($vidId);
 
-        return view('edit.vid', ['vid' => $vid]);
+        return response()->json(['vid' => $vid]);
     }
 
     /**
@@ -76,10 +76,10 @@ class VidController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $vidId)
+    public function update(Request $request)
     {
         if ($request) {
-            $vid = Vid::find($vidId);
+            $vid = Vid::find($request->id);
             if ($request->name) {
                 $vid->name = $request->name;
             }

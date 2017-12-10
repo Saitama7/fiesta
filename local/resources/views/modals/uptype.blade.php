@@ -8,11 +8,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/update/type/{{ $type->id }}"  method="POST">
+            <form action="/update/type"  method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
                         <div class="col-12 mb-5">
+                            <input type="hidden" id="t-id" name="id" value="{{ $type->id }}">
                             <label for="t-name"></label>
                             <input type="text" name="name" class="form-control" id="t-name" value="{{ $type->name }}">
                         </div>

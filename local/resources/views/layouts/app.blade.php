@@ -30,10 +30,11 @@
 
 <header>
     <!-- Хедер -->
-    <div class="img-back"></div>
     <div class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-0 nav bg-header">
-            <a class="navbar-brand py-0 mx-auto col-2 active" href="/"><img src="/fiesta_img/fiesta_logofff.png" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
+            @foreach($apps as $app)
+            <a class="navbar-brand py-0 mx-auto col-2 active" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
+            @endforeach
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,7 +69,7 @@
 
                 <ul class="navbar-nav mx-auto nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><ins>+996 700 923-231</ins><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#"><ins>{{ $app->tel }}</ins><span class="sr-only">(current)</span></a>
                     </li>
 
                 </ul>
@@ -80,18 +81,22 @@
 </header>
 
         <content>
-            <div class="container my-3">
-                <div class="row justify-content-center">
-                    <div class="col-7">
-                        <img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">
-                    </div>
-                </div>
-                <div class="buttons">
-                    <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="http://odnoklassniki.ru" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
-                    <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-                    <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-                </div>
+            {{--<div class="container my-3">--}}
+                {{--<div class="row justify-content-center">--}}
+                    {{--<div class="col-7">--}}
+                        {{--<img src="{{ asset('fiesta_img/fiesta_logo.png') }}" alt="" class="w-100">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            <div style="height:72px;"></div>
+            <div class="banner">
+                <img src="/uploads/banners/{{ $app->img_path }}" alt="">
+            </div>
+            <div class="buttons">
+                <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
+                <a href="{{ $app->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="{{ $app->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>
             @yield('content')
         </content>
@@ -101,14 +106,14 @@
                 <div class="row py-5 justify-content-center">
 
                     <div class="col-3 font-italic font-weight-light text-center foot-contact">
-                        <img class="mb-4 w-100" src="/fiesta_img/fiesta_logofff.png" alt="">
+                        <img class="mb-4 w-100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
                         <p>
                             <span class="fa fa-phone"> ТЕЛЕФОН:</span><br>
-                            <a href="tel:996700923321" target="_blank">+996 (700) 923-321</a>
+                            <a href="tel:{{ $app->tel }}" target="_blank">{{ $app->tel }}</a>
                         </p>
                         <p>
                             <span class="fa fa-whatsapp"> WHATSAPP:</span><br>
-                            <a href="tel:996700923321" target="_blank">+996 (700) 923-321</a>
+                            <a href="tel:{{ $app->tel }}" target="_blank">{{ $app->whatsapp }}</a>
                         </p>
 
                     </div>

@@ -68,7 +68,7 @@ class VipController extends Controller
     {
         $vip = Vip::find($vipId);
 
-        return view('edit.vip', ['vip' => $vip]);
+        return response()->json(['vip' => $vip]);
     }
 
     /**
@@ -78,10 +78,10 @@ class VipController extends Controller
      * @param  \App\Vip  $vip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $vipId)
+    public function update(Request $request)
     {
         if ($request) {
-            $vip = Vip::find($vipId);
+            $vip = Vip::find($request->id);
             if ($request->name) {
                 $vip->name = $request->name;
             }

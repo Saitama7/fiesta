@@ -66,7 +66,7 @@ class SizeController extends Controller
     {
         $size = Size::find($sizeId);
 
-        return view('edit.size', ['size' => $size]);
+        return response()->json(['size' => $size]);
     }
 
     /**
@@ -76,10 +76,10 @@ class SizeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $sizeId)
+    public function update(Request $request)
     {
         if ($request) {
-            $size = Size::find($sizeId);
+            $size = Size::find($request->id);
             if ($request->name) {
                 $size->name = $request->name;
             }

@@ -105,24 +105,111 @@ $(document).ready(function() {
     });
 
 
-
-    $('#modalProduct').on('show.bs.modal', function (event) {
-        alert('jhgjh');
-    });
-
     $('#modalupproduct').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
-        alert(button.data('id'));
-        console.log(button.data(''));
         var modal = $(this);
         $.ajax({
-           url: '/uploads/products/' + button.data('id'),
+            url: '/edit/product/' + button.data('id'),
             type: 'GET',
             success: function (data) {
-                
+                modal.find('#p-id').val(data.product.id)
+                modal.find('#p-name').val(data.product.name)
+                modal.find('#p-cost').val(data.product.cost)
+                modal.find('#p-desc').val(data.product.desc)
+                modal.find('#p-type').val(data.product.type_id)
+                modal.find('#p-size').val(data.product.size_id)
+                // modal.find('#p-vid').val(data.product.vid_id);
+                modal.find('#p-img').val(data.product.image_path)
+                 modal.find('#p-status').val(data.product.status);
+                 modal.find('#p-slide').val(data.product.slide_status);
             }
         });
-    })
+    });
+
+    $('#modalupdeliv').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/delivery/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#d-id').val(data.delivery.id)
+                 modal.find('#d-name').val(data.delivery.name)
+                 modal.find('#d-cost').val(data.delivery.cost)
+            }
+        });
+    });
+
+    $('#modalupsize').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/size/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#s-id').val(data.size.id)
+                modal.find('#s-name').val(data.size.name)
+            }
+        });
+    });
+
+    $('#modaluptype').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/type/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#t-id').val(data.type.id);
+                modal.find('#t-name').val(data.type.name);
+            }
+        });
+    });
+
+    $('#modalupvip').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/vip/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#v-id').val(data.vip.id);
+                modal.find('#v-name').val(data.vip.name);
+                modal.find('#v-phone').val(data.vip.phone_number);
+                modal.find('#v-address').val(data.vip.address);
+                modal.find('#v-discount').val(data.vip.discount);
+            }
+        });
+    });
+
+    $('#modalupvid').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/vid/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#vid-id').val(data.vid.id);
+                modal.find('#vid-name').val(data.vid.name);
+            }
+        });
+    });
+
+    $('#modalupintervals').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/edit/time/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                modal.find('#tid').val(data.time.id);
+                console.log(data.time.id);
+                modal.find('#interval').val(data.time.interval);
+            }
+        });
+    });
+
+
 
 });
 

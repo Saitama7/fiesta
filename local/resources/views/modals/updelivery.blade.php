@@ -8,11 +8,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/update/delivery" method="POST">
+            <form action="/update/delivery" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
                         <div class="col mb-5">
+                            <input type="hidden" id="d-id" name="id" value="{{ $delivery->id }}">
                             <label for="d-name">Курьер</label>
                             <input type="text" name="name" class="form-control" id="d-name" value="{{ $delivery->name }}">
                         </div>

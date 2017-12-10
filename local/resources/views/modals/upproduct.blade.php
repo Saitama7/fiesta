@@ -8,50 +8,67 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/update/product/" method="POST">
+            <form action="/update/product" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="row pt-3">
                         <div class="col-6 mb-3">
+                            <input type="hidden" id="p-id" name="id" value="{{ $product->id }}">
                             <label for="p-name" class="pull-left">Наименование</label>
 
                             <input type="text" name="name" value="{{ $product->name }}" class="form-control pull" id="p-name" value="" size="25">
                         </div>
                         <div class="col-6 mb-3">
                             <label for="p-cost">Цена</label>
-                            <input type="text" name="cost" class="form-control" id="p-cost" value="" size="10">
+                            <input type="text" name="cost" value="{{ $product->cost }}" class="form-control" id="p-cost" size="10">
                         </div>
                         <div class="col-12 mb-4">
                             <label for="p-desc">Описание</label>
-                            <textarea type="text" name="desc" class="form-control" id="p-desc" value="" rows="5"></textarea>
+                            <textarea type="text" name="desc" value="{{ $product->desc }}" class="form-control" id="p-desc" rows="5"></textarea>
                         </div>
                         <div class="col-6 mb-4">
                             <label for="p-type">Тип</label>
-                            <select class="form-control form-control" name="type_id" value="" id="p-type">
-
-                                    <option></option>
-
+                            <select class="form-control form-control"  name="type_id"  id="p-type">
+                                @foreach($types as $type)
+                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-6 mb-4">
-                            <label for="p-size">Размер</label>
-                            <select class="form-control form-control" name="size_id" value="" id="p-size">
-
+                            <label for="p-size">Категория</label>
+                            <select class="form-control form-control" name="size_id"  id="p-size">
+                                @foreach($sizes as $size)
+                                    <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-12 mb-4">
                             <label for="p-img">Изображение</label>
-                            <input type="file" name="image_path" class="form-control-file" value="" id="p-img">
+                            <input type="file" name="image_path" class="form-control-file" >
                         </div>
                         <div class="col-12">
-                            <label for="p-status">
-                                <input type="checkbox" name="status" class="form-check-input form-control" value="" id="p-status">
-                                Отображать
-                            </label>
+
+                                @if($product->status == 1)
+                                <label for="p-status" class="p-status">
+                                    <input type="checkbox" name="status" class="form-check-input form-control" checked  id="p-status">
+                                    Отображать
+                                </label>
+                                @else
+                                <label for="p-status" class="p-status">
+                                    <input type="checkbox" name="status" class="form-check-input form-control" id="p-status">
+                                    Отображать
+                                </label>
+                                @endif
+
                         </div>
                         <div class="col-12">
                             <label for="p-slide">
-                                <input type="checkbox" name="slide_status" class="form-check-input form-control" value="" id="p-slide">
+                                {{--@if($product->slide_status == 1)--}}
+                                    {{--<input type="checkbox" class="form-check-input form-control" name="slide_status" checked>--}}
+                                {{--@else--}}
+                                    {{--<input type="checkbox" class="form-check-input form-control" name="slide_status">--}}
+                                {{--@endif--}}
+                                <input type="checkbox" class="form-check-input form-control" value="{{ $product->slide_status }}" name="slide_status">
                                 Показать на слайде
                             </label>
                         </div>

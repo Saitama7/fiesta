@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\App;
 use App\Cart;
 use App\Product;
 use App\Vip;
 use App\Vid;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Session;
@@ -53,7 +55,6 @@ class ProductController extends Controller
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)->resize(400, 400)->save('uploads/products/' . $filename );
             $product->image_path = $filename;
-
         }
         if ($request->status == 'on') {
             $product->status = 1;
@@ -78,6 +79,7 @@ class ProductController extends Controller
         $products = Product::all()->where('type_id', '=', 3);
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('all.flowers', [
             'tproducts' => $products,
@@ -85,6 +87,7 @@ class ProductController extends Controller
             'totalQty' => $cart->totalQty,
             'totalPrice' => $cart->totalPrice,
             'vids' => Vid::all(),
+            'apps' => $apps->where('id', '=', 1)
         ]);
     }
 
@@ -92,12 +95,14 @@ class ProductController extends Controller
         $products = Product::all()->where('type_id', '=', 4);
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('all.boxes', [
             'tproducts' => $products,
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)
         ]);
     }
 
@@ -124,7 +129,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        return view('edit.product', ['product' => $product]);
+        return response()->json(['product' => $product]);
     }
 
     /**
@@ -134,10 +139,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         if ($request) {
-            $product = Product::find($id);
+            $product = Product::find($request->id);
             if ($request->name) {
                 $product->name = $request->name;
             }
@@ -150,14 +155,32 @@ class ProductController extends Controller
             if ($request->type_id) {
                 $product->type_id = $request->type_id;
             }
+            if ($request->vid_id) {
+                $product->vid_id = $request->vid_id;
+            }
             if ($request->status) {
-                $product->status = $request->status;
+                if ($request->status == 'on') {
+                    $product->status = 1;
+                }else {
+                    $product->status = 0;
+                }
+
             }
             if ($request->slide_status) {
-                $product->slide_status = $request->slide_status;
+                if ($request->slide_status == 'on') {
+                    $product->slide_status = 1;
+                }else {
+                    $product->slide_status = 0;
+                }
             }
             if ($request->image_path) {
-                $product->image_path = $request->image_path;
+                if ($request->hasFile('image_path')) {
+                    $avatar = $request->file('image_path');
+                    $filename = time() . '.' . $avatar->getClientOriginalExtension();
+                    Image::make($avatar)->resize(400, 400)->save('uploads/products/' . $filename );
+                    //$avatar->move(public_path().'uploads/products/', $filename);
+                    $product->image_path = $filename;
+                }
             }
             if ($request->cost) {
                 $product->cost = $request->cost;

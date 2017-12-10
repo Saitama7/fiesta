@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\OrderTime;
 use App\Product;
+use App\App;
 use Illuminate\Http\Request;
 use Session;
 
@@ -13,9 +14,11 @@ class IndexController extends Controller
     public function index()
     {
         $products = Product::all();
+        $apps = App::all();
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+
 
         //dd($products->where('type_id', '=', 4));
         return view('welcome', [
@@ -23,13 +26,24 @@ class IndexController extends Controller
             'boxes' => $products->where('type_id', '=', 4),
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)
+            ]);
+    }
+    public function logo()
+    {
+        $apps = App::all();
+
+        return view('app', [
+            'apps' => $apps->where('id', '=', 1)
+        ]);
     }
 
     public function getCart() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
         
         $cartNew = [];
 
@@ -40,52 +54,61 @@ class IndexController extends Controller
         return view('korzina', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
     public function about() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('about-us', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
     public function vigvams() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('vigvams', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
     public function contacts() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('contacts', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
     public function order() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('order', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
             'totalPrice' => $cart->totalPrice,
             'order_times' => OrderTime::all(),
+            'apps' => $apps->where('id', '=', 1)
             ]);
     }
 
@@ -93,32 +116,38 @@ class IndexController extends Controller
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('deliver', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
     public function corpclient() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('corporative-clients', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
     public function admin() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+        $apps = App::all();
 
         return view('admin', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
-            'totalPrice' => $cart->totalPrice]);
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)]);
     }
 
 

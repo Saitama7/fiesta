@@ -68,7 +68,7 @@ class DeliveryController extends Controller
     {
         $delivery = Delivery::find($deliveryId);
 
-        return view('edit.delivery', ['delivery' => $delivery]);
+        return response()->json(['delivery' => $delivery]);
     }
 
     /**
@@ -78,10 +78,10 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $deliveryId)
+    public function update(Request $request)
     {
         if ($request) {
-            $delivery = Delivery::find($deliveryId);
+            $delivery = Delivery::find($request->id);
             if ($request->name) {
                 $delivery->name = $request->name;
             }

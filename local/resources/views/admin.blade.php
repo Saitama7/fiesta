@@ -10,10 +10,10 @@
                     <a class="nav-link" id="v-pills-vid-tab" data-toggle="pill" href="#v-pills-vid" role="tab" aria-controls="v-pills-profile" aria-selected="false">Вид Букета</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
                     <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Курьеры</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-deliv" role="tab" aria-controls="v-pills-deliv" aria-selected="false">Курьеры</a>
                     <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
-                    <a class="nav-link" id="v-pills-background-tab" data-toggle="pill" href="#v-pills-background" role="tab" aria-controls="v-pills-mainpage" aria-selected="false">Главный фон</a>
                     <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Настройки</a>
                 </div>
             </div>
             <div class="col-10">
@@ -82,7 +82,7 @@
                                                 <td class="align-middle">Нет</td>
                                             @endif
                                             <td class="align-middle">
-                                                <button id="{{ $i }}" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
+                                                <button data-id="{{ $product->id }}" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
                                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                                 </button>
                                             </td>
@@ -121,7 +121,7 @@
                                         <th scope="row" class="align-middle">{{ $type->id }}</th>
                                         <td class="align-middle col">{{ $type->name }}</td>
                                         <td class="align-middle col">
-                                            <button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}" data-target="#modaluptype">
                                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                             </button>
                                         </td>
@@ -158,7 +158,7 @@
                                         <th scope="row" class="align-middle">{{ $vid->id }}</th>
                                         <td class="align-middle col">{{ $vid->name }}</td>
                                         <td class="align-middle col">
-                                            <button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $vid->id }}">
+                                            <button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $vid->id }}" data-target="#modalupvid">
                                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                             </button>
                                         </td>
@@ -233,7 +233,7 @@
                                         <th scope="row" class="align-middle">{{ $time->id }}</th>
                                         <td class="align-middle col">{{ $time->interval }}</td>
                                         <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupsize" data-id="{{ $time->id }}">
+                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupintervals" data-id="{{ $time->id }}">
                                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                             </button>
                                         </td>
@@ -250,7 +250,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="tab-pane fade" id="v-pills-deliv" role="tabpanel" aria-labelledby="v-pills-deliv-tab">
                         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modaldeliv">
                             Новый курьер
                         </button>
@@ -377,6 +377,69 @@
                         </div>
                     </div>
 
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <div class="pt-5">
+                            <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalapp">
+                                Настроить
+                            </button>
+
+                            <table class="table table-bordered table-hover table-light">
+                                <thead>
+
+                                </thead>
+                                    <tbody>
+                                    @foreach($apps as $app)
+                                        <tr>
+                                            <th scope="row" class="align-middle ">Логотип</th>
+                                            <td class="col-5">
+                                                <img class="img-thumbnail bg-primary" width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
+                                                <img class="img-thumbnail " width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle  ">Баннер</th>
+                                            <td class="col-5"><img class="img-thumbnail" width="250" height="250" src="/uploads/banners/{{ $app->img_path }}" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">facebook</th>
+                                            <td>{{$app->facebook}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Instagram</th>
+                                            <td>{{ $app->instagram }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Twitter</th>
+                                            <td>{{ $app->twitter }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Odnoklassniki</th>
+                                            <td>{{ $app->odnoklassniki }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Телефон</th>
+                                            <td>{{ $app->tel }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Whatsapp</th>
+                                            <td>{{ $app->whatsapp }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Telegram</th>
+                                            <td>{{ $app->telegram }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="align-middle">Viber</th>
+                                            <td>{{ $app->viber }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -389,15 +452,17 @@
         @include('modals.type')
         @include('modals.uptype')
         @include('modals.vid ')
+        @include('modals.upvid ')
         @include('modals.uptype')
         @include('modals.size')
         @include('modals.upsize')
         @include('modals.time')
-        {{--@include('modals.uptime')--}}
+        @include('modals.uptime')
         @include('modals.delivery')
         @include('modals.updelivery')
         @include('modals.vip')
         @include('modals.upvip')
+        @include('modals.app')
 
 
 

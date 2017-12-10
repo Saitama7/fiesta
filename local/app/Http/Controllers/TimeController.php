@@ -15,7 +15,7 @@ class TimeController extends Controller
     public function index()
     {
         $order_times = OrderTime::all();
-        return view('all.time', ['time' => $order_times]);
+        return response()->json(['time' => $order_times]);
     }
 
     /**
@@ -66,7 +66,7 @@ class TimeController extends Controller
     {
         $time = OrderTime::find($timeId);
 
-        return view('edit.time', ['time' => $time]);
+        return response()->json(['time' => $time]);
     }
 
     /**
@@ -76,10 +76,10 @@ class TimeController extends Controller
      * @param  \App\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $timeId)
+    public function update(Request $request)
     {
         if ($request) {
-            $time = OrderTime::find($timeId);
+            $time = OrderTime::find($request->id);
             if ($request->interval) {
                 $time->interval = $request->interval;
             }
