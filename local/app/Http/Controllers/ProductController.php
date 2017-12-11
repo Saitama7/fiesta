@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\App;
 use App\Cart;
 use App\Product;
+use App\Size;
 use App\Vip;
 use App\Vid;
 use Carbon\Carbon;
@@ -80,8 +81,10 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $apps = App::all();
+        $sizes = Size::all();
 
         return view('all.flowers', [
+            'sizes' => $sizes,
             'tproducts' => $products,
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
