@@ -45,7 +45,7 @@ class AppController extends Controller
         if ($request->hasFile('logo_path')) {
             $logo = $request->file('logo_path');
             $filename = time() . '.' . $logo->getClientOriginalExtension();
-            Image::make($logo)->resize(400, 400)->save('uploads/logo/' . $filename );
+            Image::make($logo)->resize(1000, 308)->save('uploads/logo/' . $filename );
             $app->logo_path = $filename;
         }
 
@@ -54,7 +54,7 @@ class AppController extends Controller
         if ($request->hasFile('img_path')) {
             $banner = $request->file('img_path');
             $filename = time() . '.' . $banner->getClientOriginalExtension();
-            Image::make($banner)->resize(400, 400)->save('uploads/banners/' . $filename );
+            Image::make($banner)->resize(1311, 400)->save('uploads/banners/' . $filename );
             $app->img_path = $filename;
         }
         $app->facebook = $request->facebook;
