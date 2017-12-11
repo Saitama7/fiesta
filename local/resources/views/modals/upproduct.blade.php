@@ -47,28 +47,14 @@
                             <input type="file" name="image_path" class="form-control-file" >
                         </div>
                         <div class="col-12">
-
-                                @if($product->status == 1)
                                 <label for="p-status" class="p-status">
-                                    <input type="checkbox" name="status" class="form-check-input form-control" checked  id="p-status">
+                                    <input type="checkbox" name="status" class="form-check-input form-control"  id="p-status">
                                     Отображать
                                 </label>
-                                @else
-                                <label for="p-status" class="p-status">
-                                    <input type="checkbox" name="status" class="form-check-input form-control" id="p-status">
-                                    Отображать
-                                </label>
-                                @endif
-
                         </div>
                         <div class="col-12">
                             <label for="p-slide">
-                                {{--@if($product->slide_status == 1)--}}
-                                    {{--<input type="checkbox" class="form-check-input form-control" name="slide_status" checked>--}}
-                                {{--@else--}}
-                                    {{--<input type="checkbox" class="form-check-input form-control" name="slide_status">--}}
-                                {{--@endif--}}
-                                <input type="checkbox" class="form-check-input form-control" value="{{ $product->slide_status }}" name="slide_status">
+                                <input type="checkbox" class="form-check-input form-control" id="p-slide" name="slide_status">
                                 Показать на слайде
                             </label>
                         </div>

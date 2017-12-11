@@ -38,18 +38,27 @@ class IndexController extends Controller
             'apps' => $apps->where('id', '=', 1)
         ]);
     }
+    public function apiGetCart() {
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return response()->json([
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice,
+            ]);
+    }
+
+    public function session() {
+        Session::remove('cart');
+    }
 
     public function getCart() {
 
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $apps = App::all();
-        
-        $cartNew = [];
 
-        foreach ($cart->items as $item) {
-            
-        }
 
         return view('korzina', [
             'products' => $cart->items,

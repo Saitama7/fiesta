@@ -149,7 +149,7 @@
         <script src="js/mask.js"></script>
         <script type="text/javascript">
             jQuery(function($){
-                $("#phone").mask("+996 (999) 999-999");
+                $("#phone").mask("+999 (999) 999-999");
             });
         </script>
 

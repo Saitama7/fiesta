@@ -11,11 +11,24 @@ $(document).ready(function() {
     var products = $('.productsInCart');
 
 
+    $.ajax({
+       url: '/api/cart',
+        type: 'GET',
+        success: function (data) {
+            if (data.totalQty > 0) {
+                solt.text(data.totalQty);
+            }
+        },
+        error: function () {
+            console.log('error');
+        }
+    });
+
 
     $('.zakazat').click(function(e) {
         e.preventDefault(e);
         $.ajax({
-            url: '/add-to-cart/' + this.id,
+            url: '/api/add-to-cart/' + this.id,
             type: "GET",
             success: function(data) {
                 solt.removeClass('d-none');
@@ -120,8 +133,20 @@ $(document).ready(function() {
                 modal.find('#p-size').val(data.product.size_id)
                 // modal.find('#p-vid').val(data.product.vid_id);
                 modal.find('#p-img').val(data.product.image_path)
-                 modal.find('#p-status').val(data.product.status);
-                 modal.find('#p-slide').val(data.product.slide_status);
+                console.log(data.product.status)
+                if (data.product.status == 1) {
+                    modal.find('#p-status').attr('checked', true);
+                }
+                else {
+                    modal.find('#p-status').attr('checked', false);
+                }
+                if (data.product.slide_status == 1) {
+                    modal.find('#p-slide').attr('checked', true);
+                }
+                else {
+                    modal.find('#p-slide').attr('checked', false);
+                }
+
             }
         });
     });

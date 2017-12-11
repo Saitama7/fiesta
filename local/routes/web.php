@@ -17,11 +17,15 @@ Auth::routes();
 //Cart
 Route::get('/getcart', 'IndexController@getCart');
 Route::get('/','IndexController@index');
+Route::get('/session','IndexController@session');
 
-Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('product.index'); // ADD
-Route::get('/remove-form-cart/{id}', 'ProductController@removeFromCart'); //Remove 1 item From Cart
-Route::get('/remove-form-cart/{id}', 'ProductController@deleteFromCart'); //Delete items from Cart
+Route::get('/api/add-to-cart/{id}', 'ProductController@apiGetAddToCart')->name('product.index'); // ADD
 
+Route::get('/remove-from-cart/{id}', 'ProductController@removeFromCart'); //Remove 1 item From Cart
+Route::get('/delete-from-cart/{id}', 'ProductController@deleteFromCart'); //Delete items from Cart
+
+Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart'); // ADD
+Route::get('/api/cart', 'IndexController@apiGetCart');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

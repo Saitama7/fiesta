@@ -48,7 +48,8 @@ class Cart
             }
         }
         if ($storedItem['qty'] == 1) {
-            array_splice($this->items, $id, 1);
+            unset($this->items[$id]);
+//            array_splice($this->items, $id, 1);
         } else {
             $storedItem['qty']--;
             $storedItem['price'] = $item->cost * $storedItem['qty'];
@@ -66,7 +67,8 @@ class Cart
             if (array_key_exists($id, $this->items))
             {
                 $storedItem = $this->items[$id];
-                array_splice($this->items, $id, 1);
+//                array_splice($this->items, $id, 1);
+                unset($this->items[$id]);
             }
         }
         $this->totalPrice -= $storedItem['price'];

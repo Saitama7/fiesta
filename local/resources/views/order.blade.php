@@ -7,9 +7,26 @@
             <h1 class="my-5">Оформление Заказа</h1>
             <h4 class='mb-5'>Информация о заказе</h4>
             <div class="order-info">
+                <div class="row text-center p-3">
+                    <div class="col-1">
+
+                    </div>
+                    <div class="col-4">
+                        Товар
+                    </div>
+                    <div class="col-2">
+                        Цена
+                    </div>
+                    <div class="col-2">
+                        Количество
+                    </div>
+                    <div class="col-2">
+                        Итог
+                    </div>
+                </div>
                 @foreach($products as $product)
                     <div class="row align-items-center border bg-dark text-light rounded text-center p-3">
-                        <div class="col-2">
+                        <div class="col-1">
                             <img class="w-100 rounded-circle" src="/uploads/products/{{ $product['item']['image_path'] }}" alt="" >
                         </div>
                         <div class="col-4">
@@ -18,16 +35,11 @@
                         <div class="col-2">
                             {{ $product['item']['cost'] }} сом
                         </div>
-                        <div class="col-1">
-                            <input type="text" value="{{ $product['qty'] }}"  class="form-control text-center" size="4" maxlength="4">
+                        <div class="col-2">
+                            <span > {{ $product['qty'] }} </span>
                         </div>
                         <div class="col-2">
                             {{ $product['price'] }} сом
-                        </div>
-                        <div class="col-1">
-                            <button type="button" class="btn btn-outline-danger">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </button>
                         </div>
                     </div>
                 @endforeach

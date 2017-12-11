@@ -207,7 +207,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function getAddToCart(Request $request, $id)
+    public function apiGetAddToCart(Request $request, $id)
     {
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -225,6 +225,24 @@ class ProductController extends Controller
             'totalPrice' => $cart->totalPrice
         ]);
     }
+    public function getAddToCart(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $product = $cart->add($product, $product->id);
+
+        $request->session()->put('cart', $cart);
+        //add($request->session()->get('cart'));
+//        return redirect()->route('product.index');
+
+
+        return redirect()->back()->with([
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
+        ]);
+    }
 
 
     public function removeFromCart(Request $request, $id)
@@ -234,7 +252,12 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->remove($product, $product->id);
         $request->session()->put('cart', $cart);
-        return redirect()->back();
+
+        return redirect()->back()->with([
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
+        ]);
 
     }
 
@@ -245,7 +268,12 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->delete($product, $product->id);
         $request->session()->put('cart', $cart);
-        return redirect()->back();
+
+        return redirect()->back()->with([
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice
+        ]);
 
     }
 }
