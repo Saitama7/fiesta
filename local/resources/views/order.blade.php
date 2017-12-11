@@ -135,6 +135,16 @@
                         </ul>
                     </div>
                 </div>
+                <div class="row mb-3 mt-5">
+                    <div class="col">
+                        ДОСТАВКА ПО ГОРОДУ - 150 сом
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА- 300 сом
+                    </div>
+                </div>
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
