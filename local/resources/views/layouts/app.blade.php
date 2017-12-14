@@ -89,9 +89,6 @@
                 {{--</div>--}}
             {{--</div>--}}
             <div style="height:72px;"></div>
-            <div class="banner">
-                <img src="/uploads/banners/{{ $app->img_path }}" alt="">
-            </div>
             <div class="buttons">
                 <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
                 <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
@@ -114,6 +111,10 @@
                         <p>
                             <span class="fa fa-whatsapp"> WHATSAPP:</span><br>
                             <a href="tel:{{ $app->tel }}" target="_blank">{{ $app->whatsapp }}</a>
+                        </p>
+                        <p>
+                            <i class="fa fa-address-book" aria-hidden="true"> АДРЕС:</i><br>
+                            <span>Аалы Токомбаева 53/1 (Globus)</span>
                         </p>
 
                     </div>

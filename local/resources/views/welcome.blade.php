@@ -2,16 +2,11 @@
 @section('title', 'Главная')
 @section('content')
 
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--@foreach($products as $product)--}}
-                {{--<div class="col-3">--}}
-                    {{--<p>{{ $product->name }}</p>--}}
-                    {{--<a href="/add-to-cart/{{ $product->id }}">Заказать</a>--}}
-                {{--</div>--}}
-            {{--@endforeach--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    @foreach($apps as $app)
+        <div class="banner">
+            <img src="/uploads/banners/{{ $app->img_path }}" alt="">
+        </div>
+    @endforeach
 
     <section class="py-5">
         <div class="h3 text-center mb-3 text-family">Цветы</div>

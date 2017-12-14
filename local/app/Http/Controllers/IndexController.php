@@ -49,6 +49,15 @@ class IndexController extends Controller
             ]);
     }
 
+    public function itogo() {
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return response()->json([
+            'totalPrice' => $cart->totalPrice,
+        ]);
+    }
+
     public function session() {
         Session::remove('cart');
     }

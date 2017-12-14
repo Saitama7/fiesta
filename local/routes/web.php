@@ -26,6 +26,7 @@ Route::get('/delete-from-cart/{id}', 'ProductController@deleteFromCart'); //Dele
 
 Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart'); // ADD
 Route::get('/api/cart', 'IndexController@apiGetCart');
+Route::get('/itogo', 'IndexController@itogo');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

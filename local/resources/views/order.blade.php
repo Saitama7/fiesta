@@ -21,7 +21,7 @@
                         Количество
                     </div>
                     <div class="col-2">
-                        Итог
+                        Сумма
                     </div>
                 </div>
                 @foreach($products as $product)
@@ -43,6 +43,11 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="row">
+                    <div class="col d-flex justify-content-end mx-auto mt-3">
+                        <b style="font-size: 18px;">Итого: {{ $totalPrice }} сом</b>
+                    </div>
+                </div>
             </div>
             <h4 class="mb-3">Контактные данные</h4>
             <p class="shrift-ton">Укажите свои контактные данные</p>
@@ -135,17 +140,24 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row mb-3 mt-5">
+                <div class="row my-5">
                     <div class="col">
-                        ДОСТАВКА ПО ГОРОДУ - 150 сом
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА- 300 сом
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="deliver" id="city" value="1" checked>
+                            <span class="srift-ton">ДОСТАВКА ПО ГОРОДУ - 150 сом</span>
+                        </label><br>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio"  name="deliver"  id="notcity" value="2">
+                            <span class="srift-ton">ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА- 300 сом</span>
+                        </label>
                     </div>
                 </div>
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
+                <div class="row">
+                    <div class="col d-flex justify-content-end mx-auto mt-3">
+                        <b style="font-size: 18px;" class="itogo">Итого: {{ $totalPrice }} сом</b>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
                         <button type="submit" class="btn btn-outline-dark ali">Оформить заказ</button>

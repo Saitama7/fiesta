@@ -18,7 +18,7 @@
                     Количество
                 </div>
                 <div class="col-2">
-                    Итог
+                    Сумма
                 </div>
                 <div class="col-1">
                     Удалить
@@ -54,6 +54,11 @@
                 @endforeach
         @endif
         @if($products)
+            <div class="row">
+                <div class="col d-flex justify-content-end mx-auto mt-3">
+                    <b style="font-size: 18px;">Итого: {{ $totalPrice }} сом</b>
+                </div>
+            </div>
             <div class="row">
                 <div class="col d-flex justify-content-end mx-auto my-5">
                     <button type="button" class="btn btn-outline-dark ali" data-toggle="modal" data-target="#validatevip">Оформление заказа</button>
