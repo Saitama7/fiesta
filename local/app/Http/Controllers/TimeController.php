@@ -41,7 +41,7 @@ class TimeController extends Controller
         $time->interval = $request->interval;
         $time->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Успешно добавлено новое время: '.$request->name);
     }
 
     /**
@@ -89,7 +89,7 @@ class TimeController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**

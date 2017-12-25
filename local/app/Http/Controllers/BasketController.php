@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Basket;
+use App\Cart;
 use App\OrderTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -52,8 +53,23 @@ class BasketController extends Controller
         $basket->sign = $request->sign;
         $basket->totalPrice = $request->totalPrice;
         $basket->save();
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $products = $cart->items;
+        foreach ($products as $product){
+            $basket->products()->attach($product['item']['id'], ['count_product' => $product['qty']]);
+        }
         Session::remove('cart');
-        return redirect('/');
+        Session::remove('vip');
+        return redirect('/')->with('status', 'Благодарим за покупку!!! Мы с вами свяжемся в ближайшее время!');
+
+    }
+
+    public function more($id){
+        $basket = Basket::find($id);
+        return response()->json([
+            'products' => $basket->products,
+        ]);
 
     }
 

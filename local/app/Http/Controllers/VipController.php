@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Vip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class VipController extends Controller
 {
@@ -44,7 +45,7 @@ class VipController extends Controller
         $vip->discount = $request->discount;
         $vip->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Уважаемый(ая), '.$request->name.', успешно добавлена в список VIP - клиентов!');
     }
     /**
      * Display the specified resource.
@@ -55,6 +56,7 @@ class VipController extends Controller
     public function show($vipId)
     {
         $vip = Vip::find($vipId);
+        dd($vip);
         return view('all.vip', ['vip' => $vip]);
     }
 
@@ -99,7 +101,7 @@ class VipController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**
@@ -113,5 +115,26 @@ class VipController extends Controller
         $vip= Vip::find($vipId);
         $vip->delete();
         return redirect()->back();
+    }
+
+    public function validatevip(Request $request) {
+        $vip = Vip::all()->where('vip_id', '=', $request->id)->first();
+        $flag = false;
+        if (is_numeric($request->name)) {
+            if ($vip->phone_number == $request->name)
+                $flag = true;
+        }
+        else {
+            if (mb_strtoupper($vip->name) == mb_strtoupper($request->name))
+                $flag = true;
+        }
+
+        if ($flag) {
+            Session::put('vip', $vip);
+        }
+
+        return response()->json([
+           'flag' => $flag,
+        ]);
     }
 }

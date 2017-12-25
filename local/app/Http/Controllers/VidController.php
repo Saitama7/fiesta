@@ -41,7 +41,7 @@ class VidController extends Controller
         $vid->name = $request->name;
         $vid->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Успешно добавлен новый вид: '.$request->name);
     }
 
     /**
@@ -89,7 +89,7 @@ class VidController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**

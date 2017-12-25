@@ -43,7 +43,7 @@ class DeliveryController extends Controller
 
         $delivery->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Добавлен новый курьер: '.$request->name);
     }
 
     /**
@@ -94,7 +94,7 @@ class DeliveryController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**

@@ -9,18 +9,20 @@
                 </button>
             </div>
                 <div class="modal-body">
-                    <div class="row pt-3">
-                        <div class="col mb-5">
-                            <input type="text" name="name" class="form-control" placeholder="Ваше имя" size="25">
+                    <form action="/check/vip" method="POST" enctype="multipart/form-data">
+                        <div class="row pt-3">
+                            <div class="col-12 mb-5">
+                                <input type="text" id="v-id" name="id" class="form-control" placeholder="VIP код">
+                            </div>
+                            <div class="col mb-5">
+                                <input type="text" name="name" class="form-control" placeholder="Ваше имя или номер телефона" size="25">
+                            </div>
                         </div>
-                        <div class="col mb-5">
-                            <input type="text" name="phone_number" id="phone" class="form-control" placeholder="Номер телефона" size="25">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-danger" id="validatevipbutton">Проверить</button>
+                            <a href="/order" class="btn btn-outline-success">Нет VIP-карты</a>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Проверить</button>
-                        <a href="/order" class="btn btn-outline-success">Нет VIP-карты</a>
-                    </div>
+                    </form>
                 </div>
         </div>
     </div>

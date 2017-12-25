@@ -152,7 +152,7 @@ class AppController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Настройки успешно сохранены');
     }
 
     /**

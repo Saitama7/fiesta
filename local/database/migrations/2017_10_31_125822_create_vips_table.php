@@ -17,7 +17,7 @@ class CreateVipsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('phone_number');
-            $table->string('address')->nullable();
+            $table->string('vip_id');
             $table->integer('discount');
             $table->timestamps();
         });

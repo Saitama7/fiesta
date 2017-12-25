@@ -2,6 +2,21 @@
 @section('title', 'Главная')
 @section('content')
 
+    {{--@if (session('status'))--}}
+        <div  class="alert al-s height">
+
+            <div class="al-content">
+                <div class="float-right">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                </div>
+                <div class="p-2">
+                    Благодарим за покупку!!! Мы с вами свяжемся в ближайщее время!
+                    {{--{{ session('status') }}--}}
+                </div>
+
+            </div>
+        </div>
+    {{--@endif--}}
     @foreach($apps as $app)
         <div class="banner">
             <img src="/uploads/banners/{{ $app->img_path }}" alt="">

@@ -41,7 +41,7 @@ class SizeController extends Controller
         $size->name = $request->name;
         $size->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Успешно добавлена новая категория: '.$request->name);
     }
 
     /**
@@ -89,7 +89,7 @@ class SizeController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**

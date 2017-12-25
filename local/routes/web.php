@@ -13,6 +13,8 @@
 //Authentication
 Auth::routes();
 
+Route::get('/validatevip', 'VipController@validatevip');
+Route::get('/show/{id}', 'VipController@show');
 
 //Cart
 Route::get('/getcart', 'IndexController@getCart');
@@ -26,6 +28,7 @@ Route::get('/delete-from-cart/{id}', 'ProductController@deleteFromCart'); //Dele
 
 Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart'); // ADD
 Route::get('/api/cart', 'IndexController@apiGetCart');
+Route::get('/more/products/{id}', 'BasketController@more');
 Route::get('/itogo', 'IndexController@itogo');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -57,6 +60,7 @@ Route::post('/update/vip', 'VipController@update');
 Route::post('/store/vip', 'VipController@store');
 Route::get('/edit/vip/{id}', 'VipController@edit');
 Route::get('/delete/vip/{id}', 'VipController@destroy');
+Route::get('/check/vip', 'VipController@check');
 
 //Delivery
 Route::get('/create/delivery', 'DeliveryController@create');

@@ -141,11 +141,13 @@
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
 <script src="http://code.gijgo.com/1.6.1/js/gijgo.js" type="text/javascript"></script>
-<script>
+<script type="text/javascript">
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap4',
-        iconsLibrary: 'fontawesome'
+        iconsLibrary: 'fontawesome',
+//        minDate: new Date()
     });
+    console.log(new Date())
 </script>
         <script src="js/mask.js"></script>
         <script type="text/javascript">

@@ -17,6 +17,11 @@
                 </div>
             </div>
             <div class="col-10">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('status') }}
+                    </div>
+                 @endif
                 <!-- <div class="container">-->
 
 
@@ -362,9 +367,10 @@
                                         <td class="align-middle">{{ $basket->phone_number }}</td>
                                         <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
                                         <td class="align-middle">{{ $basket->totalPrice }}</td>
-                                        <td class="align-middle"><a href="#">Подробнее</a></td>
                                         <td class="align-middle">
-                                            
+                                            <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-id="{{ $basket->id }}" data-target="#modalmore">
+                                                Подробнее
+                                            </button>
                                         </td>
                                         <td class="align-middle">
                                             <input type="checkbox">
@@ -463,6 +469,7 @@
         @include('modals.vip')
         @include('modals.upvip')
         @include('modals.app')
+        @include('modals.more')
 
 
 

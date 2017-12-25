@@ -41,7 +41,7 @@ class TypeController extends Controller
         $type->name = $request->name;
         $type->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Успешно добавлен новый тип: '.$request->name);
     }
 
     /**
@@ -88,7 +88,7 @@ class TypeController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**

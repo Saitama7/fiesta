@@ -37,5 +37,11 @@
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="js/mask.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+            $("#phone").mask("+999 (999) 999-999");
+        });
+    </script>
 </body>
 </html>

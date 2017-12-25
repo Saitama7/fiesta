@@ -45,7 +45,7 @@
                 @endforeach
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
-                        <b style="font-size: 18px;">Итого: {{ $totalPrice }} сом</b>
+                        <b style="font-size: 18px;">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>
                     </div>
                 </div>
             </div>
@@ -56,11 +56,11 @@
                 <div class="row mb-4">
                     <div class="col">
                         <label for="name">Ваше имя <span style="color: red;">*</span></label>
-                        <input type="text" name="name" class="form-control" placeholder="Ваше Имя" id="name" required>
+                        <input type="text" name="name" value="@if(Session::has('vip')) {{ Session::get('vip')->name }} @endif" class="form-control" placeholder="Ваше Имя" id="name" required>
                     </div>
                     <div class="col">
                         <label for="phone">Ваш телефон <span style="color: red;">*</span></label>
-                        <input type="tel"   pattern="+996-[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phone_number" class="form-control" placeholder="+996-777-777-777" id="phone" required>
+                        <input type="tel" value="@if(Session::has('vip')) {{ Session::get('vip')->phone_number }} @endif"  pattern="+996-[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phone_number" class="form-control" placeholder="+996-777-777-777" id="phone" required>
                     </div>
                 </div>
 
@@ -70,7 +70,7 @@
                 <div class="row mb-4">
                     <div class="col">
                         <label for="datepicker">Дата</label>
-                        <input type="text" id="datepicker" name="order_date" width="276" required />
+                        <input type="text" id="datepicker"  name="order_date" width="276" required/>
                     </div>
                     <div class="col justify-content-center">
                         <label class="col p-0" for="inputState">Время <span style="color: red;">*</span></label>
@@ -142,20 +142,17 @@
                 </div>
                 <div class="row my-5">
                     <div class="col">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="deliver" id="city" value="1" checked>
-                            <span class="srift-ton">ДОСТАВКА ПО ГОРОДУ - 150 сом</span>
-                        </label><br>
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio"  name="deliver"  id="notcity" value="2">
-                            <span class="srift-ton">ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА- 300 сом</span>
-                        </label>
+                            <input class="form-check-input del" type="radio" name="deliver" id="ciity" value="1" >
+                            <label for="ciity">ДОСТАВКА ПО ГОРОДУ - 150 сом</label>
+                        <br>
+                            <input class="form-check-input del" type="radio"  name="deliver"  id="notcity" value="2">
+                            <label for="notcity">ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА - 300 сом</label>
                     </div>
                 </div>
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
-                        <b style="font-size: 18px;" class="itogo">Итого: {{ $totalPrice }} сом</b>
+                        <b style="font-size: 18px;" class="itogo">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>
                     </div>
                 </div>
                 <div class="row">
@@ -163,7 +160,6 @@
                         <button type="submit" class="btn btn-outline-dark ali">Оформить заказ</button>
                     </div>
                 </div>
-
             </form>
 
         </div>

@@ -25,6 +25,44 @@ $(document).ready(function() {
     });
 
 
+
+
+$('button#validatevipbutton').click(function (e) {
+    e.preventDefault(e);
+
+    $.ajax({
+        url: '/validatevip',
+        type: 'GET',
+
+        data: {
+            'id': $('#v-id').val(),
+            'name': $('input[name=name]').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            console.log(data.flag);
+        },
+        error: function () {
+            console.log('ERROR!');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $('.zakazat').click(function (e) {
         e.preventDefault(e);
         $.ajax({
@@ -234,6 +272,74 @@ $(document).ready(function() {
         });
     });
     
+    $('#modalmore').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        $.ajax({
+            url: '/more/products/' + button.data('id'),
+            type: 'GET',
+            success: function (data) {
+                $('.tbody').empty();
+                for(var product of data.products){
+                    $('.tbody').append(
+                        '<tr>'+
+                            '<td class="align-middle justify-content-center">' + product.id + '</td>'+
+                            '<td><img class="w-50 align-middle justify-content-center" src="/uploads/products/' + product.image_path + '" alt=""></td>'+
+                            '<td class="align-middle justify-content-center">' + product.name + '</td>'+
+                            '<td class="align-middle justify-content-center">' + product.cost +  'сом' + '</td>'+
+                            '<td class="align-middle justify-content-center">' + product.desc + '</td>'+
+                            '<td class="align-middle justify-content-center">' + product.pivot.count_product + '</td>'+
+                        '</tr>'
+                    )
+                }
+            }
+        });
+    });
+
+
+    $(".del").click(function () {
+        $.ajax({
+            url: '/itogo',
+            type: 'GET',
+            success: function (data) {
+                var ito = data.totalPrice;
+                if (document.getElementById("ciity").checked === true){
+                    if (data.totalPrice === ito){
+                        data.totalPrice += 150;
+                        $('.totalPrice').empty();
+                        $('.totalPrice').text(data.totalPrice);
+                        $('input[name=totalPrice]').val(data.totalPrice);
+                        console.log(data.totalPrice);
+                    }else {
+                        data.totalPrice -= 300;
+                        data.totalPrice += 150;
+                        $('.totalPrice').empty();
+                        $('.totalPrice').text(data.totalPrice);
+                        $('input[name=totalPrice]').val(data.totalPrice);
+                        console.log(data.totalPrice);
+                    }
+                }
+                if (document.getElementById("notcity").checked === true){
+                    if (data.totalPrice === ito){
+                        data.totalPrice += 300;
+                        $('.totalPrice').empty();
+                        $('.totalPrice').text(data.totalPrice);
+                        $('input[name=totalPrice]').val(data.totalPrice);
+                        console.log(data.totalPrice);
+                    }else {
+                        data.totalPrice -= 150;
+                        data.totalPrice += 300;
+                        $('.totalPrice').empty();
+                        $('.totalPrice').text(data.totalPrice);
+                        $('input[name=totalPrice]').val(data.totalPrice);
+                        console.log(data.totalPrice);
+                    }
+
+                }
+            }
+        });
+    });
+
 
 });
 

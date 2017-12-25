@@ -73,7 +73,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Успешно добавлен новый товар: '.$request->name);
     }
 
     public function flowers() {
@@ -194,7 +194,7 @@ class ProductController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Изменения успешно сохранены!');
     }
 
     /**
