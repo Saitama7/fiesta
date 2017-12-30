@@ -41,13 +41,25 @@ $('button#validatevipbutton').click(function (e) {
         dataType: 'json',
         success: function (data) {
             console.log(data.flag);
+            $('.vip-find').empty();
+            $('.vip-find').append(
+            '<div class="modal-body">'+
+                data.vip.name + ', Мы вас нашли!' +
+            '</div>'+
+            '<div class="modal-footer">'+
+                '<a href="/order" class="btn btn-outline-success">Оформить заказ</a>'+
+            '</div>'
+            )
         },
         error: function () {
             console.log('ERROR!');
+            $('.vip-find').empty();
+            $('.vip-find').append(
+                'Попробуйте еще раз('
+            )
         }
     });
 });
-
 
 
 

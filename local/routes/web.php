@@ -13,8 +13,8 @@
 //Authentication
 Auth::routes();
 
-Route::get('/validatevip', 'VipController@validatevip');
-Route::get('/show/{id}', 'VipController@show');
+
+
 
 //Cart
 Route::get('/getcart', 'IndexController@getCart');
@@ -60,7 +60,9 @@ Route::post('/update/vip', 'VipController@update');
 Route::post('/store/vip', 'VipController@store');
 Route::get('/edit/vip/{id}', 'VipController@edit');
 Route::get('/delete/vip/{id}', 'VipController@destroy');
-Route::get('/check/vip', 'VipController@check');
+Route::get('/validatevip', 'VipController@validatevip');
+Route::get('/show/{id}', 'VipController@show');
+
 
 //Delivery
 Route::get('/create/delivery', 'DeliveryController@create');

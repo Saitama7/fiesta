@@ -19,7 +19,7 @@
                             <input type="text" id="phone" name="phone_number" class="form-control" placeholder="Номер телефона" size="25">
                         </div>
                         <div class="col-6 mt-4 mb-4">
-                            <input type="text" name="address" class="form-control" placeholder="Адрес" size="25">
+                            <input type="text" name="vip_id" class="form-control" placeholder="Код" size="25">
                         </div>
                         <div class="col-6 mt-4 mb-4">
                             <input type="text" name="discount" class="form-control" placeholder="Скидка(%)" size="25">

@@ -135,6 +135,8 @@ class VipController extends Controller
 
         return response()->json([
            'flag' => $flag,
+            'vip' => $vip
         ]);
     }
+
 }

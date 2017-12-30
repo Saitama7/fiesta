@@ -145,7 +145,7 @@
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap4',
         iconsLibrary: 'fontawesome',
-//        minDate: new Date()
+        minDate: new Date()
     });
     console.log(new Date())
 </script>
