@@ -23,6 +23,11 @@
                     <div class="col-2">
                         Сумма
                     </div>
+                    @if(Session::has('vip'))
+                        <div class="col-1">
+                            Скидка
+                        </div>
+                    @endif
                 </div>
                 @foreach($products as $product)
                     <div class="row align-items-center border bg-dark text-light rounded text-center p-3">
@@ -41,11 +46,16 @@
                         <div class="col-2">
                             {{ $product['price'] }} сом
                         </div>
+                        @if(Session::has('vip'))
+                            <div class="col-1">
+                                {{ Session::get('vip')->discount }} %
+                            </div>
+                        @endif
                     </div>
                 @endforeach
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
-                        <b style="font-size: 18px;">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>
+                        <b style="font-size: 18px;">Итого: <span>{{ $totalPrice }}</span> сом</b>
                     </div>
                 </div>
             </div>
@@ -81,21 +91,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{--<div class="form-check form-check-inline">--}}
-                            {{--<label class="form-check-label">--}}
-                                {{--<input class="form-check-input" name="order_time" type="checkbox" id="inlineCheckbox2" value="option1"> с 13 до 16 ч.--}}
-                            {{--</label>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-check form-check-inline">--}}
-                            {{--<label class="form-check-label">--}}
-                                {{--<input class="form-check-input" name="order_time" type="checkbox" id="inlineCheckbox3" value="option1"> с 16 до 19 ч.--}}
-                            {{--</label>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-check form-check-inline">--}}
-                            {{--<label class="form-check-label">--}}
-                                {{--<input class="form-check-input" name="order_time" type="checkbox" id="inlineCheckbox4" value="option1"> с 19 до 21 ч.--}}
-                            {{--</label>--}}
-                        {{--</div>--}}
                     </div>
                 </div>
                 <h4 class="mb-3">Адрес доставки</h4>
@@ -133,8 +128,8 @@
                                     <span class="srift-ton">Оплата наличными при доставке</span>
                                 </label><br>
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                                    <span class="srift-ton">Оплата онлайн по карте</span>
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" disabled>
+                                    <span class="srift-ton">Оплата онлайн по карте - (Недоступно! В стадии разработки )</span>
                                 </label>
                             </li>
                         </ul>
@@ -152,7 +147,7 @@
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
-                        <b style="font-size: 18px;" class="itogo">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>
+                        <b style="font-size: 18px;">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>
                     </div>
                 </div>
                 <div class="row">

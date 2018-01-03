@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vip;
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -56,7 +57,6 @@ class VipController extends Controller
     public function show($vipId)
     {
         $vip = Vip::find($vipId);
-        dd($vip);
         return view('all.vip', ['vip' => $vip]);
     }
 
@@ -120,6 +120,8 @@ class VipController extends Controller
     public function validatevip(Request $request) {
         $vip = Vip::all()->where('vip_id', '=', $request->id)->first();
         $flag = false;
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
         if (is_numeric($request->name)) {
             if ($vip->phone_number == $request->name)
                 $flag = true;
@@ -133,9 +135,13 @@ class VipController extends Controller
             Session::put('vip', $vip);
         }
 
+        if (Session::get('vip')){
+             Session::get('cart')->totalPrice = Session::get('cart')->totalPrice - (Session::get('cart')->totalPrice / 100) * $vip->discount;
+        }
         return response()->json([
            'flag' => $flag,
-            'vip' => $vip
+            'vip' => $vip,
+            'totalPrice' => $cart->totalPrice
         ]);
     }
 

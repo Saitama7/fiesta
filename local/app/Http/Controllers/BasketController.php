@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Basket;
 use App\Cart;
+use App\Vip;
 use App\OrderTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
