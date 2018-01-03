@@ -3,20 +3,19 @@ body {
      min-height:100%;     
 }
 .img-back {
-
      background-size: cover;
      background-position: center center;
      height: 100px;
-
 }
-
+.banner img{
+     width: 100% !important;
+}
 
 
 .nav-link:hover {
      color: #bbb;
 
 }
-
 
 .logo-size {
      width: 75px;

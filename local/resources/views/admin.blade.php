@@ -48,8 +48,9 @@
                                         <th scope="col">Наименование</th>
                                         <th scope="col">Цена</th>
                                         <th scope="col">Тип</th>
-                                        <th scope="col">Описание</th>
+                                        {{--<th scope="col">Описание</th>--}}
                                         <th scope="col">Категория</th>
+                                        <th scope="col">Популярный</th>
                                         <th scope="col">Видим</th>
                                         <th scope="col">Слайд</th>
                                     </tr>
@@ -68,10 +69,17 @@
                                                     <td class="align-middle" value="{{ $product->type_id }}">{{ $type->name }}</td>
                                                 @endif
                                             @endforeach
-                                            <td class="align-middle">{{ $product->desc }}</td>
+                                            {{--<td class="align-middle">{{ $product->desc }}</td>--}}
+                                            {{--Категория--}}
                                             @foreach($sizes as $size)
                                                 @if($product->size_id == $size->id)
                                                     <td class="align-middle">{{ $size->name }}</td>
+                                                @endif
+                                            @endforeach
+                                            {{--Популярный--}}
+                                            @foreach($vids as $vid)
+                                                @if($product->vid_id == $vid->id)
+                                                    <td class="align-middle">{{ $vid->name }}</td>
                                                 @endif
                                             @endforeach
 

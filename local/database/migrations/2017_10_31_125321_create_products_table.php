@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('cost');
             $table->integer('type_id');
             $table->integer('vid_id');
-            $table->string('desc');
+            $table->string('desc')->nullable();
             $table->integer('size_id');
             $table->tinyInteger('status')->nullable();
             $table->tinyInteger('slide_status')->nullable();

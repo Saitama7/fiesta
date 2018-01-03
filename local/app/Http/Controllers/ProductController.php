@@ -46,10 +46,10 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product();
-
         $product->name = $request->name;
         $product->desc = $request->desc;
         $product->size_id = $request->size_id;
+        $product->vid_id = $request->vid_id;
         $product->type_id = $request->type_id;
         if ($request->hasFile('image_path')) {
             $avatar = $request->file('image_path');

@@ -36,7 +36,7 @@
                                 <img class="card-img rounded-circle " src="/uploads/products/{{ $flower->image_path }}" alt="Card image">
                                 <div class="card-img-overlay rounded-circle ">
                                     <h4 class="card-title mt-5">{{ $flower->cost }} сом</h4>
-                                    <p class="card-text">{{ $flower->desc }}</p>
+                                    <p class="card-text">{{ $flower->name }}</p>
 
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                 <img class="card-img rounded-circle " src="/uploads/products/{{ $box->image_path }}" alt="Card image">
                                 <div class="card-img-overlay rounded-circle ">
                                     <h4 class="card-title mt-5">{{ $box->cost }} сом</h4>
-                                    <p class="card-text">{{ $box->desc }}</p>
+                                    <p class="card-text">{{ $box->name }}</p>
 
                                 </div>
                                 <div class="col d-flex justify-content-center">

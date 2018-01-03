@@ -22,9 +22,9 @@
                         </div>
                         <div class="col-12 mb-4">
                             <label for="p-desc">Описание</label>
-                            <textarea type="text" name="desc" class="form-control" id="p-desc" rows="5" required></textarea>
+                            <textarea type="text" name="desc" class="form-control" id="p-desc" rows="5"></textarea>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-4 mb-4">
                             <label for="p-type">Тип</label>
                             <select class="form-control form-control" name="type_id" id="p-type">
                                 @foreach($types as $type)
@@ -32,11 +32,19 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-4 mb-4">
                             <label for="p-size">Категория</label>
                             <select class="form-control form-control" name="size_id" id="p-size">
                                 @foreach($sizes as $size)
                                     <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <label for="p-vid">Популярный</label>
+                            <select class="form-control form-control" name="vid_id" id="p-vid">
+                                @foreach($vids as $vid)
+                                    <option value="{{ $vid->id }}">{{ $vid->name }}</option>
                                 @endforeach
                             </select>
                         </div>

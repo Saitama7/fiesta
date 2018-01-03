@@ -181,7 +181,7 @@ $('button#validatevipbutton').click(function (e) {
                 modal.find('#p-desc').val(data.product.desc);
                 modal.find('#p-type').val(data.product.type_id);
                 modal.find('#p-size').val(data.product.size_id);
-                // modal.find('#p-vid').val(data.product.vid_id);
+                 modal.find('#p-vid').val(data.product.vid_id);
                 modal.find('#p-img').val(data.product.image_path);
                 console.log(data.product.status);
                 if (data.product.status == 1) {
