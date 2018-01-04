@@ -121,6 +121,10 @@
                     </div>
 
                 </div>
+
+                <div class="row justify-content-center">
+                    Made with&nbsp;&hearts;&nbsp;<a href="#">Mount</a>
+                </div>
             </div>
         </footer>
 
