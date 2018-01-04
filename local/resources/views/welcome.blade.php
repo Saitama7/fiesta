@@ -3,18 +3,15 @@
 @section('content')
 
     {{--@if (session('status'))--}}
-        <div  class="alert al-s height">
+        <div  class="alert al-s">
 
-            <div class="al-content">
-                <div class="float-right">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                </div>
-                <div class="p-2">
-                    Благодарим за покупку!!! Мы с вами свяжемся в ближайщее время!
-                    {{--{{ session('status') }}--}}
-                </div>
 
-            </div>
+                <div class="p-5">
+                    <div class="" style="position:absolute; right:80px;">
+                        <a href="#" class="close text-white" style="opacity: 1;" data-dismiss="alert" aria-label="close">&times;</a>
+                    </div>
+                    <img src="fiesta_img/435019.jpg" class="img-fluid" alt="">
+                </div>
         </div>
     {{--@endif--}}
     @foreach($apps as $app)
