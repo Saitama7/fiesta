@@ -20,7 +20,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-danger" id="validatevipbutton" data-toggle="modal" data-target="#result">Проверить</button>
-                            <a href="/order" class="btn btn-outline-success">Нет VIP-карты</a>
+                            <a href="/novipcart" class="btn btn-outline-success" id="novipcartbutton">Нет VIP-карты</a>
                         </div>
                     </form>
                 </div>

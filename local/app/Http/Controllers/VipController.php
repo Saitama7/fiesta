@@ -122,6 +122,12 @@ class VipController extends Controller
         $flag = false;
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
+
+        if (Session::has('vip')){
+            Session::remove('vip');
+            Session::get('cart')->totalPrice = $cart->realPrice;
+        }
+
         if (is_numeric($request->name)) {
             if ($vip->phone_number == $request->name)
                 $flag = true;
@@ -141,8 +147,21 @@ class VipController extends Controller
         return response()->json([
            'flag' => $flag,
             'vip' => $vip,
-            'totalPrice' => $cart->totalPrice
+            'totalPrice' => $cart->totalPrice,
+            'realPrice' => $cart->realPrice
         ]);
+    }
+
+    public function novipcart(Request $request){
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        if (Session::has('vip')){
+            Session::remove('vip');
+            Session::get('cart')->totalPrice = $cart->realPrice;
+        }
+
+        return redirect('/order');
     }
 
 }

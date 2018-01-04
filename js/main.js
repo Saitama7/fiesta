@@ -48,20 +48,25 @@ $('button#validatevipbutton').click(function (e) {
         dataType: 'json',
         success: function (data) {
             console.log(data.flag);
-            console.log(data.vip.discount);
-            var disc = data.vip.discount;
-            data.totalPrice = data.totalPrice - (data.totalPrice / 100 * disc);
-            $('.totalPrice').empty();
-            $('.totalPrice').text(data.totalPrice);
-            $('.vip-find').empty();
-            $('.vip-find').append(
-            '<div class="modal-body">'+
-                data.vip.name + ', Мы вас нашли!' +
-            '</div>'+
-            '<div class="modal-footer">'+
-                '<a href="/order" class="btn btn-outline-success">Оформить заказ</a>'+
-            '</div>'
-            )
+            if (data.flag === true){
+                $('.totalPrice').empty();
+                $('.totalPrice').text(data.totalPrice);
+                $('.vip-find').empty();
+                $('.vip-find').append(
+                    '<div class="modal-body">'+
+                    data.vip.name + ', Мы вас нашли!' +
+                    '</div>'+
+                    '<div class="modal-footer">'+
+                    '<a href="/order" class="btn btn-outline-success">Оформить заказ</a>'+
+                    '</div>'
+                )
+            }else {
+                $('.vip-find').empty();
+                $('.vip-find').append(
+                    'Попробуйте еще раз('
+                )
+            }
+
         },
         error: function () {
             console.log('ERROR!');

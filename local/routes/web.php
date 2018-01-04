@@ -61,6 +61,7 @@ Route::post('/store/vip', 'VipController@store');
 Route::get('/edit/vip/{id}', 'VipController@edit');
 Route::get('/delete/vip/{id}', 'VipController@destroy');
 Route::get('/validatevip', 'VipController@validatevip');
+Route::get('/novipcart', 'VipController@novipcart');
 Route::get('/show/{id}', 'VipController@show');
 
 

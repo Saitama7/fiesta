@@ -7,6 +7,7 @@ class Cart
     public $items = null;
     public $totalQty = 0;
     public $totalPrice = 0;
+    public $realPrice = 0;
 
     public function __construct($oldCart)
     {
@@ -15,6 +16,7 @@ class Cart
             $this->items = $oldCart->items;
             $this->totalQty = $oldCart->totalQty;
             $this->totalPrice = $oldCart->totalPrice;
+            $this->realPrice = $oldCart->realPrice;
         }
     }
 
@@ -33,6 +35,7 @@ class Cart
         $this->items[$id] = $storedItem;
         $this->totalQty++;
         $this->totalPrice += $item->cost;
+        $this->realPrice += $item->cost;
 
         return $storedItem;
     }
@@ -57,6 +60,7 @@ class Cart
         }
         $this->totalQty--;
         $this->totalPrice -= $item->cost;
+        $this->realPrice -= $item->cost;
     }
 
     public function delete($item, $id)
@@ -72,6 +76,7 @@ class Cart
             }
         }
         $this->totalPrice -= $storedItem['price'];
+        $this->realPrice -= $storedItem['price'];
         $this->totalQty -= $storedItem['qty'];
 
     }
