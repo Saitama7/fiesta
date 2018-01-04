@@ -12,8 +12,8 @@
                                 <div class="card bg-dark text-white  text-center" style="border: 0px;">
                                     <img class="card-img " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
                                     <div class="card-img-overlay">
-                                        <h4 class="card-title mt-5">{{ $product->cost }} сом</h4>
-                                        <p class="card-text">{{ $product->desc }}</p>
+                                        <h4 class="card-title mt-5"><span class="">{{ $product->cost }}</span> сом</h4>
+                                        <p class="card-text">{{ $product->name }}</p>
                                     </div>
                                     <div class="col d-flex justify-content-center">
                                         <a href="{{ $product->id }}" id="{{ $product->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
@@ -38,7 +38,7 @@
                                 <div class="card bg-dark text-white  text-center" style="border: 0px;">
                                     <img class="card-img " src="/uploads/products/{{ $product->image_path }}" alt="Card image">
                                     <div class="card-img-overlay">
-                                        <h4 class="card-title mt-5">{{ $product->cost }} сом</h4>
+                                        <h4 class="card-title mt-5"><span>{{ $product->cost }}</span> сом</h4>
                                         <p class="card-text">{{ $product->name }}</p>
                                     </div>
                                     <div class="col d-flex justify-content-center">

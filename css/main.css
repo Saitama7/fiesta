@@ -332,6 +332,17 @@ ul>li>a ins {
      font-size: 13px !important;
 }
 
+.card h4,p {
+     font-family: 'Lobster', cursive;
+}
+
+.card span {
+     font-size: 40px;
+}
+
+.card p {
+     font-size: 24px;
+}
 
 .card-images-overlay {
      display: none;
