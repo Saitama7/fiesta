@@ -137,11 +137,22 @@
                 </div>
                 <div class="row my-5">
                     <div class="col">
-                            <input class="form-check-input del" type="radio" name="deliver" id="ciity" value="1" >
-                            <label for="ciity">ДОСТАВКА ПО ГОРОДУ - 150 сом</label>
-                        <br>
-                            <input class="form-check-input del" type="radio"  name="deliver"  id="notcity" value="2">
-                            <label for="notcity">ДОСТАВКА ЗА ЧЕРТОЙ ГОРОДА - 300 сом</label>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <h4>Доставка</h4>
+                            </li>
+                            <li class="nav-item">
+                                <label for="ciity" class="form-check-label">
+                                    <input class="form-check-input del" type="radio" name="deliver" id="ciity" value="1" >
+                                    <span class="strift-ton">ПО ГОРОДУ - 150 сом</span>
+                                </label>
+                                <br>
+                                <label for="notcity" class="form-check-label">
+                                    <input class="form-check-input del" type="radio"  name="deliver"  id="notcity" value="2">
+                                    <span class="strift-ton">ЗА ЧЕРТОЙ ГОРОДА - 300 сом</span>
+                                </label>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">

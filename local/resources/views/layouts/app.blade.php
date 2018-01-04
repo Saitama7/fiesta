@@ -100,7 +100,7 @@
 
         <footer class="bg-dark py-3">
             <div class="container">
-                <div class="row py-5 justify-content-center">
+                <div class="row justify-content-center">
 
                     <div class="col-3 font-italic font-weight-light text-center foot-contact">
                         <img class="mb-4 w-100" src="/uploads/logo/{{ $app->logo_path }}" alt="">

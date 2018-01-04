@@ -29,7 +29,7 @@
     </div>
 
     <div class="container py-5">
-        <h2 class="mb-3">Боксы</h2>
+        <h2 class="mb-3">Все боксы</h2>
         <div class="row">
             @foreach($tproducts as $product)
                 @if($product->status == 1)

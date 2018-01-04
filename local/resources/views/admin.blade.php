@@ -325,7 +325,7 @@
                                         <th scope="row" class="align-middle">{{ $vip->id }}</th>
                                         <td class="align-middle">{{ $vip->name }}</td>
                                         <td class="align-middle">{{ $vip->phone_number }}</td>
-                                        <td class="align-middle">{{ $vip->address }}</td>
+                                        <td class="align-middle">{{ $vip->vip_id }}</td>
                                         <td class="align-middle">{{ $vip->discount }}</td>
                                         <td class="align-middle">
                                             <button type="submit" class="btn btn-outline-info " data-toggle="modal" data-target="#modalupvip" data-id="{{ $vip->id }}">
