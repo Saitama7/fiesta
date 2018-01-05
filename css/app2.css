@@ -1,5 +1,6 @@
 .body {
-     background-image: url(/fiesta_img/sakura.png);
+     /*background-image: url(/fiesta_img/sakura.png);*/
+     background-color: #ebeff2;
 }
 
 .rad {
@@ -25,6 +26,5 @@
      width: 75px;
      height: auto;
      transition: 0.5s;
-     
 }
 

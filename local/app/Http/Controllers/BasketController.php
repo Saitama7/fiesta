@@ -71,8 +71,11 @@ class BasketController extends Controller
 
     public function more($id){
         $basket = Basket::find($id);
+        $time = new OrderTime();
         return response()->json([
             'products' => $basket->products,
+            'baskets' => $basket,
+            'times' => $time
         ]);
 
     }

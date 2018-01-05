@@ -2,21 +2,31 @@
 @section('title', 'Административная панель')
     @section('content-admin')
         <div class="row ml-0 mr-0">
-            <div class="col-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a href="" class="col-5"><img class="w-100" src="{{ asset('fiesta_img/logo-flower.png') }}" alt="image"><h5 class="flower text-dark">Fiesta flower</h5></a>
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
-                    {{--<a class="nav-link" id="v-pills-vid-tab" data-toggle="pill" href="#v-pills-vid" role="tab" aria-controls="v-pills-profile" aria-selected="false">Вид Букета</a>--}}
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
-                    <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-deliv" role="tab" aria-controls="v-pills-deliv" aria-selected="false">Курьеры</a>
-                    <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
-                    <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Настройки</a>
+            <div class="position-absolute" style="z-index:1;">
+                <div class="pos-f-t">
+                    <nav class="navbar navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#adminmenu" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </nav>
+                    <div class="collapse" id="adminmenu">
+                        <div class="bg-light">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
+                                {{--<a class="nav-link" id="v-pills-vid-tab" data-toggle="pill" href="#v-pills-vid" role="tab" aria-controls="v-pills-profile" aria-selected="false">Вид Букета</a>--}}
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
+                                <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-deliv" role="tab" aria-controls="v-pills-deliv" aria-selected="false">Курьеры</a>
+                                <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
+                                <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Настройки</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-12">
                 @if (session('status'))
                     <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('status') }}
@@ -27,19 +37,12 @@
 
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
                         <!-- Button trigger modal -->
-                        <button type="button" id="prodbtn" class="btn btn-success py-3 mt-2" data-toggle="modal" data-target="#modalProduct">
+                        <button type="button" id="prodbtn" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalProduct">
                             Создать товар
                         </button>
 
-                        <form id="logout-form" class="pull-right" action="{{ route('logout') }}" method="POST" >
-                            {{ csrf_field() }}
-                            <button class="btn btn-secondary mt-2" type="submit">Выйти</button>
-                        </form>
-
                         <div class="pt-5">
-
                                 <table class="table table-bordered table-hover table-light">
                                     <thead>
                                     <tr>
@@ -61,7 +64,7 @@
                                         <tbody>
                                         <tr>
                                             <th scope="row" class="align-middle">{{ $product->id }}</th>
-                                            <td><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
+                                            <td style="width: 8%;"><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
                                             <td class="align-middle">{{ $product->name }}</td>
                                             <td class="align-middle">{{ $product->cost }} сом</td>
                                             @foreach($types as $type)
@@ -108,14 +111,13 @@
                                         </tbody>
                                     @endforeach
                                 </table>
-
                         </div>
 
                     </div>
 
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modaltype">
+                        <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltype">
                             Создать тип
                         </button>
 
@@ -152,7 +154,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalsize">
+                        <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalsize">
                             Создать категорию
                         </button>
 
@@ -189,7 +191,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-intervals" role="tabpanel" aria-labelledby="v-pills-intervals-tab">
-                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modaltime">
+                        <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltime">
                             Создать диапазон времени
                         </button>
 
@@ -226,7 +228,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-deliv" role="tabpanel" aria-labelledby="v-pills-deliv-tab">
-                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modaldeliv">
+                        <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaldeliv">
                             Новый курьер
                         </button>
 
@@ -265,7 +267,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-button5" role="tabpanel" aria-labelledby="v-pills-button5-tab">
-                        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalvip">
+                        <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalvip">
                             Новый VIP - клиент
                         </button>
 
@@ -308,7 +310,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
-                        <div class="pt-5">
+                        <div class="mt-5 pt-3">
 
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
@@ -318,7 +320,9 @@
                                     <th scope="col">ФИО</th>
                                     <th scope="col">Номер телефона</th>
                                     <th scope="col">Адрес</th>
-                                    <th scope="col">Итоговая сумма</th>
+                                    <th scope="col">Дата</th>
+                                    <th scope="col">Время</th>
+                                    <th scope="col">Итог</th>
                                     <th scope="col">Товары</th>
                                     <th scope="col">Доставлено</th>
                                 </tr>
@@ -337,6 +341,12 @@
                                         <td class="align-middle">{{ $basket->name }}</td>
                                         <td class="align-middle">{{ $basket->phone_number }}</td>
                                         <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
+                                        <td class="align-middle">{{ $basket->order_date}}</td>
+                                        @foreach($order_times as $time)
+                                            @if($basket->order_time_id == $time->id)
+                                                <td class="align-middle">{{ $time->interval}}</td>
+                                            @endif
+                                        @endforeach
                                         <td class="align-middle">{{ $basket->totalPrice }}</td>
                                         <td class="align-middle">
                                             <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-id="{{ $basket->id }}" data-target="#modalmore">
@@ -361,14 +371,11 @@
 
                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <div class="pt-5">
-                            <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalapp">
+                            <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalapp">
                                 Настроить
                             </button>
 
                             <table class="table table-bordered table-hover table-light">
-                                <thead>
-
-                                </thead>
                                     <tbody>
                                     @foreach($apps as $app)
                                         <tr>

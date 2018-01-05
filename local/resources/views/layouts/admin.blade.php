@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,32 @@
 
 </head>
 <body>
+    <header>
+        <!-- Хедер -->
+        <nav class="header">
+            <nav class="navbar navbar-expand-lg py-0 nav bg-header">
+                <div class="float-left">
+                    @foreach($apps as $app)
+                        <a class="navbar-brand py-0 float-left col-2 active" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
+                    @endforeach
+
+                    <form class="form-inline mt-3">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="float-right ">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        {{ csrf_field() }}
+                        <button class="btn btn-light mt-2" type="submit">Выйти</button>
+                    </form>
+                </div>
+            </nav>
+
+        </div>
+
+    </header>
     <div class="body height">
         @yield('content-admin')
     </div>

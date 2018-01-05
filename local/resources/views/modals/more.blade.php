@@ -17,7 +17,6 @@
                         <th scope="col">Картина</th>
                         <th scope="col">Наименование</th>
                         <th scope="col">Цена</th>
-                        <th scope="col">Описание</th>
                         <th scope="col">Количество</th>
                     </tr>
                     </thead>

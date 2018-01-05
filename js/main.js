@@ -228,7 +228,6 @@ $('button#validatevipbutton').click(function (e) {
                             '<td><img class="w-50 align-middle justify-content-center" src="/uploads/products/' + product.image_path + '" alt=""></td>'+
                             '<td class="align-middle justify-content-center">' + product.name + '</td>'+
                             '<td class="align-middle justify-content-center">' + product.cost +  'сом' + '</td>'+
-                            '<td class="align-middle justify-content-center">' + product.desc + '</td>'+
                             '<td class="align-middle justify-content-center">' + product.pivot.count_product + '</td>'+
                         '</tr>'
                     )
