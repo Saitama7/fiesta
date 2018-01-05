@@ -13,7 +13,11 @@
 //Authentication
 Auth::routes();
 
-
+Route::get('/email', function () {
+   return view('emails.email-shipped', [
+       'order' => \App\Basket::all()->last(),
+   ]);
+});
 
 
 //Cart
