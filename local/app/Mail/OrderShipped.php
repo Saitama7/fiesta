@@ -31,7 +31,7 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.email-shipped')->with([
+        return $this->markdown('emails.email-shipped')->with([
             'order' => $this->basket
         ]);
     }
