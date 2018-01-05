@@ -345,8 +345,13 @@
                                         <tr>
                                             <th scope="row" class="align-middle">{{ $basket->id }}</th>
                                             <td class="align-middle">
-                                                @if($basket->vip)
-                                                    <input type="checkbox" checked disabled>
+                                                @if($basket->vip_id)
+                                                    <input type="checkbox" checked disabled><br>
+                                                    @foreach($vips as $vip)
+                                                        @if($vip->phone_number == $basket->phone_number)
+                                                            {{ $vip->vip_id }}
+                                                        @endif
+                                                    @endforeach
                                                 @else
                                                     <input type="checkbox" disabled>
                                                 @endif
