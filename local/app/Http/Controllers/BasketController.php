@@ -45,7 +45,9 @@ class BasketController extends Controller
         $basket = new Basket();
 
         $basket->delivery_id = $request->delivery_id;
-        $basket->vip_id = $request->vip_id;
+        if (Session::has('vip')){
+            $basket->vip_id = 1;
+        }
         $basket->name = $request->name;
         $basket->city = $request->city;
         $basket->street = $request->street;

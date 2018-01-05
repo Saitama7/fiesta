@@ -33,10 +33,11 @@
                         <a class="navbar-brand py-0 float-left col-2 active" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
                     @endforeach
 
-                    <form class="form-inline mt-3">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    {{--<form class="form-inline mt-3">--}}
+                        {{--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--}}
+                        {{--<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>--}}
+                    {{--</form>--}}
+
                 </div>
 
                 <div class="float-right ">

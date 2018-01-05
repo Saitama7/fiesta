@@ -59,57 +59,59 @@
                                     </tr>
                                     </thead>
                                     <?php $i = 0 ?>
-                                    @foreach($products as $product)
-                                        <?php $i++ ?>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row" class="align-middle">{{ $product->id }}</th>
-                                            <td style="width: 8%;"><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
-                                            <td class="align-middle">{{ $product->name }}</td>
-                                            <td class="align-middle">{{ $product->cost }} сом</td>
-                                            @foreach($types as $type)
-                                                @if($product->type_id == $type->id)
-                                                    <td class="align-middle" value="{{ $product->type_id }}">{{ $type->name }}</td>
-                                                @endif
-                                            @endforeach
-                                            {{--<td class="align-middle">{{ $product->desc }}</td>--}}
-                                            {{--Категория--}}
-                                            @foreach($sizes as $size)
-                                                @if($product->size_id == $size->id)
-                                                    <td class="align-middle">{{ $size->name }}</td>
-                                                @endif
-                                            @endforeach
-                                            {{--Популярный--}}
-                                            @foreach($vids as $vid)
-                                                @if($product->vid_id == $vid->id)
-                                                    <td class="align-middle">{{ $vid->name }}</td>
-                                                @endif
-                                            @endforeach
+                                   @if(!empty($products))
+                                        @foreach($products as $product)
+                                            <?php $i++ ?>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row" class="align-middle">{{ $product->id }}</th>
+                                                <td style="width: 8%;"><img class="img-thumbnail" src="/uploads/products/{{ $product->image_path }}" alt=""></td>
+                                                <td class="align-middle">{{ $product->name }}</td>
+                                                <td class="align-middle">{{ $product->cost }} сом</td>
+                                                @foreach($types as $type)
+                                                    @if($product->type_id == $type->id)
+                                                        <td class="align-middle" value="{{ $product->type_id }}">{{ $type->name }}</td>
+                                                    @endif
+                                                @endforeach
+                                                {{--<td class="align-middle">{{ $product->desc }}</td>--}}
+                                                {{--Категория--}}
+                                                @foreach($sizes as $size)
+                                                    @if($product->size_id == $size->id)
+                                                        <td class="align-middle">{{ $size->name }}</td>
+                                                    @endif
+                                                @endforeach
+                                                {{--Популярный--}}
+                                                @foreach($vids as $vid)
+                                                    @if($product->vid_id == $vid->id)
+                                                        <td class="align-middle">{{ $vid->name }}</td>
+                                                    @endif
+                                                @endforeach
 
                                                 @if($product->status == 1)
                                                     <td class="align-middle">Да</td>
                                                 @else
-                                                <td class="align-middle">Нет</td>
+                                                    <td class="align-middle">Нет</td>
                                                 @endif
 
-                                            @if($product->slide_status == 1)
-                                                <td class="align-middle">Да</td>
-                                            @else
-                                                <td class="align-middle">Нет</td>
-                                            @endif
-                                            <td class="align-middle">
-                                                <button data-id="{{ $product->id }}" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
-                                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="/delete/product/{{ $product->id }}" type="button"   class="btn btn-outline-danger">
-                                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    @endforeach
+                                                @if($product->slide_status == 1)
+                                                    <td class="align-middle">Да</td>
+                                                @else
+                                                    <td class="align-middle">Нет</td>
+                                                @endif
+                                                <td class="align-middle">
+                                                    <button data-id="{{ $product->id }}" type="submit" class="btn btn-outline-info"  data-toggle="modal" data-target="#modalupproduct">
+                                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                                    </button>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="/delete/product/{{ $product->id }}" type="button"   class="btn btn-outline-danger">
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        @endforeach
+                                    @endif
                                 </table>
                         </div>
 
@@ -130,24 +132,26 @@
                                     <th scope="col">Наименование</th>
                                 </tr>
                                 </thead>
-                                @foreach($types as $type)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $type->id }}</th>
-                                        <td class="align-middle col">{{ $type->name }}</td>
-                                        <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}" data-target="#modaluptype">
-                                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle col">
-                                            <a href="/delete/type/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                              @if(!empty($types))
+                                    @foreach($types as $type)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $type->id }}</th>
+                                            <td class="align-middle col">{{ $type->name }}</td>
+                                            <td class="align-middle col">
+                                                <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $type->id }}" data-target="#modaluptype">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle col">
+                                                <a href="/delete/type/{{ $type->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -167,24 +171,26 @@
                                         <th scope="col">Наименование</th>
                                     </tr>
                                 </thead>
-                                @foreach($sizes as $size)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $size->id }}</th>
-                                        <td class="align-middle col">{{ $size->name }}</td>
-                                        <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupsize" data-id="{{ $size->id }}">
-                                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle col">
-                                            <a href="/delete/size/{{ $size->id }}" type="button"   class="btn btn-outline-danger float-left">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                               @if(!empty($sizes))
+                                    @foreach($sizes as $size)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $size->id }}</th>
+                                            <td class="align-middle col">{{ $size->name }}</td>
+                                            <td class="align-middle col">
+                                                <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupsize" data-id="{{ $size->id }}">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle col">
+                                                <a href="/delete/size/{{ $size->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -204,24 +210,26 @@
                                     <th scope="col">Диапазон</th>
                                 </tr>
                                 </thead>
-                                @foreach($order_times as $time)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $time->id }}</th>
-                                        <td class="align-middle col">{{ $time->interval }}</td>
-                                        <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupintervals" data-id="{{ $time->id }}">
-                                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle col">
-                                            <a href="/delete/time/{{ $time->id }}" type="button"   class="btn btn-outline-danger float-left">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                                @if(!empty($order_times))
+                                    @foreach($order_times as $time)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $time->id }}</th>
+                                            <td class="align-middle col">{{ $time->interval }}</td>
+                                            <td class="align-middle col">
+                                                <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupintervals" data-id="{{ $time->id }}">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle col">
+                                                <a href="/delete/time/{{ $time->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -242,25 +250,27 @@
                                         <th scope="col">Цена</th>
                                     </tr>
                                 </thead>
-                                @foreach($deliveries as $delivery)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $delivery->id }}</th>
-                                        <td class="align-middle col">{{ $delivery->name }}</td>
-                                        <td class="align-middle col">{{ $delivery->cost }}</td>
-                                        <td class="align-middle col">
-                                            <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupdeliv" data-id="{{ $delivery->id }}">
-                                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle col">
-                                            <a href="/delete/delivery/{{ $delivery->id }}" type="button"   class="btn btn-outline-danger float-left">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                               @if(!empty($deliveries))
+                                    @foreach($deliveries as $delivery)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $delivery->id }}</th>
+                                            <td class="align-middle col">{{ $delivery->name }}</td>
+                                            <td class="align-middle col">{{ $delivery->cost }}</td>
+                                            <td class="align-middle col">
+                                                <button type="submit" class="btn btn-outline-info float-left" data-toggle="modal" data-target="#modalupdeliv" data-id="{{ $delivery->id }}">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle col">
+                                                <a href="/delete/delivery/{{ $delivery->id }}" type="button"   class="btn btn-outline-danger float-left">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -283,27 +293,29 @@
                                         <th scope="col">Размер скидки (%)</th>
                                     </tr>
                                 </thead>
-                                @foreach($vips as $vip)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $vip->id }}</th>
-                                        <td class="align-middle">{{ $vip->name }}</td>
-                                        <td class="align-middle">{{ $vip->phone_number }}</td>
-                                        <td class="align-middle">{{ $vip->vip_id }}</td>
-                                        <td class="align-middle">{{ $vip->discount }}</td>
-                                        <td class="align-middle">
-                                            <button type="submit" class="btn btn-outline-info " data-toggle="modal" data-target="#modalupvip" data-id="{{ $vip->id }}">
-                                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <a href="/delete/vip/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                                @if(!empty($vips))
+                                    @foreach($vips as $vip)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $vip->id }}</th>
+                                            <td class="align-middle">{{ $vip->name }}</td>
+                                            <td class="align-middle">{{ $vip->phone_number }}</td>
+                                            <td class="align-middle">{{ $vip->vip_id }}</td>
+                                            <td class="align-middle">{{ $vip->discount }}</td>
+                                            <td class="align-middle">
+                                                <button type="submit" class="btn btn-outline-info " data-toggle="modal" data-target="#modalupvip" data-id="{{ $vip->id }}">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="/delete/vip/{{ $vip->id }}" type="button"   class="btn btn-outline-danger ">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -327,43 +339,50 @@
                                     <th scope="col">Доставлено</th>
                                 </tr>
                                 </thead>
-                                @foreach($baskets as $basket)
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle">{{ $basket->id }}</th>
-                                        <td class="align-middle">
-                                            @if($basket->vip)
-                                                <input type="checkbox" checked disabled>
+                                @if(!empty($baskets))
+                                    @foreach($baskets as $basket)
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" class="align-middle">{{ $basket->id }}</th>
+                                            <td class="align-middle">
+                                                @if($basket->vip_id)
+                                                    <input type="checkbox" checked disabled><br>
+                                                    @foreach($vips as $vip)
+                                                        @if($vip->phone_number == $basket->phone_number)
+                                                            {{ $vip->vip_id }}
+                                                        @endif
+                                                    @endforeach
                                                 @else
-                                                <input type="checkbox" disabled>
-                                            @endif
-                                        </td>
-                                        <td class="align-middle">{{ $basket->name }}</td>
-                                        <td class="align-middle">{{ $basket->phone_number }}</td>
-                                        <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
-                                        <td class="align-middle">{{ $basket->order_date}}</td>
-                                        @foreach($order_times as $time)
-                                            @if($basket->order_time_id == $time->id)
-                                                <td class="align-middle">{{ $time->interval}}</td>
-                                            @endif
-                                        @endforeach
-                                        <td class="align-middle">{{ $basket->totalPrice }}</td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-id="{{ $basket->id }}" data-target="#modalmore">
-                                                Подробнее
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <form action="{{route('toggle.deliver',$basket->id)}}" method="POST" class="pull-right" id="deliver-toggle">
-                                                {{csrf_field()}}
-                                                <label for="delivered"</label>
-                                                <input type="checkbox" value="1" name="delivered"  {{$basket->delivered==1?"checked":"" }}>
-                                                <button class="btn" type="submit">Сохранить</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                @endforeach
+                                                    <input type="checkbox" disabled>
+                                                @endif
+                                            </td>
+                                            <td class="align-middle">{{ $basket->name }}</td>
+                                            <td class="align-middle">{{ $basket->phone_number }}</td>
+                                            <td class="align-middle">{{ $basket->city }} {{ $basket->street }} {{ $basket->house }}</td>
+                                            <td class="align-middle">{{ $basket->order_date}}</td>
+                                            @foreach($order_times as $time)
+                                                @if($basket->order_time_id == $time->id)
+                                                    <td class="align-middle">{{ $time->interval}}</td>
+                                                @endif
+                                            @endforeach
+                                            <td class="align-middle">{{ $basket->totalPrice }}</td>
+                                            <td class="align-middle">
+                                                <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-id="{{ $basket->id }}" data-target="#modalmore">
+                                                    Подробнее
+                                                </button>
+                                            </td>
+                                            <td class="align-middle">
+                                                <form action="{{route('toggle.deliver',$basket->id)}}" method="POST" class="pull-right" id="deliver-toggle">
+                                                    {{csrf_field()}}
+                                                    <label for="delivered"</label>
+                                                    <input type="checkbox" value="1" name="delivered"  {{$basket->delivered==1?"checked":"" }}>
+                                                    <button class="btn" type="submit">Сохранить</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    @endforeach
+                                @endif
                             </table>
 
                         </div>
@@ -377,52 +396,54 @@
 
                             <table class="table table-bordered table-hover table-light">
                                     <tbody>
-                                    @foreach($apps as $app)
-                                        <tr>
-                                            <th scope="row" class="align-middle ">Логотип</th>
-                                            <td class="col-5">
-                                                <img class="img-thumbnail bg-primary" width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
-                                                <img class="img-thumbnail " width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
-                                            </td>
+                                    @if(!empty($apps))
+                                        @foreach($apps as $app)
+                                            <tr>
+                                                <th scope="row" class="align-middle ">Логотип</th>
+                                                <td class="col-5">
+                                                    <img class="img-thumbnail bg-primary" width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
+                                                    <img class="img-thumbnail " width="150" height="100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
+                                                </td>
 
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle  ">Баннер</th>
-                                            <td class="col-5"><img class="img-thumbnail" width="250" height="250" src="/uploads/banners/{{ $app->img_path }}" alt=""></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">facebook</th>
-                                            <td>{{$app->facebook}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Instagram</th>
-                                            <td>{{ $app->instagram }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Twitter</th>
-                                            <td>{{ $app->twitter }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Odnoklassniki</th>
-                                            <td>{{ $app->odnoklassniki }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Телефон</th>
-                                            <td>{{ $app->tel }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Whatsapp</th>
-                                            <td>{{ $app->whatsapp }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Telegram</th>
-                                            <td>{{ $app->telegram }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="align-middle">Viber</th>
-                                            <td>{{ $app->viber }}</td>
-                                        </tr>
-                                    @endforeach
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle  ">Баннер</th>
+                                                <td class="col-5"><img class="img-thumbnail" width="250" height="250" src="/uploads/banners/{{ $app->img_path }}" alt=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">facebook</th>
+                                                <td>{{$app->facebook}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Instagram</th>
+                                                <td>{{ $app->instagram }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Twitter</th>
+                                                <td>{{ $app->twitter }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Odnoklassniki</th>
+                                                <td>{{ $app->odnoklassniki }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Телефон</th>
+                                                <td>{{ $app->tel }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Whatsapp</th>
+                                                <td>{{ $app->whatsapp }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Telegram</th>
+                                                <td>{{ $app->telegram }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Viber</th>
+                                                <td>{{ $app->viber }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                     </tbody>
                             </table>
 
