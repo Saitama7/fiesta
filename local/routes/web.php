@@ -99,7 +99,7 @@ Route::post('/update/basket', 'BasketController@update');
 Route::post('/store/basket', 'BasketController@store');
 Route::get('/edit/basket/{id}', 'BasketController@edit');
 Route::get('/delete/basket/{id}', 'BasketController@destroy');
-
+Route::post('toggledeliver/{id}', 'BasketController@toggledeliver')->name('toggle.deliver');
 //Apps
 Route::get('/create/app', 'AppController@create');
 Route::post('/update/app', 'AppController@update');

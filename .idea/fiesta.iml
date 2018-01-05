@@ -11,6 +11,8 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/erusev/parsedown" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/intervention/image" />
@@ -85,6 +87,8 @@
           <root url="file://$MODULE_DIR$/local/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/local/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/local/vendor/fzaninotto/faker" />
+          <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/promises" />
           <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/local/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/local/vendor/intervention/image" />
@@ -155,6 +159,8 @@
           <root url="file://$MODULE_DIR$/local/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/local/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/local/vendor/fzaninotto/faker" />
+          <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/promises" />
           <root url="file://$MODULE_DIR$/local/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/local/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/local/vendor/intervention/image" />

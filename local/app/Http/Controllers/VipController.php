@@ -164,4 +164,5 @@ class VipController extends Controller
         return redirect('/order');
     }
 
+
 }

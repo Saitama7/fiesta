@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Basket;
 use App\Cart;
+use App\Mail\OrderShipped;
 use App\Vip;
 use App\OrderTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class BasketController extends Controller
@@ -60,6 +62,7 @@ class BasketController extends Controller
         foreach ($products as $product){
             $basket->products()->attach($product['item']['id'], ['count_product' => $product['qty']]);
         }
+        Mail::to('djsaitama7@gmail.com')->send(new OrderShipped($basket));
         Session::remove('cart');
         Session::remove('vip');
         return redirect('/')->with('status', 'Благодарим за покупку!!! Мы с вами свяжемся в ближайшее время!');
@@ -161,6 +164,20 @@ class BasketController extends Controller
     {
         $basket = Basket::find($basketId);
         $basketId->delete();
+        return redirect()->back();
+    }
+
+    public function toggledeliver(Request $request, $basketId){
+        $basket = Basket::find($basketId);
+
+        if ($request->has('delivered')){
+            $basket->delivered=$request->delivered;
+        }else{
+            $basket->delivered =  "0";
+        }
+
+        $basket->save();
+
         return redirect()->back();
     }
 }

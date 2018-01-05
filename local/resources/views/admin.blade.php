@@ -151,44 +151,6 @@
                         </div>
                     </div>
 
-                    {{--<div class="tab-pane fade" id="v-pills-vid" role="tabpanel" aria-labelledby="v-pills-vid-tab">--}}
-                        {{--<button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalvid">--}}
-                            {{--Создать вид букета--}}
-                        {{--</button>--}}
-
-                        {{--<div class="pt-5">--}}
-
-                            {{--<table class="table table-bordered table-hover table-light">--}}
-                                {{--<thead>--}}
-                                {{--<tr>--}}
-                                    {{--<th scope="col">#</th>--}}
-                                    {{--<th scope="col">Наименование</th>--}}
-                                {{--</tr>--}}
-                                {{--</thead>--}}
-                                {{--@foreach($vids as $vid)--}}
-                                    {{--<tbody>--}}
-                                    {{--<tr>--}}
-                                        {{--<th scope="row" class="align-middle">{{ $vid->id }}</th>--}}
-                                        {{--<td class="align-middle col">{{ $vid->name }}</td>--}}
-                                        {{--<td class="align-middle col">--}}
-                                            {{--<button type="button" class="btn btn-outline-info float-left" data-toggle="modal" data-id="{{ $vid->id }}" data-target="#modalupvid">--}}
-                                                {{--<i class="fa fa-cog" aria-hidden="true"></i>--}}
-                                            {{--</button>--}}
-                                        {{--</td>--}}
-                                        {{--<td class="align-middle col">--}}
-                                            {{--<a href="/delete/vid/{{ $vid->id }}" type="button"   class="btn btn-outline-danger float-left">--}}
-                                                {{--<i class="fa fa-times" aria-hidden="true"></i>--}}
-                                            {{--</a>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                    {{--</tbody>--}}
-                                {{--@endforeach--}}
-                            {{--</table>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#modalsize">
                             Создать категорию
@@ -358,6 +320,7 @@
                                     <th scope="col">Адрес</th>
                                     <th scope="col">Итоговая сумма</th>
                                     <th scope="col">Товары</th>
+                                    <th scope="col">Доставлено</th>
                                 </tr>
                                 </thead>
                                 @foreach($baskets as $basket)
@@ -381,7 +344,12 @@
                                             </button>
                                         </td>
                                         <td class="align-middle">
-                                            <input type="checkbox">
+                                            <form action="{{route('toggle.deliver',$basket->id)}}" method="POST" class="pull-right" id="deliver-toggle">
+                                                {{csrf_field()}}
+                                                <label for="delivered"</label>
+                                                <input type="checkbox" value="1" name="delivered"  {{$basket->delivered==1?"checked":"" }}>
+                                                <button class="btn" type="submit">Сохранить</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     </tbody>

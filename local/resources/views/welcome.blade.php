@@ -2,7 +2,7 @@
 @section('title', 'Главная')
 @section('content')
 
-    {{--@if (session('status'))--}}
+    @if (session('status'))
         <div  class="alert al-s">
 
 
@@ -13,7 +13,7 @@
                     <img src="fiesta_img/435019.jpg" class="img-fluid" alt="">
                 </div>
         </div>
-    {{--@endif--}}
+    @endif
     @foreach($apps as $app)
         <div class="banner">
             <img src="/uploads/banners/{{ $app->img_path }}" alt="">

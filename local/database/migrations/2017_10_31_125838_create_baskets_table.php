@@ -25,6 +25,7 @@ class CreateBasketsTable extends Migration
             $table->string('house')->nullable();
             $table->string('sign')->nullable();
             $table->string('phone_number');
+            $table->tinyInteger('delivered')->nullable();
             $table->integer('totalPrice');
             $table->timestamps();
         });
