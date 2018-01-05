@@ -32,7 +32,7 @@ class OrderShipped extends Mailable
     public function build()
     {
         return $this->view('emails.email-shipped')->with([
-            'total' => $this->basket->totalPrice
+            'order' => $this->basket
         ]);
     }
 }
