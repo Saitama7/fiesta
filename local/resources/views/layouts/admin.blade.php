@@ -47,7 +47,7 @@
                 </div>
             </nav>
 
-        </div>
+        </nav>
 
     </header>
     <div class="body height">
