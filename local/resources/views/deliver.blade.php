@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <span class="brd"></span><br>
-            <h1 class="mb-3 corp" >Доставка и оплата</h1>
-                <section class="text-with-summary text-with-summary-0">
+            <h1 class="my-5 corp" >Доставка и оплата</h1>
+                <section class="text-with-summary text-with-summary-0 mb-5">
                     <h2><img src="/uploads/flower.png" width="64" height="34">Как заказать букет:</h2>
                     <p>После того как вы определились с выбором букета, нажмите кнопку ЗАКАЗАТЬ, после чего вы можете перейти к оформлению заказа или продолжить покупки.</p>
                     <p>Оплату заказа в нашем инернет-магазине вы можете совершить при помощи наличного расчета во время получения товара или безналичного-переводом на пластиковую карту.</p>
