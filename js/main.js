@@ -33,8 +33,6 @@ $(document).ready(function() {
     });
 
 
-
-
 $('button#validatevipbutton').click(function (e) {
     e.preventDefault(e);
 

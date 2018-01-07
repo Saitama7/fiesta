@@ -61,7 +61,7 @@
 
                 <ul class="navbar-nav mr-auto nav max-menu">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/vigvams">Вигвамы<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/all/vigvams">Вигвамы<span class="sr-only">(current)</span></a>
                     </li>
 
                 </ul>

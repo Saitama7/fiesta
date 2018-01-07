@@ -109,6 +109,21 @@ class ProductController extends Controller
         ]);
     }
 
+    public function vigvams() {
+        $products = Product::all()->where('type_id', '=', 6);
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $apps = App::all();
+
+        return view('all.vigvams', [
+            'tproducts' => $products,
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1)
+        ]);
+    }
+
 
     /**
      * Display the specified resource.

@@ -113,7 +113,6 @@ Route::get('/delete/app/{id}', 'AppController@destroy');
 
 //Pages
 Route::get('/about-us', 'IndexController@about');
-Route::get('/vigvams', 'IndexController@vigvams');
 Route::get('/contacts', 'IndexController@contacts');
 Route::get('/order', 'IndexController@order');
 Route::get('/cart', 'IndexController@getCart');
@@ -123,3 +122,4 @@ Route::get('/festivities', 'IndexController@corpclient');
 
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');
+Route::get('/all/vigvams', 'ProductController@vigvams');

@@ -97,6 +97,10 @@
         p {
             position: relative;
             z-index:999;
+            color: #FFFFFF;
+        }
+        .im {
+            color: #FFFFFF !important;
         }
     </style>
 </head>
@@ -105,13 +109,13 @@
     <div class="body">
         <div class="body-hover">
             <div class="header">
-                <a href="http://fiesta/"><h1>{{ config('app.name') }}</h1></a>
+                <a href="http://fiesta/"><h1>Fiesta Flowers</h1></a>
             </div>
 
             <div class="content">
                 <p>Заказчик: {{ $order->name }}</p>
                 <p>Номер телефона: {{ $order->phone_number }}</p>
-                <p>Адрес: {{ $order->city }}, {{ $order->street }}, №{{ $order->house }}</p>
+                <p>Адрес: г.{{ $order->city }}, ул.{{ $order->street }}, №{{ $order->house }}</p>
 
                 <br>
                 <hr>
@@ -134,7 +138,7 @@
             </div>
 
             <div class="footer">
-                <p>&copy; {{ config('app.name') }}</p>
+                <p>&copy; Fiesta Flowers</p>
             </div>
         </div>
     </div>
