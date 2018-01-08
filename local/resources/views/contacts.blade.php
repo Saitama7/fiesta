@@ -18,7 +18,7 @@
 
             <div class="col-4">
                 <ul class="list-group sticky-top">
-                    <li class="list-group-item list-group-item-primary">Адрес: Токомбаева, 53/1</li>
+                    <li class="list-group-item list-group-item-primary">Адрес: Токомбаева, 53/1 (Globus)</li>
                     <li class="list-group-item list-group-item-primary">Телефон: +996 550 806-000</li>
                     <li class="list-group-item list-group-item-primary">Телефон: +996 700 923-231</li>
                     <li class="list-group-item list-group-item-primary">WhatsApp: +996 700 923-231</li>
