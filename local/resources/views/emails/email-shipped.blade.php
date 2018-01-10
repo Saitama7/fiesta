@@ -109,7 +109,7 @@
     <div class="body">
         <div class="body-hover">
             <div class="header">
-                <a href="http://fiesta/"><h1>Fiesta Flowers</h1></a>
+                <a href="http://fiesta/admin"><h1>Fiesta Flowers</h1></a>
             </div>
 
             <div class="content">
@@ -121,10 +121,10 @@
                 <hr>
                 <br>
 
-                <p><div class="col-6">Название</div><div class="col-6">Количество</div></p>
+                <p><div class="col-6 im">Название</div><div class="col-6 im">Количество</div></p>
                 @foreach($order->products as $product)
 
-                    <p><div class="col-6">{{ $product->name }}</div> <div class="col-3">{{ $product->pivot->count_product }}</div></p>
+                    <p><div class="col-6 im">{{ $product->name }}</div> <div class="col-3 im">{{ $product->pivot->count_product }}</div></p>
 
                 @endforeach
 

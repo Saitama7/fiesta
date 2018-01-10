@@ -367,7 +367,7 @@
                                             @endforeach
                                             <td class="align-middle">
                                                 Сумма: {{ $basket->summ }} сом<br>
-                                                Доставка: {{$basket->totalPrice - $basket->summ}} сом<br>
+                                                Курьер: {{$basket->totalPrice - $basket->summ}} сом<br>
                                                 Итого: {{ $basket->totalPrice }} сом
                                             </td>
                                             <td class="align-middle">
