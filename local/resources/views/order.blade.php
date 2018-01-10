@@ -156,6 +156,7 @@
                     </div>
                 </div>
                 <input type="hidden" value="{{ Session::get('cart')->totalPrice }}" name="totalPrice">
+                <input type="hidden" value="{{ Session::get('cart')->realPrice }}" name="summ">
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
                         <b style="font-size: 18px;">Итого: <span class="totalPrice">{{ $totalPrice }}</span> сом</b>

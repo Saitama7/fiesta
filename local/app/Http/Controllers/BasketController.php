@@ -46,7 +46,7 @@ class BasketController extends Controller
 
         $basket->delivery_id = $request->delivery_id;
         if (Session::has('vip')){
-            $basket->vip_id = 1;
+            $basket->vip_id = Session::get('vip')->id;
         }
         $basket->name = $request->name;
         $basket->city = $request->city;
@@ -56,6 +56,7 @@ class BasketController extends Controller
         $basket->order_date = $request->order_date;
         $basket->order_time_id = $request->order_time_id;
         $basket->sign = $request->sign;
+        $basket->summ = $request->summ;
         $basket->totalPrice = $request->totalPrice;
         $basket->save();
         $oldCart = Session::get('cart');

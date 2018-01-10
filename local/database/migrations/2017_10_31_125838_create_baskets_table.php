@@ -27,6 +27,7 @@ class CreateBasketsTable extends Migration
             $table->string('phone_number');
             $table->tinyInteger('delivered')->nullable();
             $table->integer('totalPrice');
+            $table->integer('summ');
             $table->timestamps();
         });
     }

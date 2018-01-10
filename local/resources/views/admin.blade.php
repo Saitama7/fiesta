@@ -334,7 +334,7 @@
                                     <th scope="col">Адрес</th>
                                     <th scope="col">Дата</th>
                                     <th scope="col">Время</th>
-                                    <th scope="col">Итог</th>
+                                    <th scope="col">Оплата</th>
                                     <th scope="col">Товары</th>
                                     <th scope="col">Доставлено</th>
                                 </tr>
@@ -365,7 +365,11 @@
                                                     <td class="align-middle">{{ $time->interval}}</td>
                                                 @endif
                                             @endforeach
-                                            <td class="align-middle">{{ $basket->totalPrice }}</td>
+                                            <td class="align-middle">
+                                                Сумма: {{ $basket->summ }} сом<br>
+                                                Доставка: {{$basket->totalPrice - $basket->summ}} сом<br>
+                                                Итого: {{ $basket->totalPrice }} сом
+                                            </td>
                                             <td class="align-middle">
                                                 <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-id="{{ $basket->id }}" data-target="#modalmore">
                                                     Подробнее

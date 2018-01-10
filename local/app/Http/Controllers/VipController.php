@@ -143,6 +143,7 @@ class VipController extends Controller
 
         if (Session::get('vip')){
              Session::get('cart')->totalPrice = Session::get('cart')->totalPrice - (Session::get('cart')->totalPrice / 100) * $vip->discount;
+             Session::get('cart')->realPrice = Session::get('cart')->realPrice - (Session::get('cart')->realPrice / 100) * $vip->discount;
         }
         return response()->json([
            'flag' => $flag,

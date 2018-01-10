@@ -246,14 +246,12 @@ $('button#validatevipbutton').click(function (e) {
                         $('.totalPrice').empty();
                         $('.totalPrice').text(data.totalPrice);
                         $('input[name=totalPrice]').val(data.totalPrice);
-                        console.log(data.totalPrice);
                     }else {
                         data.totalPrice -= 300;
                         data.totalPrice += 150;
                         $('.totalPrice').empty();
                         $('.totalPrice').text(data.totalPrice);
                         $('input[name=totalPrice]').val(data.totalPrice);
-                        console.log(data.totalPrice);
                     }
                 }
                 if (document.getElementById("notcity").checked === true){
@@ -262,14 +260,12 @@ $('button#validatevipbutton').click(function (e) {
                         $('.totalPrice').empty();
                         $('.totalPrice').text(data.totalPrice);
                         $('input[name=totalPrice]').val(data.totalPrice);
-                        console.log(data.totalPrice);
                     }else {
                         data.totalPrice -= 150;
                         data.totalPrice += 300;
                         $('.totalPrice').empty();
                         $('.totalPrice').text(data.totalPrice);
                         $('input[name=totalPrice]').val(data.totalPrice);
-                        console.log(data.totalPrice);
                     }
 
                 }

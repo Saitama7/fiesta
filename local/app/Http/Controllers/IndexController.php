@@ -125,6 +125,7 @@ class IndexController extends Controller
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
             'totalPrice' => $cart->totalPrice,
+            'realPrice' => $cart->realPrice,
             'order_times' => OrderTime::all(),
             'apps' => $apps->where('id', '=', 1)
             ]);
