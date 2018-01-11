@@ -49,7 +49,9 @@ class AppController extends Controller
             $app->logo_path = $filename;
         }
 
-        $app->description = $request->description;
+        if ($request->address) {
+            $app->address = $request->address;
+        }
 
         if ($request->hasFile('img_path')) {
             $banner = $request->file('img_path');
@@ -57,15 +59,39 @@ class AppController extends Controller
             Image::make($banner)->resize(1311, 400)->save('uploads/banners/' . $filename );
             $app->img_path = $filename;
         }
-        $app->facebook = $request->facebook;
-        $app->instagram = $request->instagram;
-        $app->twitter = $request->twitter;
-        $app->odnoklassniki = $request->odnoklassniki;
-        $app->tel = $request->tel;
-        $app->whatsapp = $request->whatsapp;
-        $app->telegram = $request->telegram;
-        $app->viber = $request->viber;
-        $app->save();
+        if ($request->facebook) {
+            $app->facebook = $request->facebook;
+        }
+        if ($request->instagram) {
+            $app->instagram = $request->instagram;
+        }
+        if ($request->twitter) {
+            $app->twitter = $request->twitter;
+        }
+        if ($request->odnoklassniki) {
+            $app->odnoklassniki = $request->odnoklassniki;
+        }
+        if ($request->tel) {
+            $app->tel = $request->tel;
+        }
+        if ($request->whatsapp) {
+            $app->whatsapp = $request->whatsapp;
+        }
+        if ($request->telegram) {
+            $app->telegram = $request->telegram;
+        }
+        if ($request->viber) {
+            $app->viber = $request->viber;
+        }
+        if ($request->party) {
+            $app->party = $request->party;
+        }
+        if ($request->pay) {
+            $app->pay = $request->pay;
+        }
+        if ($request->deltext) {
+            $app->deltext = $request->deltext;
+        }
 
         return redirect()->back();
     }
@@ -113,8 +139,8 @@ class AppController extends Controller
                 Image::make($logo)->resize(1000, 308)->save('uploads/logo/' . $filename );
                 $app->logo_path = $filename;
             }
-            if ($request->description) {
-                $app->description = $request->description;
+            if ($request->address) {
+                $app->address = $request->address;
             }
             if ($request->hasFile('img_path')) {
                 $banner = $request->file('img_path');
@@ -145,6 +171,15 @@ class AppController extends Controller
             }
             if ($request->viber) {
                 $app->viber = $request->viber;
+            }
+            if ($request->party) {
+                $app->party = $request->party;
+            }
+            if ($request->pay) {
+                $app->pay = $request->pay;
+            }
+            if ($request->deltext) {
+                $app->deltext = $request->deltext;
             }
 
             $app->save();

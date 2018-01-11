@@ -16,7 +16,7 @@ class CreateAppsTable extends Migration
         Schema::create('apps', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logo_path')->nullable();
-            $table->string('description')->nullable();
+            $table->string('address')->nullable();
             $table->string('img_path')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
@@ -26,6 +26,9 @@ class CreateAppsTable extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('telegram')->nullable();
             $table->string('viber')->nullable();
+            $table->string('party')->nullable();
+            $table->string('pay')->nullable();
+            $table->string('deltext')->nullable();
             $table->timestamps();
         });
     }

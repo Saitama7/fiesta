@@ -14,7 +14,6 @@
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
                                 <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
-                                {{--<a class="nav-link" id="v-pills-vid-tab" data-toggle="pill" href="#v-pills-vid" role="tab" aria-controls="v-pills-profile" aria-selected="false">Вид Букета</a>--}}
                                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
                                 <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
                                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-deliv" role="tab" aria-controls="v-pills-deliv" aria-selected="false">Курьеры</a>
@@ -431,6 +430,10 @@
                                                 <td>{{ $app->odnoklassniki }}</td>
                                             </tr>
                                             <tr>
+                                                <th scope="row" class="align-middle">Адрес</th>
+                                                <td>{{ $app->address }}</td>
+                                            </tr>
+                                            <tr>
                                                 <th scope="row" class="align-middle">Телефон</th>
                                                 <td>{{ $app->tel }}</td>
                                             </tr>
@@ -446,11 +449,22 @@
                                                 <th scope="row" class="align-middle">Viber</th>
                                                 <td>{{ $app->viber }}</td>
                                             </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Оформление торжеств</th>
+                                                <td>{{ $app->party }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Оплата</th>
+                                                <td>{{ $app->pay }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="align-middle">Доставка</th>
+                                                <td>{{ $app->deltext }}</td>
+                                            </tr>
                                         @endforeach
                                     @endif
                                     </tbody>
                             </table>
-
                         </div>
                     </div>
 

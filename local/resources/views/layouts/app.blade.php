@@ -115,7 +115,7 @@
                         </p>
                         <p>
                             <i class="fa fa-address-book" aria-hidden="true"> АДРЕС:</i><br>
-                            <span>Аалы Токомбаева 53/1 (Globus)</span>
+                            <span>{{ $app->address }}</span>
                         </p>
 
                     </div>
