@@ -1,10 +1,28 @@
 /*var options = {
  offset: 50
  }
-
  var header = new Headhesive('.header', options);*/
+
+var h = $(window).width();
+console.log(h);
+var count = 1;
+if (h < 1024 && h > 780){
+    count = 3;
+}
+if (h <= 780 && h >= 500) {
+    count = 3;
+}
+if (h < 500) {
+    count = 2;
+}
+if (h >= 1024) {
+    count = 4;
+}
+
+console.log(count);
+
 $('.autoplay').slick({
-    slidesToShow: 4,
+    slidesToShow: count,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -14,7 +32,7 @@ $('.autoplay').slick({
 });
 
 $('.slaider').slick({
-    slidesToShow: 4,
+    slidesToShow: count,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,

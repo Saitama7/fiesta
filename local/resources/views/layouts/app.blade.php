@@ -36,11 +36,9 @@
             @foreach($apps as $app)
             <a class="navbar-brand py-0 mx-auto col-2 active" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
             @endforeach
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <i class="fa fa-bars text-white" aria-hidden="true" id="mobile-button-nav"></i>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="" id="mobile-nav">
                 <ul class="navbar-nav mx-auto nav min-menu">
                     <li class="nav-item">
                         <a class="nav-link" href="/all/flowers">Заказать букет</a>
@@ -66,16 +64,16 @@
 
                 </ul>
                 <!----->
-                @include('shop.shopping-cart')
+
 
                 <ul class="navbar-nav mx-auto nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="#"><ins>{{ $app->tel }}</ins><span class="sr-only">(current)</span></a>
                     </li>
-
                 </ul>
 
             </div>
+                @include('shop.shopping-cart')
         </nav>
     </div>
 
@@ -153,6 +151,13 @@
         minDate: new Date()
     });
     console.log(new Date())
+</script>
+<script>
+    $('#mobile-button-nav').click(function (e) {
+        console.log('error');
+        e.preventDefault(e);
+        $('#mobile-nav').toggleClass('mobile-nav');
+    })
 </script>
         <script src="js/mask.js"></script>
         <script type="text/javascript">

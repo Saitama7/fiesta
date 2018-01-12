@@ -27,7 +27,7 @@
 
                 @foreach($flowers as $flower)
                     @if($flower->type_id == 3 && $flower->status == 1 && $flower->slide_status == 1)
-                        <div class="col-3 mb-3 div1">
+                        <div class="col-md-3 col-xs-6 col-sm-6 mb-3 div1">
 
                             <div class="card  bg-dark text-white rounded-circle  text-center" style="border: 0px;">
                                 <img class="card-img rounded-circle " src="/uploads/products/{{ $flower->image_path }}" alt="Card image">
