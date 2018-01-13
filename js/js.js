@@ -1,8 +1,3 @@
-/*var options = {
- offset: 50
- }
- var header = new Headhesive('.header', options);*/
-
 var h = $(window).width();
 console.log(h);
 var count = 1;
@@ -18,8 +13,6 @@ if (h < 500) {
 if (h >= 1024) {
     count = 4;
 }
-
-console.log(count);
 
 $('.autoplay').slick({
     slidesToShow: count,
@@ -39,12 +32,15 @@ $('.slaider').slick({
     prevArrow: $('.preve'),
     nextArrow: $('.nexte'),
     infinite: false,
-
+});
+$('.banket-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    prevArrow: $('.prevb'),
+    nextArrow: $('.nextb'),
+    infinite: false,
 });
 
-
-$('#modalProduct').on('show.bs.modal', function (event) {
-    alert('dsafasdf');
-})
-// $(".owl-carousel").owlCarousel();
 
