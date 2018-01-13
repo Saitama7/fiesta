@@ -13,12 +13,13 @@
                         <div class="bg-light">
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Товары</a>
+                                <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
+                                <a class="nav-link" id="v-pills-bankets-tab" data-toggle="pill" href="#v-pills-bankets" role="tab" aria-controls="v-pills-bankets" aria-selected="false">Картинки Оформления торжеств</a>
                                 <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Тип товара</a>
                                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Категории</a>
                                 <a class="nav-link" id="v-pills-interval-tab" data-toggle="pill" href="#v-pills-intervals" role="tab" aria-controls="v-pills-intervals" aria-selected="false">Диапазон времени</a>
                                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-deliv" role="tab" aria-controls="v-pills-deliv" aria-selected="false">Курьеры</a>
                                 <a class="nav-link" id="v-pills-button5-tab" data-toggle="pill" href="#v-pills-button5" role="tab" aria-controls="v-pills-button5" aria-selected="false">VIP - клиенты</a>
-                                <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Заказы</a>
                                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Настройки</a>
                             </div>
                         </div>
@@ -117,7 +118,35 @@
                     </div>
 
 
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="tab-content" id="v-pills-bankets">
+                        <div class="tab-pane fade show active" id="v-pills-bankets" role="tabpanel" aria-labelledby="v-pills-bankets-tab">
+                            <!-- Button trigger modal -->
+                            <button type="button" id="banketbtn" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalBanket">
+                                Загрузить картину
+                            </button>
+
+                            <div class="pt-5">
+                                <div class="row w-100">
+                                    @if(!empty($bankets))
+                                        @foreach($bankets as $banket)
+                                            <div class="col-4 mb-3 mt-5">
+                                                <div class="text-white  text-center" style="border: 0px;">
+                                                    <img class="card-img " src="/uploads/bankets/{{ $banket->path }}" alt="Оформление торжеств">
+                                                    <div class="col d-flex justify-content-center">
+                                                        <a href="/delete/banket/{{ $banket->id }} }}" type="button" class="onetwo btn btn-pos btn-labflower text-dark">Удалить</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltype">
                             Создать тип
                         </button>
@@ -491,6 +520,7 @@
         @include('modals.vip')
         @include('modals.upvip')
         @include('modals.app')
+        @include('modals.banket')
         @include('modals.more')
 
 

@@ -83,6 +83,11 @@ Route::post('/store/size', 'SizeController@store');
 Route::get('/edit/size/{id}', 'SizeController@edit');
 Route::get('/delete/size/{id}', 'SizeController@destroy');
 
+//Banket
+Route::get('/create/banket', 'BanketController@create');
+Route::post('/store/banket', 'BanketController@store');
+Route::get('/delete/banket/{id}', 'BanketController@destroy');
+
 //Vid
 Route::get('/create/vid', 'VidController@create');
 Route::post('/update/vid', 'VidController@update');

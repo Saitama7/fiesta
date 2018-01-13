@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Banket;
 use App\Cart;
 use App\OrderTime;
 use App\Product;
@@ -149,11 +150,13 @@ class IndexController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $apps = App::all();
+        $bankets = Banket::all();
 
         return view('corporative-clients', [
             'products' => $cart->items,
             'totalQty' => $cart->totalQty,
             'totalPrice' => $cart->totalPrice,
+            'bankets' => $bankets,
             'apps' => $apps->where('id', '=', 1)]);
     }
     public function admin() {

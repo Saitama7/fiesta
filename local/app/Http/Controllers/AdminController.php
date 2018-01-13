@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Banket;
 use App\Basket;
 use App\Delivery;
 use App\OrderTime;
@@ -30,6 +31,7 @@ class AdminController extends Controller
                 'order_times' => OrderTime::all(),
                 'vids' => Vid::all(),
                 'apps' => App::all(),
+                'bankets' => Banket::all(),
             ]);
         }else {
             return $redirectTo = '/login';
