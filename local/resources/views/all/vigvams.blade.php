@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Вигвамы')
+@section('description')
+    Вигвам для детей (типи, teepee, игровой домик, детская палатка) купить в Бишкеке – отличный и практичный подарок для Вашего ребенка. Интернет магазин FIESTA KIDS- вигвамы и аксессуары к ним с доставкой.
+@stop
 @section('content')
 
             <div class="container">

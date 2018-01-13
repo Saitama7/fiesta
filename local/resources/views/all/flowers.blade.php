@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Заказать букет')
+@section('description')
+    В магазине FIESTA FLOWERS собран огромный каталог, где Вы можете подобрать для любимых оригинальный букет из более чем 1000 вариантов цветка. Пионы, розы, тюльпаны, экзотика и многое другое.
+@stop
 @section('content')
 
             <div class="container py-5">

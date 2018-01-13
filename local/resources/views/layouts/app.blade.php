@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Fiesta, Фиеста, Букеты, Цветы, Бишкек цветы, Бишкек букеты, Бишкек мишки, Бишкек Фиеста, Купить букеты, Купить подарок, Fiesta flowers, Фиеста фловерс, Flowers, 101 роза, 1001 роза, Оформление торжеств, Вигвам" />
+    <meta name="description" content="@yield('description')">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">

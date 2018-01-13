@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Главная')
+@section('description')
+    Интернет-магазин цветов FIESTA FLOWERS. Доставка по Бишкеку и пригороду. Оформление праздников и свадеб. Букеты на заказ и в наличии от 350 сом. +996 (550) 806-000
+@stop
 @section('content')
 
     @if (session('status'))
