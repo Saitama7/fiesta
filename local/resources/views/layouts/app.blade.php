@@ -20,8 +20,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/owlcarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/owlcarousel/dist/assets/owl.theme.default.min.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -35,44 +33,62 @@
     <!-- Хедер -->
     <div class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-0 nav bg-header">
+            <i class="fa fa-bars text-white" aria-hidden="true" id="mobile-button-nav"></i>
             @foreach($apps as $app)
-            <a class="navbar-brand py-0 mx-auto col-2 active" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
+            <a class="navbar-brand p-0 col-4 col-md-2 active mx-auto" href="/"><img src="/uploads/logo/{{ $app->logo_path }}" alt="" class="w-100 py-2"><span class="sr-only">(current)</span></a>
             @endforeach
-                <i class="fa fa-bars text-white" aria-hidden="true" id="mobile-button-nav"></i>
+            <div id="backdrop"></div>
 
-            <div class="" id="mobile-nav">
-                <ul class="navbar-nav mx-auto nav min-menu">
-                    <li class="nav-item">
+
+            <div class="row" id="mobile-nav">
+                <i class="fa fa-times text-white float-right d-xs-none" style="margin-top: 20px; margin-right: 20px;" aria-hidden="true"></i>
+                <ul class="navbar-nav mt-5 my-xs-0 ml-5 ml-xs-0 nav min-menu">
+                    <li class="nav-item my-2 my-xs-0">
                         <a class="nav-link" href="/all/flowers">Заказать букет</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-2 my-xs-0">
                         <a class="nav-link" href="/all/boxes">Подарочные боксы</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-2 my-xs-0">
                         <a class="nav-link" href="/festivities">Оформление торжеств</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-2 my-xs-0">
                         <a class="nav-link" href="/contacts">Контакты</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-2 my-xs-0">
                         <a class="nav-link" href="/deliver">Доставка и оплата</a>
                     </li>
                 </ul>
 
-                <ul class="navbar-nav mr-auto nav max-menu">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/all/vigvams">Вигвамы<span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav ml-5 ml-xs-0 mr-auto nav max-menu">
+                    <li class="nav-item my-2 my-xs-0 active">
+                        <a class="nav-link" href="/all/vigvams">Вигвамы</a>
                     </li>
 
                 </ul>
                 <!----->
 
 
-                <ul class="navbar-nav mx-auto nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><ins>{{ $app->tel }}</ins><span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav ml-5 ml-xs-0 nav">
+                    <li class="nav-item my-2 my-xs-0 active">
+                        <a class="nav-link" href="#">{{ $app->tel }}</a>
                     </li>
                 </ul>
+
+                <div class="row d-xs-none ml-5 mt-5 ml-xs-0">
+                    <div class="col">
+                        <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook text-white"></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki text-white"></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="{{ $app->instagram }}" target="_blank"><i class="fa fa-instagram text-white"></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="{{ $app->twitter }}" target="_blank"><i class="fa fa-twitter text-white"></i></a>
+                    </div>
+                </div>
 
             </div>
                 @include('shop.shopping-cart')
@@ -102,9 +118,13 @@
         <footer class="bg-dark py-3">
             <div class="container">
                 <div class="row justify-content-center">
-
-                    <div class="col-3 font-italic font-weight-light text-center foot-contact">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <img class="mb-4 w-100" src="/uploads/logo/{{ $app->logo_path }}" alt="">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+
+                    <div class="col-sm-12 col-md-6 col-lg-3 font-italic font-weight-light text-center foot-contact">
                         <p>
                             <span class="fa fa-phone"> ТЕЛЕФОН:</span><br>
                             <a href="tel:{{ $app->tel }}" target="_blank">{{ $app->tel }}</a>
@@ -156,9 +176,28 @@
 </script>
 <script>
     $('#mobile-button-nav').click(function (e) {
-        console.log('error');
         e.preventDefault(e);
-        $('#mobile-nav').toggleClass('mobile-nav');
+        $('#mobile-nav').toggleClass('row');
+        $('#mobile-nav').toggleClass('mobile-nav', 1000);
+        $('#backdrop').show();
+    })
+    $('.fa-times').click(function (e) {
+        e.preventDefault(e);
+        $('#mobile-nav').toggleClass('mobile-nav', 1000,
+        function() {
+            $('#mobile-nav').toggleClass('row');
+        });
+
+        $('#backdrop').hide(1000);
+    })
+    $('#backdrop').click(function (e) {
+        e.preventDefault(e);
+        $('#mobile-nav').toggleClass('mobile-nav', 1000,
+            function() {
+                $('#mobile-nav').toggleClass('row');
+            });
+
+        $('#backdrop').hide(1000);
     })
 </script>
         <script src="js/mask.js"></script>
