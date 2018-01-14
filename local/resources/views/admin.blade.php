@@ -32,16 +32,12 @@
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('status') }}
                     </div>
                  @endif
-                <!-- <div class="container">-->
-
-
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <!-- Button trigger modal -->
                         <button type="button" id="prodbtn" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalProduct">
                             Создать товар
                         </button>
-
                         <div class="pt-5">
                                 <table class="table table-bordered table-hover table-light">
                                     <thead>
@@ -114,17 +110,13 @@
                                     @endif
                                 </table>
                         </div>
-
                     </div>
-
-
                     <div class="tab-content" id="v-pills-bankets">
                         <div class="tab-pane fade show active" id="v-pills-bankets" role="tabpanel" aria-labelledby="v-pills-bankets-tab">
                             <!-- Button trigger modal -->
                             <button type="button" id="banketbtn" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalBanket">
                                 Загрузить картину
                             </button>
-
                             <div class="pt-5">
                                 <div class="row w-100">
                                     @if(!empty($bankets))
@@ -143,16 +135,11 @@
                             </div>
                         </div>
                     </div>
-
-
-
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltype">
                             Создать тип
                         </button>
-
                         <div class="pt-5">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                 <tr>
@@ -180,8 +167,7 @@
                                         </tbody>
                                     @endforeach
                                 @endif
-                            </table>
-
+                            </table
                         </div>
                     </div>
 
@@ -189,9 +175,7 @@
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalsize">
                             Создать категорию
                         </button>
-
                         <div class="pt-5">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                     <tr>
@@ -220,17 +204,13 @@
                                     @endforeach
                                 @endif
                             </table>
-
                         </div>
                     </div>
-
                     <div class="tab-pane fade" id="v-pills-intervals" role="tabpanel" aria-labelledby="v-pills-intervals-tab">
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltime">
                             Создать диапазон времени
                         </button>
-
                         <div class="pt-5">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                 <tr>
@@ -259,7 +239,6 @@
                                     @endforeach
                                 @endif
                             </table>
-
                         </div>
                     </div>
 
@@ -267,9 +246,7 @@
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaldeliv">
                             Новый курьер
                         </button>
-
                         <div class="pt-5">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                     <tr>
@@ -300,7 +277,6 @@
                                     @endforeach
                                 @endif
                             </table>
-
                         </div>
                     </div>
 
@@ -308,9 +284,7 @@
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalvip">
                             Новый VIP - клиент
                         </button>
-
                         <div class="pt-5">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                     <tr>
@@ -345,13 +319,11 @@
                                     @endforeach
                                 @endif
                             </table>
-
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
                         <div class="mt-5 pt-3">
-
                             <table class="table table-bordered table-hover table-light">
                                 <thead>
                                 <tr>
@@ -416,7 +388,6 @@
                                     @endforeach
                                 @endif
                             </table>
-
                         </div>
                     </div>
 
@@ -425,7 +396,6 @@
                             <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalapp">
                                 Настроить
                             </button>
-
                             <table class="table table-bordered table-hover table-light">
                                     <tbody>
                                     @if(!empty($apps))
@@ -496,8 +466,6 @@
                             </table>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <!--</div>-->

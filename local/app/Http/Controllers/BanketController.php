@@ -45,9 +45,7 @@ class BanketController extends Controller
             Image::make($img)->resize(1080, 1080)->save('uploads/bankets/' . $filename );
             $banket->path = $filename;
         }
-
         $banket->save();
-
         return redirect()->back();
     }
 

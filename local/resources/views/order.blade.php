@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Оформление заказа')
 @section('content')
-
     <content>
         <div class="container">
             <h1 class="my-5">Оформление Заказа</h1>
@@ -73,10 +72,8 @@
                         <input type="tel" value="@if(Session::has('vip')) {{ Session::get('vip')->phone_number }} @endif"  pattern="+996-[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phone_number" class="form-control" placeholder="+996-777-777-777" id="phone" required>
                     </div>
                 </div>
-
                 <h4 class="mb-3">Дата и время заказа</h4>
                 <p class="shrift-ton">Укажите нужную дату и время заказа</p>
-
                 <div class="row mb-4">
                     <div class="col">
                         <label for="datepicker">Дата</label>
@@ -109,7 +106,6 @@
                         <input type="text" name="house" class="form-control" placeholder="Номер дома" id="home" required>
                     </div>
                 </div>
-
                 <div class="row mb-4">
                     <div class="col">
                         <label for="caption">Подпись</label>
@@ -168,7 +164,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </content>
 

@@ -43,7 +43,6 @@ class BasketController extends Controller
     public function store(Request $request)
     {
         $basket = new Basket();
-
         $basket->delivery_id = $request->delivery_id;
         if (Session::has('vip')){
             $basket->vip_id = Session::get('vip')->id;
@@ -80,7 +79,6 @@ class BasketController extends Controller
             'baskets' => $basket,
             'times' => $time
         ]);
-
     }
 
     /**
@@ -104,7 +102,6 @@ class BasketController extends Controller
     public function edit($basketId)
     {
         $basket = Basket::find($basketId);
-
         return view('edit.basket', ['basket' => $basket]);
     }
 
@@ -149,9 +146,6 @@ class BasketController extends Controller
             if ($request->sign) {
                 $basket->sign = $request->sign  ;
             }
-
-
-
             $basket->save();
         }
 

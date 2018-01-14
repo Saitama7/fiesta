@@ -181,7 +181,6 @@ class AppController extends Controller
             if ($request->deltext) {
                 $app->deltext = $request->deltext;
             }
-
             $app->save();
         }
 

@@ -1,24 +1,18 @@
 .body {
-     /*background-image: url(/fiesta_img/sakura.png);*/
      background-color: #ebeff2;
 }
-
 .rad {
      width: 75px;
      height: 75px;
      border-radius: 170px;
 }
-
 .flower {
      font-family: 'Great Vibes', cursive;
-     
 }
-
 #size-img {
      border: 1px #000;
      border-radius: 50px;
 }
-
 .content{
      margin-top: 90px;
 }

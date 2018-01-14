@@ -37,12 +37,9 @@ class DeliveryController extends Controller
     public function store(Request $request)
     {
         $delivery = new Delivery();
-
         $delivery->name = $request->name;
         $delivery->cost = $request->cost;
-
         $delivery->save();
-
         return redirect()->back()->with('status', 'Добавлен новый курьер: '.$request->name);
     }
 
@@ -67,7 +64,6 @@ class DeliveryController extends Controller
     public function edit($deliveryId)
     {
         $delivery = Delivery::find($deliveryId);
-
         return response()->json(['delivery' => $delivery]);
     }
 
@@ -88,7 +84,6 @@ class DeliveryController extends Controller
             if ($request->cost) {
                 $delivery->cost = $request->cost;
             }
-
             $delivery->save();
         }
 

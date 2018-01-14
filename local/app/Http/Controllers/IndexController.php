@@ -16,12 +16,9 @@ class IndexController extends Controller
     {
         $products = Product::all();
         $apps = App::all();
-
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
 
-
-        //dd($products->where('type_id', '=', 4));
         return view('welcome', [
             'flowers' => $products->where('type_id', '=', 3),
             'boxes' => $products->where('type_id', '=', 4),

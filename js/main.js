@@ -1,11 +1,9 @@
 $(document).ready(function() {
-
     $(window).resize(function () {
         var h = $(window).height();
         $('.height').css({'min-height': h});
     });
     $(window).trigger('resize');
-
 
     var solt = $('.solt');
     var products = $('.productsInCart');
@@ -69,7 +67,6 @@ $(document).ready(function() {
 
 $('button#validatevipbutton').click(function (e) {
     e.preventDefault(e);
-
     $.ajax({
         url: '/validatevip',
         type: 'GET',
@@ -98,7 +95,6 @@ $('button#validatevipbutton').click(function (e) {
                     'Попробуйте еще раз('
                 )
             }
-
         },
         error: function () {
             console.log('ERROR!');
@@ -124,7 +120,6 @@ $('button#validatevipbutton').click(function (e) {
                 $('.totalPrice').text(data.totalPrice);
             },
             error: function () {
-
             }
         });
     });
@@ -157,7 +152,6 @@ $('button#validatevipbutton').click(function (e) {
                 else {
                     modal.find('#p-slide').attr('checked', false);
                 }
-
             }
         });
     });
@@ -301,7 +295,6 @@ $('button#validatevipbutton').click(function (e) {
                         $('.totalPrice').text(data.totalPrice);
                         $('input[name=totalPrice]').val(data.totalPrice);
                     }
-
                 }
             }
         });

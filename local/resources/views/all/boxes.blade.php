@@ -4,11 +4,8 @@
     В магазине FIESTA FLOWERS собран огромный каталог подарочных наборов, где Вы можете подобрать для любимых оригинальный подарок из более чем 1000 вариантов подарков. Косметика Organic shop, сладости, апперетивы, сувениры, свечи и многое другие.
 @stop
 @section('content')
-
-
     <div class="container py-5">
         <h2 class="mb-3">Популярные</h2>
-
         <div class="row">
             @foreach($tproducts as $product)
                 @if($product->status == 1 && $product->vid_id == 6 && $product->type_id == 4)
@@ -22,15 +19,12 @@
                             <div class="col d-flex justify-content-center">
                                 <a href="{{ $product->id }}" id="{{ $product->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                             </div>
-
                         </div>
-
                     </div>
                 @endif
             @endforeach
         </div>
     </div>
-
     <div class="container py-5">
         <h2 class="mb-3">Все боксы</h2>
         <div class="row">
