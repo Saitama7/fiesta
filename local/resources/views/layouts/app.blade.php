@@ -40,7 +40,7 @@
             <div id="backdrop"></div>
 
 
-            <div class="row" id="mobile-nav">
+            <div class="row" style="font-family: 'Lobster', cursive;" id="mobile-nav">
                 <i class="fa fa-times text-white float-right d-xl-none" style="margin-top: 20px; margin-right: 20px;" aria-hidden="true"></i>
                 <ul class="navbar-nav mt-5 my-xl-0 ml-5 ml-xl-0 nav min-menu">
                     <li class="nav-item my-2 my-xl-0">
@@ -75,7 +75,7 @@
                     </li>
                 </ul>
 
-                <div class="row d-xl-none ml-5 mt-5 ml-xl-0">
+                <div class="row d-xl-none mx-auto mt-5 mx-xl-0">
                     <div class="col">
                         <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook text-white"></i></a>
                     </div>
@@ -106,7 +106,7 @@
                 {{--</div>--}}
             {{--</div>--}}
             <div style="height:72px;"></div>
-            <div class="buttons">
+            <div class="buttons d-none d-lg-block">
                 <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
                 <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
                 <a href="{{ $app->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -183,21 +183,21 @@
     })
     $('.fa-times').click(function (e) {
         e.preventDefault(e);
-        $('#mobile-nav').toggleClass('mobile-nav', 1000,
+        $('#mobile-nav').toggleClass('mobile-nav',
         function() {
             $('#mobile-nav').toggleClass('row');
         });
 
-        $('#backdrop').hide(1000);
+        $('#backdrop').hide();
     })
     $('#backdrop').click(function (e) {
         e.preventDefault(e);
-        $('#mobile-nav').toggleClass('mobile-nav', 1000,
+        $('#mobile-nav').toggleClass('mobile-nav',
             function() {
                 $('#mobile-nav').toggleClass('row');
             });
 
-        $('#backdrop').hide(1000);
+        $('#backdrop').hide();
     })
 </script>
         <script src="js/mask.js"></script>

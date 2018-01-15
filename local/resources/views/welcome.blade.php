@@ -28,13 +28,17 @@
                         <div class="col-md-3 col-xs-6 col-sm-6 mb-3 div1">
                             <div class="card  bg-dark text-white rounded-circle  text-center" style="border: 0px;">
                                 <img class="card-img rounded-circle " src="/uploads/products/{{ $flower->image_path }}" alt="Card image">
-                                <div class="card-img-overlay rounded-circle ">
+                                <div class="card-img-overlay rounded-circle d-none">
                                     <h4 class="card-title mt-5"><span>{{ $flower->cost }}</span> сом</h4>
                                     <p class="card-text">{{ $flower->name }}</p>
                                 </div>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <a href="{{ $flower->id }}" id="{{ $flower->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
+                            </div>
+                            <div class="text-dark text-center">
+                                <h4 class=" mt-3" style="font-family: 'Lobster', cursive;"><span class="" >{{ $flower->cost }}</span> сом</h4>
+                                <p class="">{{ $flower->name }}</p>
                             </div>
                         </div>
                     @endif
@@ -66,6 +70,10 @@
                                 <div class="col d-flex justify-content-center">
                                     <a href="{{ $box->id }}" id="{{ $box->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                                 </div>
+                            </div>
+                            <div class="text-dark text-center">
+                                <h4 class=" mt-3" style="font-family: 'Lobster', cursive;"><span class="" >{{ $box->cost }}</span> сом</h4>
+                                <p class="">{{ $box->name }}</p>
                             </div>
                         </div>
                     @endif

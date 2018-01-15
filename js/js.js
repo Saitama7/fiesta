@@ -33,14 +33,5 @@ $('.slaider').slick({
     nextArrow: $('.nexte'),
     infinite: false,
 });
-$('.banket-slider').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    prevArrow: $('.prevb'),
-    nextArrow: $('.nextb'),
-    infinite: false,
-});
 
 
