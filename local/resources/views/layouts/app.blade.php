@@ -41,27 +41,27 @@
 
 
             <div class="row" id="mobile-nav">
-                <i class="fa fa-times text-white float-right d-xs-none" style="margin-top: 20px; margin-right: 20px;" aria-hidden="true"></i>
-                <ul class="navbar-nav mt-5 my-xs-0 ml-5 ml-xs-0 nav min-menu">
-                    <li class="nav-item my-2 my-xs-0">
+                <i class="fa fa-times text-white float-right d-xl-none" style="margin-top: 20px; margin-right: 20px;" aria-hidden="true"></i>
+                <ul class="navbar-nav mt-5 my-xl-0 ml-5 ml-xl-0 nav min-menu">
+                    <li class="nav-item my-2 my-xl-0">
                         <a class="nav-link" href="/all/flowers">Заказать букет</a>
                     </li>
-                    <li class="nav-item my-2 my-xs-0">
+                    <li class="nav-item my-2 my-xl-0">
                         <a class="nav-link" href="/all/boxes">Подарочные боксы</a>
                     </li>
-                    <li class="nav-item my-2 my-xs-0">
+                    <li class="nav-item my-2 my-xl-0">
                         <a class="nav-link" href="/festivities">Оформление торжеств</a>
                     </li>
-                    <li class="nav-item my-2 my-xs-0">
+                    <li class="nav-item my-2 my-xl-0">
                         <a class="nav-link" href="/contacts">Контакты</a>
                     </li>
-                    <li class="nav-item my-2 my-xs-0">
+                    <li class="nav-item my-2 my-xl-0">
                         <a class="nav-link" href="/deliver">Доставка и оплата</a>
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ml-5 ml-xs-0 mr-auto nav max-menu">
-                    <li class="nav-item my-2 my-xs-0 active">
+                <ul class="navbar-nav ml-5 ml-xl-0 mr-auto nav max-menu">
+                    <li class="nav-item my-2 my-xl-0 active">
                         <a class="nav-link" href="/all/vigvams">Вигвамы</a>
                     </li>
 
@@ -69,13 +69,13 @@
                 <!----->
 
 
-                <ul class="navbar-nav ml-5 ml-xs-0 nav">
-                    <li class="nav-item my-2 my-xs-0 active">
+                <ul class="navbar-nav ml-5 ml-xl-0 nav">
+                    <li class="nav-item my-2 my-xl-0 active">
                         <a class="nav-link" href="#">{{ $app->tel }}</a>
                     </li>
                 </ul>
 
-                <div class="row d-xs-none ml-5 mt-5 ml-xs-0">
+                <div class="row d-xl-none ml-5 mt-5 ml-xl-0">
                     <div class="col">
                         <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook text-white"></i></a>
                     </div>
