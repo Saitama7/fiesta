@@ -43,25 +43,25 @@
                 <i class="fa fa-times text-white float-right d-xl-none" style="margin-top: 20px; margin-right: 20px;" aria-hidden="true"></i>
                 <ul class="navbar-nav mt-5 my-xl-0 ml-5 nav min-menu">
                     <li class="nav-item my-2 my-xs-0">
-                        <a class="nav-link" href="/all/flowers">Заказать букет</a>
+                        <a class="nav-link" href="/all/flowers"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Заказать букет</a>
                     </li>
                     <li class="nav-item my-2 my-xs-0">
-                        <a class="nav-link" href="/all/boxes">Подарочные боксы</a>
+                        <a class="nav-link" href="/all/boxes"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Подарочные боксы</a>
                     </li>
                     <li class="nav-item my-2 my-xs-0">
-                        <a class="nav-link" href="/festivities">Оформление торжеств</a>
+                        <a class="nav-link" href="/festivities"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Оформление торжеств</a>
                     </li>
                     <li class="nav-item my-2 my-xs-0">
-                        <a class="nav-link" href="/contacts">Контакты</a>
+                        <a class="nav-link" href="/contacts"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Контакты</a>
                     </li>
                     <li class="nav-item my-2 my-xs-0">
-                        <a class="nav-link" href="/deliver">Доставка и оплата</a>
+                        <a class="nav-link" href="/deliver"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Доставка и оплата</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav ml-5 ml-xl-0 mr-auto nav max-menu">
                     <li class="nav-item my-2 my-xs-0 active">
-                        <a class="nav-link" href="/all/vigvams">Вигвамы</a>
+                        <a class="nav-link" href="/all/vigvams"><i class="fa fa-angle-double-right d-xl-none" style="font-size: 15px;" aria-hidden="true"></i> Вигвамы</a>
                     </li>
                 </ul>
                 <!----->
@@ -75,16 +75,16 @@
 
                 <div class="row d-xl-none ml-5 mt-5 ml-xs-0">
                     <div class="col">
-                        <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook text-white"></i></a>
+                        <a href="{{ $app->facebook }}" target="_blank"><i class="fa fa-facebook-square  text-white isize"></i></a>
                     </div>
                     <div class="col">
-                        <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki text-white"></i></a>
+                        <a href="{{ $app->odnoklassniki }}" target="_blank"><i class="fa fa-odnoklassniki text-white isize"></i></a>
                     </div>
                     <div class="col">
-                        <a href="{{ $app->instagram }}" target="_blank"><i class="fa fa-instagram text-white"></i></a>
+                        <a href="{{ $app->instagram }}" target="_blank"><i class="fa fa-instagram text-white isize"></i></a>
                     </div>
                     <div class="col">
-                        <a href="{{ $app->twitter }}" target="_blank"><i class="fa fa-twitter text-white"></i></a>
+                        <a href="{{ $app->twitter }}" target="_blank"><i class="fa fa-twitter text-white isize"></i></a>
                     </div>
                 </div>
 
@@ -171,7 +171,7 @@
         $('#mobile-nav').toggleClass('row');
         $('#mobile-nav').toggleClass('mobile-nav', 1000);
         $('#backdrop').show();
-    })
+    });
     $('.fa-times').click(function (e) {
         e.preventDefault(e);
         $('#mobile-nav').toggleClass('mobile-nav', 1000,
@@ -180,7 +180,7 @@
         });
 
         $('#backdrop').hide(1000);
-    })
+    });
     $('#backdrop').click(function (e) {
         e.preventDefault(e);
         $('#mobile-nav').toggleClass('mobile-nav', 1000,
@@ -189,7 +189,7 @@
             });
 
         $('#backdrop').hide(1000);
-    })
+    });
 </script>
         <script src="js/mask.js"></script>
         <script type="text/javascript">
