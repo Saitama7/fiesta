@@ -51,6 +51,7 @@ body {
           margin-left: -1000px;
           /*background: #6277e4eb;*/
           background: rgba(0,0,0, 0.77);
+          transition: 1s;
           color: #f5f5f5;
           z-index: 9999;
           height: 100%;
@@ -69,11 +70,7 @@ body {
      .mobile-nav {
           margin-left: 0px !important;
      }
-
 }
-
-
-
 
 .logo-size {
      width: 75px;
