@@ -470,3 +470,14 @@ footer{
           font-size: inherit;
      }
 }
+@media all and (max-width: 1024px) {
+     .buttons {
+          display: none !important;
+     }
+}
+@media all and (max-width: 425px){
+     .ml-xs-0 {
+          margin-left: 0 !important;
+     }
+}
+

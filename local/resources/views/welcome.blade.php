@@ -10,7 +10,7 @@
                 <div class="" style="position:absolute; right:80px;">
                     <a href="#" class="close text-white" style="opacity: 1;" data-dismiss="alert" aria-label="close">&times;</a>
                 </div>
-                <img src="fiesta_img/435019.jpg" class="img-fluid" alt="">
+                <img src="uploads/435019.jpg" class="img-fluid" alt="">
             </div>
         </div>
     @endif

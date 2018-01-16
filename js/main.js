@@ -4,6 +4,12 @@ $(document).ready(function() {
         $('.height').css({'min-height': h});
     });
     $(window).trigger('resize');
+    $('.navbar').resize(function () {
+        var v = $('.navbar').height();
+        $('.nav-height').css({'min-height': v});
+    });
+    $('.navbar').trigger('resize');
+
 
     var solt = $('.solt');
     var products = $('.productsInCart');

@@ -6,7 +6,7 @@
 @stop
 @section('content')
     <div class="container">
-        <div class="row">
+        <div>
             <h1 class="my-5 text-center text-lg-left corp" >оформление торжеств</h1>
             <p>
                 @foreach($apps as $app)
