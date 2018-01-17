@@ -6,52 +6,63 @@
             <h1 class="my-5">Оформление Заказа</h1>
             <h4 class='mb-5'>Информация о заказе</h4>
             <div class="order-info">
-                <div class="row text-center p-3">
-                    <div class="col-1">
-
+                @if($products)
+                    <div class=" d-none d-lg-flex row text-center justify-content-lg-between p-3">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-auto">
+                            Товар
+                        </div>
+                        <div class="col-auto">
+                            Цена
+                        </div>
+                        <div class="col-auto">
+                            Количество
+                        </div>
+                        <div class="col-auto">
+                            Сумма
+                        </div>
+                        <div class="col-auto">
+                            Удалить
+                        </div>
                     </div>
-                    <div class="col-4">
-                        Товар
-                    </div>
-                    <div class="col-2">
-                        Цена
-                    </div>
-                    <div class="col-2">
-                        Количество
-                    </div>
-                    <div class="col-2">
-                        Сумма
-                    </div>
-                    @if(Session::has('vip'))
-                        <div class="col-1">
-                            Скидка
-                        </div>
-                    @endif
-                </div>
-                @foreach($products as $product)
-                    <div class="row align-items-center border bg-dark text-light rounded text-center p-3">
-                        <div class="col-1">
-                            <img class="w-100 rounded-circle" src="/uploads/products/{{ $product['item']['image_path'] }}" alt="" >
-                        </div>
-                        <div class="col-4">
-                            {{ $product['item']['name'] }}
-                        </div>
-                        <div class="col-2">
-                            {{ $product['item']['cost'] }} сом
-                        </div>
-                        <div class="col-2">
-                            <span > {{ $product['qty'] }} </span>
-                        </div>
-                        <div class="col-2">
-                            {{ $product['price'] }} сом
-                        </div>
-                        @if(Session::has('vip'))
-                            <div class="col-1">
-                                {{ Session::get('vip')->discount }} %
+                @endif
+                @if($products)
+                    @foreach($products as $product)
+                        <div class="row align-items-center border bg-dark text-light rounded text-center p-3">
+                            <div class="col-4 col-lg-2">
+                                <div class="row">
+                                    <div class="col">
+                                        <img class="w-100 rounded-circle" src="/uploads/products/{{ $product['item']['image_path'] }}" alt="" >
+                                    </div>
+                                </div>
                             </div>
-                        @endif
-                    </div>
-                @endforeach
+                            <div class="col-8 col-lg-10">
+                                <div class="row align-items-center justify-content-center justify-content-lg-between">
+                                    <div class="col-12 col-md-auto col-lg-auto">
+                                        {{ $product['item']['name'] }}
+                                    </div>
+                                    <div class="col-auto col-lg-auto d-none d-md-block">
+                                        {{ $product['item']['cost'] }} сом
+                                    </div>
+                                    <div class="col-12 col-lg-auto my-4">
+                                        <a href="/remove-from-cart/{{ $product['item']['id'] }}" class="p-2 font-weight-bold bg-danger text-light">-</a>
+                                        <span class="mx-1">{{ $product['qty'] }}</span>
+                                        <a href="/add-to-cart/{{ $product['item']['id'] }}" class="p-2 font-weight-bold bg-success text-light">+</a>
+                                    </div>
+                                    <div class="col-auto col-lg-auto">
+                                        {{ $product['price'] }} сом
+                                    </div>
+                                    <div class="col-auto col-lg-auto">
+                                        <a href="/delete-from-cart/{{ $product['item']['id'] }}"  class="btn btn-danger">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
                 <div class="row">
                     <div class="col d-flex justify-content-end mx-auto mt-3">
                         <b style="font-size: 18px;">Итого: <span>{{ $totalPrice }}</span> сом</b>
@@ -93,15 +104,15 @@
                 <h4 class="mb-3">Адрес доставки</h4>
                 <p class="shrift-ton">Укажите адрес доставки</p>
                 <div class="row mb-4">
-                    <div class="col">
+                    <div class="col-12 col-lg">
                         <label for="city">Город <span style="color: red;">*</span></label>
                         <input type="text" name="city" class="form-control" placeholder="Ваш город" id="city" required>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-lg">
                         <label for="street">Улица <span style="color: red;">*</span></label>
                         <input type="text" name="street" class="form-control" placeholder="Ваша улица" id="street" required>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-lg">
                         <label for="home">Дом <span style="color: red;">*</span></label>
                         <input type="text" name="house" class="form-control" placeholder="Номер дома" id="home" required>
                     </div>
