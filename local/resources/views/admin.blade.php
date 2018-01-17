@@ -111,8 +111,8 @@
                                 </table>
                         </div>
                     </div>
-                    <div class="tab-content" id="v-pills-bankets">
-                        <div class="tab-pane fade show active" id="v-pills-bankets" role="tabpanel" aria-labelledby="v-pills-bankets-tab">
+                    {{--<div class="tab-content" id="v-pills-bankets">--}}
+                        <div class="tab-pane fade" id="v-pills-bankets" role="tabpanel" aria-labelledby="v-pills-bankets-tab">
                             <!-- Button trigger modal -->
                             <button type="button" id="banketbtn" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modalBanket">
                                 Загрузить картину
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {{--</div>--}}
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <button type="button" class="btn btn-success py-3 mt-2 float-right" data-toggle="modal" data-target="#modaltype">
                             Создать тип
@@ -167,7 +167,7 @@
                                         </tbody>
                                     @endforeach
                                 @endif
-                            </table
+                            </table>
                         </div>
                     </div>
 
