@@ -16,11 +16,11 @@
         </div>
     </div>
     @if(!empty($bankets))
-        <div class="container-fluid">
-            <div class="h3 text-center mb-3 text-family">Галерея</div>
+        <div class="container">
+            <div class="h3 text-center mb-3">Галерея</div>
             <div class="row">
                 @foreach($bankets as $banket)
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-3">
                         <div class="text-white rounded-circle  text-center" style="border: 0px;">
                             <img class="card-img " src="/uploads/bankets/{{ $banket->path }}" alt="Оформление торжеств">
                         </div>

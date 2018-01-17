@@ -16,7 +16,7 @@ if (h >= 1024) {
 
 $('.autoplay').slick({
     slidesToShow: count,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 2000,
     prevArrow: $('.prev'),
@@ -26,7 +26,7 @@ $('.autoplay').slick({
 
 $('.slaider').slick({
     slidesToShow: count,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 2500,
     prevArrow: $('.preve'),

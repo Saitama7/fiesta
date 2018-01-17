@@ -1,6 +1,9 @@
-
+.nav-link {
+     font-family: -apple-system !important;
+}
 body {
-     min-height:100%;     
+     min-height:100%;
+     font-family: 'Lobster', cursive;
 }
 .img-back {
      background-size: cover;
@@ -142,27 +145,11 @@ ul.nav a {
      margin-bottom: 20px;
 }
 
-.prev{
+.prev,.next,.preve,.nexte{
      display: block;
-     height: 20px;
-     width: 20px;
-}
-
-.next{
-     display: block;
-     height: 20px;
-     width: 20px;
-}
-.preve{
-     display: block;
-     height: 20px;
-     width: 20px;
-}
-
-.nexte{
-     display: block;
-     height: 20px;
-     width: 20px;
+     height: 30px;
+     width: 30px;
+     font-size: 20px;
 }
 
 /*Картинка меняет цвет на обычный при наведении на неё курсором мыши*/
@@ -262,23 +249,30 @@ i.fa {
      display: none;
      background-color: rgba(207, 207, 207, .3);
 }
-
+.card-header{
+     border: none;
+     background: transparent;
+     text-align: center;
+     border-bottom: 2px solid;
+     box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
 .card-img-overlay.norm {
      display: none;
      background-color: rgba(207, 207, 207, .3);
 }
-
+.slide-img {
+     border-radius: 35px;
+}
 .card:hover .card-img-overlay {
      display: block;
      transition: 1s;
 }
-
 .card:hover img {
      -webkit-filter: grayscale(.85);
      -moz-filter: grayscale(.85);
      -o-filter: grayscale(.85);
      filter: grayscale(.85);
-     opacity: .3;
+     opacity: 0.8;
      transition: .5s;
 }
 
@@ -370,14 +364,18 @@ card:hover .card-images-overlay{
      padding-top: 0.85em;
      width: 10em;
      border-radius: 1em 1em 0 0;
-     background: linear-gradient(to bottom,#f0e3d8,white);
-     background-color: #f0e3d8;
+     /*background: linear-gradient(to bottom,#f0e3d8,white);*/
+     /*background-color: #f0e3d8;*/
+     background: hsla(0,0%,100%,0.4);
      box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.12);
      color: #2c2c2c;
      text-decoration: none;
      text-transform: uppercase;
      font-weight: 200;
      font-size: 1rem;
+}
+.btn-labflower:hover {
+     background: hsla(0,0%,100%,1);
 }
 
 .num-size {
