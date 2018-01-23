@@ -21,7 +21,9 @@
                                 <div class="col-6 col-md-4 col-lg-3 mb-3 div1">
                                     <div class="card bg-dark text-white  text-center" style="border: 0px;">
                                         {{--<img class="card-img " src="/uploads/products/{{ $product->image_path }}" alt="Card image">--}}
-                                        <a data-fancybox="gallery" href="/uploads/products/{{ $product->image_path }}"><img class="card-img" src="/uploads/products/{{ $product->image_path }}" alt="{{ $product->name }}"></a>
+                                        <a data-fancybox="gallery" href="/uploads/products/{{ $product->image_path }}" data-caption="{{ $product->name }}">
+                                            <img class="card-img" src="/uploads/products/{{ $product->image_path }}" alt="{{ $product->name }}">
+                                        </a>
                                         <div class="card-img-overlay d-none">
                                             <h4 class="card-title mt-5"><span class="">{{ $product->cost }}</span> сом</h4>
                                             <p class="card-text">{{ $product->name }}</p>
@@ -62,7 +64,9 @@
                                         <div class="col-6 col-md-4 col-lg-3 mb-3 div1">
                                             <div class="card bg-dark text-white  text-center" style="border: 0px;">
                                                 {{--<img class="card-img" src="/uploads/products/{{ $product->image_path }}" alt="Card image">--}}
-                                                <a data-fancybox="gallery" href="/uploads/products/{{ $product->image_path }}"><img class="card-img" src="/uploads/products/{{ $product->image_path }}" alt="{{ $product->name }}"></a>
+                                                <a data-fancybox="gallery" href="/uploads/products/{{ $product->image_path }}" data-caption="{{ $product->name }}">
+                                                    <img class="card-img" src="/uploads/products/{{ $product->image_path }}" alt="{{ $product->name }}">
+                                                </a>
                                                 <div class="card-img-overlay d-none">
                                                     <h4 class="card-title mt-5"><span>{{ $product->cost }}</span> сом</h4>
                                                     <p class="card-text">{{ $product->name }}</p>

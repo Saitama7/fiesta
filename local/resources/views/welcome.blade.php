@@ -28,7 +28,9 @@
                         <div class="col-md-3 col-xs-6 col-sm-6 mb-3 div1">
                             <div class="card" style="border: 0px;">
                                 {{--<img class="card-img slide-img " src="/uploads/products/{{ $flower->image_path }}" alt="Card image">--}}
-                                <a data-fancybox="gallery" href="/uploads/products/{{ $flower->image_path }}"><img class="card-img slide-img" src="/uploads/products/{{ $flower->image_path }}" alt="{{ $flower->name }}"></a>
+                                <a data-fancybox="gallery" href="/uploads/products/{{ $flower->image_path }}" data-caption="{{ $flower->name }}">
+                                    <img class="card-img slide-img" src="/uploads/products/{{ $flower->image_path }}" alt="{{ $flower->name }}">
+                                </a>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <a href="{{ $flower->id }}" id="{{ $flower->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
@@ -60,7 +62,9 @@
                         <div class="col-3 mb-3 div1">
                             <div class="card" style="border: 0px;">
                                 {{--<img class="card-img slide-img" src="/uploads/products/{{ $box->image_path }}" alt="Card image">--}}
-                                <a data-fancybox="gallery" href="/uploads/products/{{ $box->image_path }}"><img class="card-img slide-img" src="/uploads/products/{{ $box->image_path }}" alt="{{ $box->name }}"></a>
+                                <a data-fancybox="gallery" href="/uploads/products/{{ $box->image_path }}" data-caption="{{ $box->name }}">
+                                    <img class="card-img slide-img" src="/uploads/products/{{ $box->image_path }}" alt="{{ $box->name }}">
+                                </a>
                                 <div class="col d-flex justify-content-center">
                                     <a href="{{ $box->id }}" id="{{ $box->id }}" class="onetwo zakazat btn btn-pos btn-labflower text-dark">Заказать</a>
                                 </div>
