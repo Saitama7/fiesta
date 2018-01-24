@@ -455,6 +455,17 @@ footer{
      max-width: 550px;
      margin: 300px auto 0px;
 }
+.callback-bg {
+     width: 100%;
+     background: rgba(0,0,0,.8) !important;
+}
+.callback-form {
+     width: 100%;
+}
+.callback-wrap {
+     width: 80%;
+     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
 @media (max-width: 768px) {
      .fa {
