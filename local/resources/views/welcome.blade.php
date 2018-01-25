@@ -14,6 +14,16 @@
             </div>
         </div>
     @endif
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            <div>
+                <div class="" style="position:absolute; right:80px;">
+                    <a href="#" class="close text-white" style="opacity: 1;" data-dismiss="alert" aria-label="close">&times;</a>
+                </div>
+                 {{ Session::get('success') }}
+            </div>
+        </div>
+    @endif
     @foreach($apps as $app)
         <div class="banner">
             <img src="/uploads/banners/{{ $app->img_path }}" alt="">

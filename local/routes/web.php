@@ -120,6 +120,12 @@ Route::get('/deliver', 'IndexController@deliver');
 Route::get('/festivities', 'IndexController@corpclient');
 //Route::get('/admin', 'IndexController@admin');
 
+//Contact-form
+Route::post('contact', 'IndexController@postContact');
+Route::post('callback', 'IndexController@callBack');
+
 Route::get('/all/flowers', 'ProductController@flowers');
 Route::get('/all/boxes', 'ProductController@boxes');
 Route::get('/all/vigvams', 'ProductController@vigvams');
+
+

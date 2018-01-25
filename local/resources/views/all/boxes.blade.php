@@ -33,16 +33,16 @@
     </div>
     <div class="callback-bg" >
         <div class="container pt-5 pb-5">
-            <form action="">
+            <form action="{{ url('callback') }}" method="POST">
                 {{ csrf_field() }}
               <div class="form-row justify-content-center">
                   <div class="col-3 mb-2">
                       <label class="sr-only" for="boxes-form-name"></label>
-                      <input type="text" class="form-control border border-danger" id="boxes-form-name" placeholder="Ваше имя">
+                      <input type="text" name="name" class="form-control border border-danger" id="boxes-form-name" placeholder="Ваше имя">
                   </div>
                   <div class="col-3 mb-2">
                       <label class="sr-only" for="boxes-form-email"></label>
-                      <input type="tel" class="form-control border border-danger" id="boxes-form-email" aria-describedby="emailHelp" placeholder="Ваш номер телефона">
+                      <input type="tel" name="phone" class="form-control border border-danger" id="boxes-form-phone" placeholder="Ваш номер телефона">
                   </div>
                   <div class="col-3 mb-2">
                       <button type="submit" class="btn btn-outline-danger">Заказать звонок</button>
@@ -78,30 +78,34 @@
             @endforeach
         </div>
     </div>
-    <div class="callback-form">
+    <div class="callback-form my-5">
         <div class="callback-wrap pt-5 pb-5 m-auto">
             <div class="text-center">
                 <p>Есть вопросы?</p>
                 <p>Мы с удовольствием ответим на каждую из них!</p>
             </div>
-            <form action="">
+            <form action="{{ url('contact') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-row justify-content-center">
                     <div class="col-3 mb-2">
                         <label class="sr-only" for="boxes-form-name">Имя</label>
-                        <input type="text" class="form-control border border-danger" id="callback-form-name" placeholder="Как вас зовут?">
+                        <input type="text" name="name" class="form-control border border-danger" id="callback-form-name" required placeholder="Как вас зовут?">
                     </div>
                     <div class="col-3 mb-2">
                         <label class="sr-only" for="boxes-form-email">E-mail</label>
-                        <input type="email" class="form-control border border-danger" id="callback-form-email" aria-describedby="emailHelp" placeholder="user@gmail.com">
+                        <input type="email" name="email" class="form-control border border-danger" id="callback-form-email" required aria-describedby="emailHelp" placeholder="user@gmail.com">
                     </div>
                     <div class="col-3 mb-2">
                         <label class="sr-only" for="boxes-form-phone"></label>
-                        <input type="tel" class="form-control border border-danger" id="callback-form-phone" aria-describedby="emailHelp" placeholder="996 XXX 123-456">
+                        <input type="tel" name="phone" class="form-control border border-danger" id="callback-form-phone" required aria-describedby="emailHelp" placeholder="996 XXX 123-456">
+                    </div>
+                    <div class="col-4 mb-2">
+                        <label class="sr-only" for="boxes-form-subject"></label>
+                        <input type="text" name="subject" class="form-control border border-danger" id="callback-form-subject" required aria-describedby="emailHelp" placeholder="Тема сообщения">
                     </div>
                     <div class="col-9 mb-2">
                         <label for="callback-sms">Сообщение</label>
-                        <textarea   id="callback-sms" rows="5" accesskey  class="form-control"></textarea>
+                        <textarea  id="callback-sms" name="message" rows="5" accesskey required  class="form-control"></textarea>
                     </div><br>
                     <div class="col-9 mb-2 text-right">
                         <button type="submit" class="btn btn-outline-danger">Отправить</button>
