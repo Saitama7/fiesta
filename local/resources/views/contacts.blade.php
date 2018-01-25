@@ -30,7 +30,6 @@
                 <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
             </div>
             <div class="col-12 col-md-6">
-
                 @foreach($apps as $app)
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -47,6 +46,41 @@
                     </li>
                 </ul>
                 @endforeach
+                <div class="callback-wrap">
+                    <div class="container">
+                        <div class="text-center pt-1">
+                            <p>Напишите нам</p>
+                        </div>
+                        <form action="{{ url('contact') }}" method="POST">
+                            {{ csrf_field() }}
+                            <div class="form-row justify-content-center">
+                                <div class="col-12 mb-2">
+                                    <label class="sr-only" for="boxes-form-name">Имя</label>
+                                    <input type="text" name="name" class="form-control border border-danger" id="callback-form-name" required placeholder="Как вас зовут?">
+                                </div>
+                                <div class="col-6 mb-2">
+                                    <label class="sr-only" for="boxes-form-email">E-mail</label>
+                                    <input type="email" name="email" class="form-control border border-danger" id="callback-form-email" required aria-describedby="emailHelp" placeholder="user@gmail.com">
+                                </div>
+                                <div class="col-6 mb-2">
+                                    <label class="sr-only" for="boxes-form-phone"></label>
+                                    <input type="tel" name="phone" class="form-control border border-danger" id="callback-form-phone" required aria-describedby="emailHelp" placeholder="996 XXX 123-456">
+                                </div>
+                                <div class="col-5 mb-2">
+                                    <label class="sr-only" for="boxes-form-subject"></label>
+                                    <input type="text" name="subject" class="form-control border border-danger" id="callback-form-subject" required aria-describedby="emailHelp" placeholder="Тема сообщения">
+                                </div>
+                                <div class="col-9 mb-2">
+                                    <label for="callback-sms">Сообщение</label>
+                                    <textarea  id="callback-sms" name="message" rows="4" accesskey required  class="form-control"></textarea>
+                                </div><br>
+                                <div class="col-9 mb-2 text-right">
+                                    <button type="submit" class="btn btn-outline-danger">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
