@@ -480,16 +480,27 @@ footer{
      .korzina {
           font-size: inherit;
      }
+     .callback-wrap{
+          width: 100%;
+     }
 }
 @media all and (max-width: 1024px) {
      .buttons {
           display: none !important;
+     }
+     .callback-wrap{
+          width: 100%;
      }
 }
 
 @media all and (max-width: 425px){
      .ml-xs-0 {
           margin-left: 0 !important;
+     }
+     .callback-wrap{
+          width: 100%;
+          padding-left: 10px;
+          padding-right: 10px;
      }
 }
 
