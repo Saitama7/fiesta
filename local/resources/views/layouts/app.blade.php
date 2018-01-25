@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
     <!-- Styles -->
+    <link rel="shortcut icon" href="{{{ asset('uploads/logo/icon/fiesta-flowers-black.png') }}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <!-- CSRF Token -->
