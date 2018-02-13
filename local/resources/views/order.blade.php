@@ -130,13 +130,17 @@
                                 <h4>Оплата</h4>
                             </li>
                             <li class="nav-item">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <span class="srift-ton">Оплата наличными при доставке</span>
+                                <label class="form-check-label row m-0 align-items-center">
+                                    <input class="form-check-input col-auto p-0" type="radio" onchange="elsom_function()" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <span class="srift-ton col-auto p-0">Оплата наличными при доставке</span>
                                 </label><br>
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" disabled>
-                                    <span class="srift-ton">Оплата онлайн по карте - (Недоступно! В стадии разработки )</span>
+                                <label class="form-check-label row m-0 align-items-center">
+                                    <input class="form-check-input col-auto p-0 elsom" onchange="elsom_function()" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                                    <span class="srift-ton col-auto p-0">Оплата Элсом <img src="/uploads/elsom.jpg" class="col-3" alt=""></span>
+                                </label><br>
+                                <label class="form-check-label row m-0 align-items-center">
+                                    <input class="form-check-input col-auto p-0" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" disabled>
+                                    <span class="srift-ton col-auto p-0">Оплата онлайн по карте - (Недоступно! В стадии разработки )</span>
                                 </label>
                             </li>
                         </ul>
@@ -176,6 +180,23 @@
                 </div>
             </form>
         </div>
+        <script>
+            var ali = document.getElementsByClassName('ali');
+            var text = ali[0].innerText;
+
+            function elsom_function() {
+                var new_text = "Получить код";
+                var elsom = document.getElementsByClassName('elsom');
+                var elsom_checked = elsom[0].checked;
+
+                if (elsom_checked) {
+                    ali[0].innerText = new_text;
+                }
+                else {
+                    ali[0].innerText = text;
+                }
+            }
+        </script>
     </content>
 
 @endsection
