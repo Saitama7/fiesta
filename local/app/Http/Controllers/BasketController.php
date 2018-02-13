@@ -43,6 +43,7 @@ class BasketController extends Controller
     public function store(Request $request)
     {
         $basket = new Basket();
+//        $basket->payment_id = $request->payment_id;
         $basket->delivery_id = $request->delivery_id;
         if (Session::has('vip')){
             $basket->vip_id = Session::get('vip')->id;
@@ -57,6 +58,7 @@ class BasketController extends Controller
         $basket->sign = $request->sign;
         $basket->summ = $request->summ;
         $basket->totalPrice = $request->totalPrice;
+        $totalPriceOld = $request->totalPrice;
         $basket->save();
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
@@ -64,9 +66,13 @@ class BasketController extends Controller
         foreach ($products as $product){
             $basket->products()->attach($product['item']['id'], ['count_product' => $product['qty']]);
         }
-        Mail::to('fiestacompanykg@gmail.com')->send(new OrderShipped($basket));
+//        Mail::to('fiestacompanykg@gmail.com')->send(new OrderShipped($basket));
         Session::remove('cart');
         Session::remove('vip');
+        if ($request->payment_id == 2) {
+            Session::put('totalPriceOld', $totalPriceOld);
+            return redirect('/elsom');
+        }
         return redirect('/')->with('status', 'Благодарим за покупку!!! Мы с вами свяжемся в ближайшее время!');
 
     }

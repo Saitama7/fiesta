@@ -131,15 +131,15 @@
                             </li>
                             <li class="nav-item">
                                 <label class="form-check-label row m-0 align-items-center">
-                                    <input class="form-check-input col-auto p-0" type="radio" onchange="elsom_function()" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input col-auto p-0" type="radio" onchange="elsom_function()" name="payment_id" id="exampleRadios1" value="1" checked>
                                     <span class="srift-ton col-auto p-0">Оплата наличными при доставке</span>
                                 </label><br>
                                 <label class="form-check-label row m-0 align-items-center">
-                                    <input class="form-check-input col-auto p-0 elsom" onchange="elsom_function()" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                                    <input class="form-check-input col-auto p-0 elsom" onchange="elsom_function()" type="radio" name="payment_id" id="exampleRadios2" value="2">
                                     <span class="srift-ton col-auto p-0">Оплата Элсом <img src="/uploads/elsom.jpg" class="col-3" alt=""></span>
                                 </label><br>
                                 <label class="form-check-label row m-0 align-items-center">
-                                    <input class="form-check-input col-auto p-0" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" disabled>
+                                    <input class="form-check-input col-auto p-0" type="radio" name="payment_id" id="exampleRadios2" value="3" disabled>
                                     <span class="srift-ton col-auto p-0">Оплата онлайн по карте - (Недоступно! В стадии разработки )</span>
                                 </label>
                             </li>
@@ -154,12 +154,12 @@
                             </li>
                             <li class="nav-item">
                                 <label for="ciity" class="form-check-label">
-                                    <input class="form-check-input del" type="radio" name="deliver" id="ciity" value="1" >
+                                    <input class="form-check-input del" type="radio" name="delivery_id" id="ciity" value="1" >
                                     <span class="strift-ton">ПО ГОРОДУ - 150 сом</span>
                                 </label>
                                 <br>
                                 <label for="notcity" class="form-check-label">
-                                    <input class="form-check-input del" type="radio"  name="deliver"  id="notcity" value="2">
+                                    <input class="form-check-input del" type="radio"  name="delivery_id"  id="notcity" value="2">
                                     <span class="strift-ton">ЗА ЧЕРТОЙ ГОРОДА - 300 сом</span>
                                 </label>
                             </li>

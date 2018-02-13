@@ -29,6 +29,7 @@ class IndexController extends Controller
             'apps' => $apps->where('id', '=', 1)
             ]);
     }
+
     public function logo()
     {
         $apps = App::all();
@@ -37,6 +38,7 @@ class IndexController extends Controller
             'apps' => $apps->where('id', '=', 1)
         ]);
     }
+
     public function apiGetCart() {
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
@@ -205,5 +207,18 @@ class IndexController extends Controller
         return redirect('/');
     }
 
+    public function elsom() {
+        $apps = App::all();
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $totalPriceOld = Session::get('totalPriceOld');
+        Session::forget('totalPriceOld');
+        return view('elsom', [
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice,
+            'apps' => $apps->where('id', '=', 1),
+            'totalPriceOld' => $totalPriceOld
+        ]);
+    }
 
 }

@@ -32,7 +32,7 @@ Route::get('/more/products/{id}', 'BasketController@more');
 Route::get('/itogo', 'IndexController@itogo');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/elsom', 'IndexController@elsom');
 
 //Admin
 Route::group(['middleware' => ['admin']],function() {
