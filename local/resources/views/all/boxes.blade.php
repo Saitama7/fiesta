@@ -36,15 +36,15 @@
             <form action="{{ url('callback') }}" method="POST">
                 {{ csrf_field() }}
               <div class="form-row justify-content-center">
-                  <div class="col-3 mb-2">
+                  <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 mb-2">
                       <label class="sr-only" for="boxes-form-name"></label>
                       <input type="text" name="name" class="form-control border border-danger" id="boxes-form-name" placeholder="Ваше имя">
                   </div>
-                  <div class="col-3 mb-2">
+                  <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 mb-2">
                       <label class="sr-only" for="boxes-form-email"></label>
-                      <input type="tel" name="phone" class="form-control border border-danger" id="boxes-form-phone" placeholder="Ваш номер телефона">
+                      <input type="tel" name="phone" class="form-control border border-danger" id="boxes-form-phone" placeholder="Ваш телефон">
                   </div>
-                  <div class="col-3 mb-2">
+                  <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 mb-2">
                       <button type="submit" class="btn btn-outline-danger">Заказать звонок</button>
                   </div>
               </div>
@@ -87,19 +87,19 @@
             <form action="{{ url('contact') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-row justify-content-center">
-                    <div class="col-3 mb-2">
+                    <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 mb-2">
                         <label class="sr-only" for="boxes-form-name">Имя</label>
                         <input type="text" name="name" class="form-control border border-danger" id="callback-form-name" required placeholder="Как вас зовут?">
                     </div>
-                    <div class="col-3 mb-2">
+                    <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 mb-2">
                         <label class="sr-only" for="boxes-form-email">E-mail</label>
                         <input type="email" name="email" class="form-control border border-danger" id="callback-form-email" required aria-describedby="emailHelp" placeholder="user@gmail.com">
                     </div>
-                    <div class="col-3 mb-2">
+                    <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 mb-2">
                         <label class="sr-only" for="boxes-form-phone"></label>
                         <input type="tel" name="phone" class="form-control border border-danger" id="callback-form-phone" required aria-describedby="emailHelp" placeholder="996 XXX 123-456">
                     </div>
-                    <div class="col-4 mb-2">
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 mb-2">
                         <label class="sr-only" for="boxes-form-subject"></label>
                         <input type="text" name="subject" class="form-control border border-danger" id="callback-form-subject" required aria-describedby="emailHelp" placeholder="Тема сообщения">
                     </div>

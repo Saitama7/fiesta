@@ -6,7 +6,7 @@
             <h1 class="text-lg-left text-center corp">Контакты</h1>
         </div>
         <div class="row ">
-            <div class="col-6 d-none d-lg-block">
+            <div class="col-6 d-none d-lg-block d-md-block">
                 <a class="dg-widget-link" href="http://2gis.kg/bishkek/firm/70000001028376673/center/74.61611509323122,42.82386161680314/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Бишкека</a>
                 <div class="dg-widget-link"><a href="http://2gis.kg/bishkek/firm/70000001028376673/photos/70000001028376673/center/74.61611509323122,42.82386161680314/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div>
                 <div class="dg-widget-link"><a href="http://2gis.kg/bishkek/center/74.616106,42.823562/zoom/16/routeTab/rsType/bus/to/74.616106,42.823562╎Fiesta Flowers, цветочный магазин?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Fiesta Flowers, цветочный магазин</a></div>
@@ -58,19 +58,19 @@
                                     <label class="sr-only" for="boxes-form-name">Имя</label>
                                     <input type="text" name="name" class="form-control border border-danger" id="callback-form-name" required placeholder="Как вас зовут?">
                                 </div>
-                                <div class="col-6 mb-2">
+                                <div class=" col-xs-9 col-sm-6  mb-2">
                                     <label class="sr-only" for="boxes-form-email">E-mail</label>
                                     <input type="email" name="email" class="form-control border border-danger" id="callback-form-email" required aria-describedby="emailHelp" placeholder="user@gmail.com">
                                 </div>
-                                <div class="col-6 mb-2">
+                                <div class="col-xs-12 col-sm-6  mb-2">
                                     <label class="sr-only" for="boxes-form-phone"></label>
                                     <input type="tel" name="phone" class="form-control border border-danger" id="callback-form-phone" required aria-describedby="emailHelp" placeholder="996 XXX 123-456">
                                 </div>
-                                <div class="col-5 mb-2">
+                                <div class="col-xs-12 col-sm-6 mb-2">
                                     <label class="sr-only" for="boxes-form-subject"></label>
                                     <input type="text" name="subject" class="form-control border border-danger" id="callback-form-subject" required aria-describedby="emailHelp" placeholder="Тема сообщения">
                                 </div>
-                                <div class="col-9 mb-2">
+                                <div class="col-xs-12 col-sm-9 mb-2">
                                     <label for="callback-sms">Сообщение</label>
                                     <textarea  id="callback-sms" name="message" rows="4" accesskey required  class="form-control"></textarea>
                                 </div><br>
