@@ -64,7 +64,7 @@ class BasketController extends Controller
         foreach ($products as $product){
             $basket->products()->attach($product['item']['id'], ['count_product' => $product['qty']]);
         }
-        Mail::to('djsaitama7@gmail.com')->send(new OrderShipped($basket));
+        Mail::to('fiestacompanykg@gmail.com')->send(new OrderShipped($basket));
         Session::remove('cart');
         Session::remove('vip');
         return redirect('/')->with('status', 'Благодарим за покупку!!! Мы с вами свяжемся в ближайшее время!');

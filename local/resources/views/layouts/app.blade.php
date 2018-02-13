@@ -4,8 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Fiesta, Фиеста, Букеты, Цветы, Бишкек цветы, Бишкек букеты, Бишкек мишки, Бишкек Фиеста, Купить букеты, Купить подарок, Fiesta flowers, Фиеста фловерс, Flowers, 101 роза, 1001 роза, Оформление торжеств, Вигвам" />
+    <meta name="keywords" content="Fiesta, Фиеста, Букеты, Цветы, Бишкек цветы, Бишкек букеты, Бишкек мишки, Бишкек Фиеста, Купить букеты, Купить подарок, Fiesta flowers, Фиеста фловерс, Flowers, 101 роза, 1001 роза, Оформление торжеств, Вигвам, цветы, купить цветы, цветы бишкек, цветы в бишкеке" />
     <meta name="description" content="@yield('description')">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91394222-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-91394222-1');
+    </script>
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">

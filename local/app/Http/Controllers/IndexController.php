@@ -182,7 +182,7 @@ class IndexController extends Controller
             'bodyMessage' => $request->message);
         Mail::send('emails.contact-email', $data, function ($message) use ($data) {
             $message->from($data['email']);
-            $message->to('djsaitama7@gmail.com');
+            $message->to('fiestacompanykg@gmail.com');
             $message->subject($data['subject']);
         });
 
@@ -197,7 +197,7 @@ class IndexController extends Controller
         );
         Mail::send('emails.callback-email', $data, function ($message) use ($data) {
            $message->from('fiesta@callback.com');
-           $message->to('djsaitama7@gmail.com');
+           $message->to('fiestacompanykg@gmail.com');
            $message->subject('Заказ обратного звонка');
         });
         Session::flash('success', 'Ваш запрос успешно отправлен!! Наши специалисты с вами свяжутся. Ожидайте.');
